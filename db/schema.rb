@@ -10,10 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322151732) do
+ActiveRecord::Schema.define(version: 20180322155055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "child_no_valids", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birth_date"
+    t.string "gender"
+    t.string "nursery"
+    t.text "montessori_before"
+    t.string "nationality"
+    t.string "first_lang"
+    t.string "snd_lang"
+    t.string "workshop"
+    t.string "comment"
+    t.bigint "subscription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_child_no_valids_on_subscription_id"
+  end
+
+  create_table "more_infos", force: :cascade do |t|
+    t.string "know_the_school"
+    t.string "start_date"
+    t.string "reason_why"
+    t.string "child_atmosphere"
+    t.bigint "subscription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_more_infos_on_subscription_id"
+  end
+
+  create_table "parent_no_valids", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "lang"
+    t.string "situation"
+    t.string "job"
+    t.string "fiscal"
+    t.string "address"
+    t.string "zip_code"
+    t.string "city"
+    t.string "phone"
+    t.string "mobile"
+    t.string "role"
+    t.bigint "subscription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_parent_no_valids_on_subscription_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +87,7 @@ ActiveRecord::Schema.define(version: 20180322151732) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "child_no_valids", "subscriptions"
+  add_foreign_key "more_infos", "subscriptions"
+  add_foreign_key "parent_no_valids", "subscriptions"
 end
