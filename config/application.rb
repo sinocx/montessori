@@ -16,6 +16,8 @@ module Montessori
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => "96c7dad2-fc64-4f63-a967-5b16ddfc0ac5" }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

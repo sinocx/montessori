@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="container">
+    <%= simple_form_for [@child], url: subscription_child_no_valids_path(@subscription, @child),method: :post do |f| %>
+      <fieldset>
+        <legend>Pet Identity</legend>
+          <%= f.input :first_name,:label => "Prénom"%>
+          <%= f.input :last_name %>
+          <div class="child-gender">
+            <%= f.input :gender, as: :radio_buttons, collection: [['Féminin'], ['Masculin']], label_method: :second, value_method: :first %>
+          </div>
+          <%= f.input :birth_date,:label => "Date de naissance" %>
+          <%= f.input :nationality,:label => "Nationalité" %>
+          <%= f.input :first_lang,:label => "Langue maternelle" %>
+          <%= f.input :snd_lang,:label => "Seconde langue" %>
+          <%= f.input :montessori_before,:label => "Votre enfant a-t-il déjà été scolarisé dans une école Montessori ? Si oui, laquelle ? *" %>
+          <%= f.input :workshop,:label => "Votre enfant aura-t-il besoin des ateliers du mercredi (centre de loisir de 8h30 à 16h) ? *"%>
+          <%= f.input :nursery,:label => "Votre enfant aura-t-il besoin de garderie ? *"%>
+          <%= f.input :comment, :label => "Choses à savoir sur votre enfant "%>
+          <%= f.button :submit %>
+        </fieldset>
+    <% end %>
+  </div>
