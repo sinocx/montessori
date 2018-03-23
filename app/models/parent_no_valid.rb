@@ -1,5 +1,6 @@
 class ParentNoValid < ApplicationRecord
-    belongs_to :subscription
+  belongs_to :subscription
+  after_create :send_welcome_email
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -13,4 +14,8 @@ class ParentNoValid < ApplicationRecord
   validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }, presence: true, uniqueness: true
   validates :phone, presence: true
   validates :mobile, format: { with: /0[6-7](\d{2}){4}/ }, presence: { message: 'Mobile uniquement' }, uniqueness: true
+
+  def send_welcome_email
+    ParentNoValidMailer.welcome(self).deliver_now
+  end
 end

@@ -9,20 +9,21 @@ class ParentNoValidsController < ApplicationController
     @subscription = params[:subscription_id]
     @parent.subscription_id = params[:subscription_id]
     if @parent.save
-      role_check?
+      role_check
     else
       render :new
     end
   end
 
-  def role_check?
+  def role_check
+
     if @parent.role == "Tuteur"
       redirect_to root_path
     else
       if no_more_parent?
         redirect_to root_path
       else
-        redirect_to new_subscription_parent_no_valid_path(@subscription,@parent)
+        redirect_to new_subscription_parent_no_valid_path(@subscription, @parent)
       end
     end
   end
@@ -35,18 +36,6 @@ class ParentNoValidsController < ApplicationController
     end
     return true if i >= 2
   end
-
-
-
-
-
-
-
-
-
-
-
-
 
   private
   def parent_no_valids_params
@@ -61,7 +50,8 @@ class ParentNoValidsController < ApplicationController
                                             :city,
                                             :email,
                                             :phone,
-                                            :mobile)
+                                            :mobile,
+                                            :role)
 
   end
 end
