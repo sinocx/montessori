@@ -1,0 +1,19 @@
+//Typographie
+.btn {
+  font-weight: 600;
+}
+
+//Positions
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Colors
+body {
+  color: $blue;
+}
+.light-gray {
+  background-color: $light-gray;
+}

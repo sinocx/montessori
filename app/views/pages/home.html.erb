@@ -1,5 +1,51 @@
-<%= link_to "Inscription", subscriptions_path(@subscription), method: :post %>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="home-head">
 
-<%= link_to "dashboard",dashboard_path %>
+          <div class="text-center">
+            <div class="home-title">
+              <h1 class="text-center">Les petites graines</h1>
+              <h3 class="text-center">École Montessori</h3>
+            </div>
+            <div class="home-img flex-center-center">
+              <%= image_tag "img_accueil.png", id: "accueil" %>
+            </div>
+            <div class="home-text flex-center-center">
+              <p>Offrez à votre enfant un environnement adapté qui stimule l’apprentissage et l’autonomie.</p>
+            </div>
+            <div class="home-link flex-center-center">
+              <%= link_to subscriptions_path(@subscription), method: :post do %>
+                <button class="btn btn-primary">Inscription</button>
+              <% end %>
+            </div>
+          </div>
+
+          <%#= link_to "dashboard",dashboard_path %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper light-gray" id="home-tabs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper" id="home-infos">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+      </div>
+    </div>
+  </div>
+</div>
