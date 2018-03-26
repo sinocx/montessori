@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get 'informations', to: "pages#informations", as: 'informations'
   get 'tarifs', to: "pages#tarifs", as: 'tarifs'
   get 'contact', to: "pages#contact", as: 'contact'
+  get 'inscription', to: "pages#inscription", as: 'inscription'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
