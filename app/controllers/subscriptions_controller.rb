@@ -5,11 +5,13 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-     @subscription = Subscription.create()
-     redirect_to  new_subscription_child_no_valid_path(@subscription)
+    @subscription = Subscription.create()
+    @subscription.status = 0
+    @subscription.save
+    redirect_to  new_subscription_child_no_valid_path(@subscription)
   end
-
-  def update
-
+  def destroy
+    @subscription = Subscription.find(params[:id])
+    @subscription.destroy
   end
 end

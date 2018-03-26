@@ -7,10 +7,25 @@ class DashboardsController < ApplicationController
   def etape_1_to_2
     @subscription = Subscription.find(params[:id])
     @subscription.status = 1
+    @subscription.save
+
+    redirect_to dashboard_path
   end
 
   def etape_2_to_3
     @subscription = Subscription.find(params[:id])
     @subscription.status = 2
+    @subscription.save
+    redirect_to dashboard_path
+
+  end
+
+  def validate_etape_3
+    @subscription = Subscription.find(params[:id])
+    @subscription.status = 3
+    @subscription.save
+
+    redirect_to dashboard_path
+
   end
 end

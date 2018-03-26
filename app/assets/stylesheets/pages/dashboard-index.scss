@@ -1,4 +1,16 @@
+.wrap {
+  background-color: white;
+  height: 100vh;
+}
+
 .dash-subcription {
+  box-shadow: 3px 3px 5px rgb(200,200,200);
+  margin-top: 30px;
   display: flex;
   justify-content: space-around;
+  .dash-subcription-childNoValid {
+    h4 {
+      margin-top: 12.5px;
+    }
+  }
 }
