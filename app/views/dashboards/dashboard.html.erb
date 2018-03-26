@@ -3,6 +3,7 @@
     <% @subscriptions.each do |subscription| %>
       <div class="dash-subcription", id="subscription-<%= subscription.id %>">
           <h3><%= subscription.id %></h3>
+          <p><%= link_to "Info", subscription_path(subscription) %></p>
         <% subscription.parent_no_valids.each do |parent| %>
           <div class="dash-subcription-parentNoValid">
             <h4> <%= parent.role %> </h4>
@@ -17,7 +18,9 @@
             <%= child.last_name %></p>
           </div>
           <div class="dash-subcription-link">
-            <% if subscription.status == "Etape 1" %>
+            <% if  subscription.status == "Etape 0" %>
+              <p> <%= link_to "Rendez-vous validé ?", rendez_vous_path(subscription) %> </p>
+            <% elsif subscription.status == "Etape 1" %>
              <p><%= link_to "GO to Etape 2", etape_1_to_2_path(subscription) %></p>
              <p><%= link_to "Refuser", subscription_path(subscription), method: :delete %></p>
             <% elsif subscription.status == "Etape 2" %>

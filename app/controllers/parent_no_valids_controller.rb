@@ -1,4 +1,5 @@
 class ParentNoValidsController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
     @parent = ParentNoValid.new()
     @subscription = params[:subscription_id]

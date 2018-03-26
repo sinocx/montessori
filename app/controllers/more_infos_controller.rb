@@ -1,4 +1,5 @@
 class MoreInfosController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
     @more_info = MoreInfo.new()
     @subscription = params[:subscription_id]
