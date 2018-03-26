@@ -1,27 +1,20 @@
 <% @subscriptions.each do |subscription| %>
-  <ul>
-    <h1><%= subscription.id %></h1>
+  <div class="dash-subcription", id="subscription-<%= subscription.id %>">
     <% subscription.parent_no_valids.each do |parent| %>
-    <div class="subcription", id="subscription-<%= subscription.id %>", style="
-      display:flex;
-      justify-content: space-around;
-      text-align: center;">
-        <li>
-          <h4> Parent </h4>
-          <%= parent.first_name %> |
-          <%= parent.last_name %>
-         </li>
-      <% end %>
-      <% subscription.child_no_valids.each do |child| %>
-        <li>
-          <h4> Child </h4>
-          <%= child.first_name %> | 
-          <%= child.first_name %>
-        </li>
-        <li>
-          <%= link_to "Prise de rendez vous ?"  %>
-        </li>
-      <% end %>
-    </div>
-  </ul>
+      <div class="dash-subcription-parentNoValid">
+        <h3><%= subscription.id %></h3>
+        <h4> Parent </h4>
+        <p><%= parent.last_name %></p>
+        <p><%= parent.first_name %></p>
+      </div>
+    <% end %>
+    <% subscription.child_no_valids.each do |child| %>
+      <div class="dash-subcription-childNoValid">
+        <h4> Child </h4>
+        <p><%= child.first_name %></p>
+        <p><%= child.last_name %></p>
+        <%= link_to "Prise de rendez vous ?"  %>
+      </div>
+    <% end %>
+  </div>
 <% end %>
