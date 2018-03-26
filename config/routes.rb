@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   get "/dashboard/subscriptions/:id/validate_etape_3", to: "dashboards#validate_etape_3", as: "etape_3"
 
   root to: 'pages#home'
+  get 'ecole', to: "pages#ecole", as: 'ecole'
+  get 'programmes', to: "pages#programmes", as: 'programmes'
+  get 'informations', to: "pages#informations", as: 'informations'
+  get 'tarifs', to: "pages#tarifs", as: 'tarifs'
+  get 'contact', to: "pages#contact", as: 'contact'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

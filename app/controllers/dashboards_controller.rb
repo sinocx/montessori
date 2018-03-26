@@ -50,4 +50,8 @@ class DashboardsController < ApplicationController
     @subscription.destroy
     redirect_to dashboard_path
   end
+
+  private
+
+
 end
