@@ -1,10 +1,17 @@
-//Typographie
+//Button
 .btn {
   font-weight: 600;
+  border: none;
+}
+.btn-primary {
+  color: $light-gray;
+  &:hover {
+    background-color: $yellow;
+    color: $blue;
+  }
 }
 
-//Positions
-
+//Flex container
 .flex-center-center {
   display: flex;
   align-items: center;
@@ -41,15 +48,50 @@
   justify-content: space-around;
   flex-direction: column
 }
+
 //Colors
 body {
   color: $blue;
 }
-
-.btn-primary {
-  color: $light-gray;
+a:hover {
+  color: $red;
+  text-decoration: none;
 }
-
 .background-light-gray {
   background-color: $light-gray;
+}
+a:hover .icon path {
+  fill: $red;
+}
+
+//Background pattern
+.hideout {
+  background-color: white;
+  background-image: url("backgrounds/hideout.svg");
+  background-size: 2.5%;
+  background-position-y: 10px;
+}
+.point-stars {
+  background-color: white;
+  background-image: url("backgrounds/point-stars.svg");
+  background-size: 2%;
+  background-position-y: 10px;
+}
+.plus {
+  background-color: white;
+  background-image: url("backgrounds/plus.svg");
+  background-size: 3.5%;
+  background-position-y: 10px;
+}
+.leaf {
+  background-color: white;
+  background-image: url("backgrounds/leaf.svg");
+  background-size: 3.5%;
+  background-position-y: 13px;
+}
+.dots {
+  background-color: white;
+  background-image: url("backgrounds/dots.svg");
+  background-size: 2.8%;
+  background-position-y: 6px;
 }
