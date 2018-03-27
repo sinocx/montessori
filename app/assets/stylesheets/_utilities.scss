@@ -10,7 +10,11 @@
   align-items: center;
   justify-content: center;
 }
-
+.flex-end-center {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
 .flex-no-center {
   display: flex;
   justify-content: center;

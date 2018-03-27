@@ -1,21 +1,19 @@
-const tabs = document.querySelectorAll(".nav-link")
+const tabs = document.querySelectorAll(".nav-item");
 tabs.forEach( function(e){
   e.addEventListener('click', (event) => {
-    $(".nav-link").removeClass('active');
+    $(".nav-item").removeClass('active');
   });
 });
 
 $(document).ready(function(){
-  $(".nav-link").click(function(){
+  $(".nav-item").click(function(){
     $(this).toggleClass("active");
   });
-  $('.nav-link').mouseenter(function(){
-    $(this).delay(5).animate({marginTop: "-20px"}, 300);
-    $(this).children(".tab-extension").animate({height: "20px"}, 300);
+  $('.nav-item').mouseenter(function(){
+    $(this).children(".tab-extension").animate({height: "20px"}, 200);
   })
-  $('.nav-link').mouseleave(function(){
-    $(this).animate({marginTop: "0px"}, 300);
-    $(this).children(".tab-extension").animate({height: "0px"}, 300);
+  $('.nav-item').mouseleave(function(){
+    $(this).children(".tab-extension").animate({height: "0px"}, 200);
   })
 });
 
