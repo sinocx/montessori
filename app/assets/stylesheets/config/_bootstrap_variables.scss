@@ -18,8 +18,12 @@ $brand-danger:    $red;
 $brand-warning:   $orange;
 
 // Buttons & inputs' radius
-$border-radius-base:  2px;
-$border-radius-large: 2px;
-$border-radius-small: 2px;
+$border-radius-small: 5px;
+$border-radius-base: 10px;
+$border-radius-large: 20px;
+
+$r-sm: 5px;
+$r-md: 10px;
+$r-lg: 20px;
 
 // Override other variables below!
