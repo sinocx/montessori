@@ -10,6 +10,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.flex-no-center {
+  display: flex;
+  justify-content: center;
+}
 .flex-center-space-around {
   display: flex;
   align-items: center;
@@ -32,12 +37,15 @@
   justify-content: space-around;
   flex-direction: column
 }
-
-
 //Colors
 body {
   color: $blue;
 }
+
+.btn-primary {
+  color: $light-gray;
+}
+
 .background-light-gray {
   background-color: $light-gray;
 }
