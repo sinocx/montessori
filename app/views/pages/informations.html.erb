@@ -24,12 +24,65 @@
   </div>
 </div>
 
-<div class="wrapper background-light-gray" id="home-infos">
+<div class="wrapper background-light-gray" id="informations-calendar">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
         <div class="information-calendar-title flex-center-center">
           <h2> Le Calendrier scolaire </h2>
+        </div>
+        <div class="wrapper" id="home-tabs">
+          <div class="nav flex-no-center" role="tablist">
+            <div class="nav-item calendar">
+              <a class="nav-link desc flex-center-center active" data-toggle="tab" href="#ecole1" role="tab">
+                <%= inline_svg "demi-rond.svg", size: '120px * 60px', class: 'demi-rond calendar'%>
+                <p>Vacances</p>
+                <div class="tab-extension"></div>
+              </a>
+            </div>
+            <div class="nav-item calendar">
+              <a class="nav-link projet flex-center-center" data-toggle="tab" href="#ecole2" role="tab">
+                <%= inline_svg "demi-rond.svg", size: '120px * 60px', class: 'demi-rond calendar'%>
+                <p>Jours fériés</p>
+                <div class="tab-extension"></div>
+              </a>
+            </div>
+          </div>
+          <div class="tab-container" id="home-tabs-content">
+            <div class="wrapper">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-offset-2 col-xs-8">
+
+                    <!-- Tab panels -->
+                    <div class="tab-content calendar-tabs">
+
+                      <!--Panel 1-->
+
+                        <div class="tab-pane fade in active white-tabs-content" id="ecole1" role="tabpanel">
+                        <br>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+                        </div>
+                      <!--/.Panel 1-->
+
+                      <!--Panel 2-->
+                      <div class="tab-pane fade white-tabs-content" id="ecole2" role="tabpanel">
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+                      </div>
+                      <!--/.Panel 2-->
+
+                      <!--Panel 3-->
+                      <!--/.Panel 3-->
+                    </div>
+                    <!--/.Tab panels -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -98,3 +151,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'tabs' %>
