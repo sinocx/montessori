@@ -1,0 +1,51 @@
+.nav {
+  height: 60px;
+  width: 100%;
+}
+.nav-item {
+  transition-property: margin-top;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  a:hover, a:focus {
+    text-decoration: none;
+    color: $blue;
+  }
+  .nav-link {
+    height: 60px;
+    width: 120px;
+    position: relative;
+  }
+  .demi-rond {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .tab-extension {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 120px;
+    height: 0px;
+    background-color: $yellow;
+  }
+  svg path {
+    fill: $yellow;
+  }
+  p {
+    margin: 25px 0 0 0;
+    z-index: 2;
+  }
+  .active {
+    svg path {
+      fill: $light-gray;
+    }
+    .tab-extension {
+      background-color: $light-gray;
+    }
+  }
+  &:hover {
+    p {
+      color: $blue;
+    }
+  }
+}
