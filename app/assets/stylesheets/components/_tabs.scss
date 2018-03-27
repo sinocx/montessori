@@ -48,7 +48,23 @@
     background-color: $light-gray;
   }
 }
+.nav-item.white.active {
+  svg path {
+    fill: white;
+  }
+  .tab-extension {
+    background-color: white;
+  }
+}
 .tab-content-container {
   position: relative;
   margin-top: -20px;
+  .tab-pane {
+    text-align: center;
+  }
+}
+.white-tabs-content {
+  background: white;
+  padding: 30px;
+  border-radius: $border-radius-large;
 }
