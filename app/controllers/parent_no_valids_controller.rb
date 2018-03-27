@@ -1,4 +1,5 @@
 class ParentNoValidsController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
     @parent = ParentNoValid.new()
     @subscription = params[:subscription_id]
@@ -16,12 +17,12 @@ class ParentNoValidsController < ApplicationController
   end
 
   def role_check
-
+    @more_info = MoreInfo.new()
     if @parent.role == "Tuteur"
-      redirect_to root_path
+      redirect_to new_subscription_more_info_path(@subscription, @more_info)
     else
       if no_more_parent?
-        redirect_to root_path
+        redirect_to new_subscription_more_info_path(@subscription, @more_info)
       else
         redirect_to new_subscription_parent_no_valid_path(@subscription, @parent)
       end

@@ -1,0 +1,39 @@
+
+<div class="subscription-show-parents">
+  <% @subscription.parent_no_valids.each do |parent| %>
+  <p><%= parent.first_name %></p>
+  <p><%= parent.last_name %></p>
+  <p><%= parent.lang %></p>
+  <p><%= parent.situation %></p>
+  <p><%= parent.job %></p>
+  <p><%= parent.fiscal %></p>
+  <p><%= parent.address %></p>
+  <p><%= parent.zip_code %></p>
+  <p><%= parent.city %></p>
+  <p><%= parent.phone %></p>
+  <p><%= parent.mobile %></p>
+  <% end %>
+</div>
+<div class="subscription-show-childs">
+  <% @subscription.child_no_valids.each do |child| %>
+    <p><%= child.first_name %></p>
+    <p><%= child.last_name %></p>
+    <p><%= child.birth_date %></p>
+    <p><%= child.gender %></p>
+    <p><%= child.nursery %></p>
+    <p><%= child.montessori_before %></p>
+    <p><%= child.nationality %></p>
+    <p><%= child.first_lang %></p>
+    <p><%= child.snd_lang %></p>
+    <p><%= child.workshop %></p>
+    <p><%= child.comment %></p>
+  <% end %>
+</div>
+<div class="subscription-show-more-info">
+  <% @subscription.more_infos.each do |more_info| %>
+    <p><%= more_info.know_the_school %></p>
+    <p><%= more_info.start_date %></p>
+    <p><%= more_info.reason_why %></p>
+    <p><%= more_info.child_atmosphere %></p>
+  <% end %>
+</div>

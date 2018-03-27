@@ -4,23 +4,48 @@
 }
 
 //Positions
+
 .flex-center-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .flex-no-center {
   display: flex;
   justify-content: center;
 }
-
+.flex-center-space-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.flex-center-space-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-right-space-around-column {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column
+}
+.flex-left-space-around-column {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column
+}
 //Colors
 body {
   color: $blue;
 }
+
 .btn-primary {
   color: $light-gray;
 }
+
 .background-light-gray {
   background-color: $light-gray;
 }
