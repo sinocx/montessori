@@ -4,29 +4,35 @@
 }
 
 //Positions
+
 .flex-center-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.flex-center-space-around-column {
+.flex-center-space-around {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-direction: column
+}
+.flex-center-space-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .flex-right-space-around-column {
   display: flex;
-  align-items: right;
+  align-items: flex-end;
   justify-content: space-around;
   flex-direction: column
 }
 .flex-left-space-around-column {
   display: flex;
-  align-items: left;
+  align-items: flex-start;
   justify-content: space-around;
   flex-direction: column
 }
+
 
 //Colors
 body {
