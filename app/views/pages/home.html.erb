@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper hideout">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -32,9 +32,10 @@
 
 
 <div class="wrapper" id="home-tabs">
-  <div class="nav flex-no-center" role="tablist">
-    <div class="nav-item">
-      <a class="nav-link desc flex-center-center active" data-toggle="tab" href="#ecole1" role="tab">
+
+  <div class="nav flex-center-center" role="tablist">
+    <div class="nav-item active">
+      <a class="nav-link desc flex-center-center" data-toggle="tab" href="#ecole1" role="tab">
         <%= inline_svg "demi-rond.svg", size: '120px * 60px', class: 'demi-rond'%>
         <p>Description</p>
         <div class="tab-extension"></div>
@@ -55,7 +56,8 @@
       </a>
     </div>
   </div>
-  <div class="background-light-gray tab-container" id="home-tabs-content">
+
+  <div class="background-light-gray tab-content-container" id="home-tabs-content">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
@@ -91,10 +93,12 @@
       </div>
     </div>
   </div>
+  <!-- <div class="tab-cache"></div> -->
+
 </div>
 
 
-<div class="wrapper" id="home-infos">
+<div class="wrapper dots" id="home-infos">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
