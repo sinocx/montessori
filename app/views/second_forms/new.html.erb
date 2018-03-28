@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="container">
+    <%= simple_form_for [@second_form], url: subscription_second_forms_path(@subscription, @parent), method: :post do |f| %>
+      <%= f.input :canteen, as: :radio_buttons, collection: [[0, 'Pas de cantine' ],[7, 'Prix par repas (7€)' ], [100, 'Au mois (100€)'], [1000, "A l'année (1000€)"]], label_method: :second, value_method: :first %>
+      <%= f.input :nursery, as: :radio_buttons, collection: [[0, 'Sans garderie'],[100, 'Au mois'], [1000, "A l'année"]], label_method: :second, value_method: :first %>
+       <%= f.input :workshop, as: :radio_buttons, collection: [[0, 'Sans atelier'],[1224, 'Au semestre'], [2232, "A l'année"]], label_method: :second, value_method: :first %>
+
+      <%= f.submit 'Ajouter un parent' %>
+    <% end %>
+  </div>
+</div>

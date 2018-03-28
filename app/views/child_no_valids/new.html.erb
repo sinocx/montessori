@@ -6,7 +6,7 @@
           <%= f.input :first_name,:label => "Prénom"%>
           <%= f.input :last_name %>
           <div class="child-gender">
-            <%= f.input :gender, as: :radio_buttons, collection: [['Féminin'], ['Masculin']], label_method: :second, value_method: :first %>
+            <%= f.input :gender, as: :radio_buttons, collection: [['Féminin','Féminin'], ['Masculin','Masculin']], label_method: :second, value_method: :first %>
           </div>
           <%= f.input :birth_date,:label => "Date de naissance" %>
           <%= f.input :nationality,:label => "Nationalité" %>
