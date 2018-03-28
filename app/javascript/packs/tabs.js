@@ -1,20 +1,18 @@
-const tabs = document.querySelectorAll(".nav-item");
-tabs.forEach( function(e){
-  e.addEventListener('click', (event) => {
-    $(".nav-item").removeClass('active');
-  });
-});
+const tabContent = $('.tab-content');
+const initialHeight = tabContent.children(".tab-panel").outerHeight();
+console.log(initialHeight);
+tabContent.outerHeight(initialHeight + 30);
 
 $(document).ready(function(){
   $(".nav-item").click(function(){
-    $(this).toggleClass("active");
+    $(".nav-item").removeClass('active');
+    $(this).addClass("active");
+    const hashit = $(this).find('a').attr('href');
+    const autoHeight = $(hashit).outerHeight();
+    const content = tabContent.children(".tab-pane").children();
+    content.animate({opacity: "0"}, 0);
+    tabContent.animate({height: autoHeight}, 100, function(){
+      content.animate({opacity: "1"}, 100);
+    });
   });
-  // $('.nav-item').mouseenter(function(){
-  //   $(this).children(".tab-extension").animate({height: "10px"}, 200);
-  // });
-  // $('.nav-item').mouseleave(function(){
-  //   $(this).children(".tab-extension").animate({height: "0px"}, 200);
-  // });
 });
-
-    // $(this).animate({height: "-=10px"}, 100);

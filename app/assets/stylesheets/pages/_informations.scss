@@ -1,4 +1,46 @@
-.information-timetable-day, .information-timetable-hours {
-  margin: 0 2% 0 2%;
-  width: 46%;
+#informations-timetable {
+  .timetable-container {
+    margin: 0 2% 0 2%;
+    width: 46%;
+  }
+}
+#informations-calendar {
+  .hollidays,
+  .ferie {
+    width: 100%;
+  }
+  .tab {
+    width: 100%;
+    margin-bottom: 20px;
+    h4 {
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+    }
+  }
+  .tab-pane {
+    padding: 30px 30px 10px 30px;
+  }
+}
+@media screen and (min-width: 425px) {
+  #informations-calendar {
+    .hollidays,
+    .ferie {
+      h4 {
+        text-align: left;
+      }
+      p {
+          text-align: right;
+        }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  #informations-calendar {
+    .hollidays,
+    .ferie {
+      h4, p {
+          text-align: center;
+        }
+    }
+  }
 }

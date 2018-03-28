@@ -34,13 +34,14 @@
     z-index: 2;
   }
   &:hover {
-    margin-top: -20px;
+    margin-top: -10px;
     p {
       color: $blue;
     }
   }
 }
 .nav-item.active {
+  margin-top: -10px;
   svg path {
     fill: $light-gray;
   }
