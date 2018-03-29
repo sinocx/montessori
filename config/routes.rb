@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'second_forms/new'
-
-  get 'second_forms/create'
-
-  get 'contacts/index'
-
   devise_for :users
   resources :subscriptions, only: [:show, :new, :create, :destroy] do
     resources :child_no_valids, only: [ :new, :create]
@@ -13,6 +7,7 @@ Rails.application.routes.draw do
     resources :more_infos, only: [ :new, :create]
     resources :second_forms, only: [:new, :create]
   end
+  resources :contacts, only: [:new, :create]
   get "/dashboard", to: "dashboards#dashboard"
   get "/dashboard/subscriptions/:id/rendez_vous", to: "dashboards#rendez_vous", as: "rendez_vous"
   get "/dashboard/subscriptions/:id/etape_1_to_2", to: "dashboards#etape_1_to_2", as: "etape_1_to_2"

@@ -1,0 +1,23 @@
+<h1>Contacts#index</h1>
+<p>Find me in app/views/contacts/index.html.erb</p>
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
+<div class="wrapper">
+  <div class="container">
+    <%= simple_form_for(@contact) do |f| %>
+      <legend>Pet Identity</legend>
+      <%= f.input :subject,:label => "Objet"%>
+      <%= f.input :full_name_parent,:label => "Nom complet des parents" %>
+      <%= f.input :child_full_name,:label => "Nom complet de l'enfant" %>
+      <%= f.input :child_birth_date,:label => "Année de naissance de votre enfant" %>
+      <%= f.input :child_first_lang,:label => "Langue maternelle" %>
+      <%= f.input :phone,:label => "Numéro de telephone" %>
+      <%= f.input :email,:label => "Aédresse email" %>
+      <%= f.input :message,:label => "Message"%>
+      <%= f.button :submit, :label => "Envoyer" %>
+    <% end %>
+  </div>

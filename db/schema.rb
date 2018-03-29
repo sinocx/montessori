@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328115841) do
+ActiveRecord::Schema.define(version: 20180328142008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,14 @@ ActiveRecord::Schema.define(version: 20180328115841) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subscription_id"], name: "index_parent_no_valids_on_subscription_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "second_forms", force: :cascade do |t|
