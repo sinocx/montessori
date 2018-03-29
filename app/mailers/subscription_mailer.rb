@@ -5,12 +5,13 @@ class SubscriptionMailer < ApplicationMailer
   #
   #   en.subscription_mailer.etape2.subject
   #
-  def etape_1_2(parent_no_valid)
+  def etape_1_2(parent_no_valid, subscription)
     if parent_no_valid.nil?
     else
+      @subscription = subscription
       @greeting = "Bonjour"
       @parent_no_valid = parent_no_valid
-      mail to: @parent_no_valid.email, subject: "Validation de la demande d'inscription"
+      mail to: @parent_no_valid.email, subject: "Validation de votre demande de préinscription à l'école Les Petites Graines"
     end
   end
 
@@ -19,12 +20,13 @@ class SubscriptionMailer < ApplicationMailer
   #
   #   en.subscription_mailer.etape3.subject
   #
-  def etape_2_3(parent_no_valid)
+  def etape_2_3(parent_no_valid, subscription)
+    @subscription = subscription
     if parent_no_valid.nil?
     else
       @greeting = "Hi"
       @parent_no_valid = parent_no_valid
-      mail to: @parent_no_valid.email, subject: "Validation de la demande d'inscription"
+      mail to: @parent_no_valid.email, subject: "Confirmation de votre demande d'inscription à l'école Les Petites Graines"
     end
   end
 

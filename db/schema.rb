@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322155055) do
+ActiveRecord::Schema.define(version: 20180328142008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(version: 20180322155055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subscription_id"], name: "index_child_no_valids_on_subscription_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "subject"
+    t.string "full_name_parent"
+    t.string "child_full_name"
+    t.string "child_birth_date"
+    t.string "child_first_lang"
+    t.string "phone"
+    t.string "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "more_infos", force: :cascade do |t|
@@ -64,6 +77,24 @@ ActiveRecord::Schema.define(version: 20180322155055) do
     t.index ["subscription_id"], name: "index_parent_no_valids_on_subscription_id"
   end
 
+  create_table "schools", force: :cascade do |t|
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+  end
+
+  create_table "second_forms", force: :cascade do |t|
+    t.integer "nursery"
+    t.integer "canteen"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "workshop"
+    t.bigint "subscription_id"
+    t.index ["subscription_id"], name: "index_second_forms_on_subscription_id"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -90,4 +121,5 @@ ActiveRecord::Schema.define(version: 20180322155055) do
   add_foreign_key "child_no_valids", "subscriptions"
   add_foreign_key "more_infos", "subscriptions"
   add_foreign_key "parent_no_valids", "subscriptions"
+  add_foreign_key "second_forms", "subscriptions"
 end

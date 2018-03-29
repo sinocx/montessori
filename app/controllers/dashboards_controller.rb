@@ -24,8 +24,12 @@ class DashboardsController < ApplicationController
 
   def etape_1_to_2
     @subscription = Subscription.find(params[:id])
-    SubscriptionMailer.etape_1_2(first_parent_of_the_subscription).deliver_now
-    SubscriptionMailer.etape_1_2(second_parent_of_the_subscription).deliver_now
+    if first_parent_of_the_subscription == second_parent_of_the_subscription
+      SubscriptionMailer.etape_1_2(first_parent_of_the_subscription, @subscription).deliver_now
+    else
+      SubscriptionMailer.etape_1_2(first_parent_of_the_subscription, @subscription).deliver_now
+      SubscriptionMailer.etape_1_2(second_parent_of_the_subscription, @subscription).deliver_now
+    end
     @subscription.update(status: 2)
 
     redirect_to dashboard_path
@@ -33,18 +37,16 @@ class DashboardsController < ApplicationController
 
   def etape_2_to_3
     @subscription = Subscription.find(params[:id])
-    @subscription.status = 3
-    @subscription.save
-    SubscriptionMailer.etape_2_3(first_parent_of_the_subscription).deliver_now
-    SubscriptionMailer.etape_2_3(second_parent_of_the_subscription).deliver_now
+    @subscription.update(status: 3)
+    SubscriptionMailer.etape_2_3(first_parent_of_the_subscription, @subscription).deliver_now
+    SubscriptionMailer.etape_2_3(second_parent_of_the_subscription, @subscription).deliver_now
 
     redirect_to dashboard_path
   end
 
   def validate_etape_3
     @subscription = Subscription.find(params[:id])
-    @subscription.status = 3
-    @subscription.save
+    @subscription.update(status: 3)
     SubscriptionMailer.etape_3(first_parent_of_the_subscription).deliver_now
     SubscriptionMailer.etape_3(last_parent_of_the_subscription).deliver_now
     @subscription.destroy

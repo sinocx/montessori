@@ -6,8 +6,9 @@ class MoreInfosController < ApplicationController
   end
 
   def create
+    @subscription = params[:subscription_id]
     @more_info = MoreInfo.new(params_more_infos)
-    @more_info.subscription_id = params[:subscription_id].to_i
+    @more_info.subscription_id = @subscription
     if @more_info.save
       redirect_to root_path
     else

@@ -3,5 +3,6 @@ class Subscription < ApplicationRecord
   has_many :parent_no_valids,  dependent: :destroy
   has_many :child_no_valids,  dependent: :destroy
   has_many :more_infos,  dependent: :destroy
+  has_one :second_form,  dependent: :destroy
 end
 

@@ -3,7 +3,7 @@ class ChildNoValid < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :gender, presence: true, inclusion: %w(Masculin Feminin)
+  validates :gender, presence: true, inclusion: %w(Masculin Féminin)
   validates :birth_date, presence: true
   validates :nationality, presence: true
   validates :first_lang, presence: true

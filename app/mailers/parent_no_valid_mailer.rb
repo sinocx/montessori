@@ -8,6 +8,6 @@
   def welcome(parent_no_valid)
     @parent_no_valid = parent_no_valid
     @greeting = "Bonjour"
-      mail to: @parent_no_valid.email , subject: "Bienvenue !"
+      mail to: @parent_no_valid.email , subject: "Confirmation de votre demande de préinscription à l'école Les Petites Graines"
   end
 end
