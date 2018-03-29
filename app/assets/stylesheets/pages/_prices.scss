@@ -1,18 +1,6 @@
-.school-price-tabs {
-  padding: 20px;
-  border-radius: $border-radius-large;
-  margin: 0 30px
-}
 .school-prices {
   padding: 20px;
   border-radius: $border-radius-large;
-}
-.school-price-label {
-  background: $blue;
-  color: $light-gray;
-  padding: 10px 20px;
-  border-radius: 0 0 20px 20px;
-  margin-bottom: 50px;
 }
 .other-prices{
   margin-bottom: 50px;
@@ -20,4 +8,47 @@
 }
 .tarif-modality {
   padding: 20px;
+}
+#scolar-prices-tabs,
+#other-prices-tabs {
+  .tab-content-container {
+    border-radius: $r-md $r-md 0 0;
+  }
+  .nav {
+    height: 60px;
+  }
+  .nav-item,
+  .nav-link {
+    width: 80px;
+    height: 40px;
+  }
+  .tab-extension {
+    width: 80px;
+    top: 40px;
+  }
+  h3 {
+    margin-bottom: 10px;
+  }
+  .nav-item p {
+    margin-top: 16px;
+  }
+}
+.school-price-label {
+  background-color: white;
+  border-top: none;
+  border-right: 1px solid $light-blue;
+  border-left: 1px solid $light-blue;
+  border-bottom: 1px solid $light-blue;
+  padding: 10px 20px;
+  border-radius: 0 0 $r-md $r-md;
+  p {
+    color: $blue;
+    // font-weight: 600;
+  }
+}
+.school-price-tabs {
+  padding: 30px;
+  p {
+    display: inline-block;
+  }
 }

@@ -94,8 +94,8 @@
         text-align: left;
       }
       p {
-          text-align: right;
-        }
+        text-align: right;
+      }
     }
   }
 }
@@ -104,21 +104,14 @@
     .hollidays,
     .ferie {
       h4, p {
-          text-align: center;
-        }
+        text-align: center;
+      }
     }
   }
 }
 #information-workshop {
-  .activities {
-    p {
-      display: inline-block;
-      padding: 0 12px;
-    }
-    // display: inline-block;
-    .activity p {
-      // display: inline-block;
-      // padding: 0 10px;
-    }
+  .activities p {
+    display: inline-block;
+    padding: 0 12px;
   }
 }
