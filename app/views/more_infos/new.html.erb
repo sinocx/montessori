@@ -1,16 +1,18 @@
 <div class="wrapper">
   <div class="container">
-   <%= simple_form_for [@more_info], url: subscription_more_infos_path(@subscription, @more_info), method: :post do |f| %>
-      <fieldset>
-        <legend>Information Complémentaire</legend>
-          <%= f.input :know_the_school %>
-          <%= f.input :start_date  %>
-          <%= f.input :child_atmosphere %>
-          <%= f.input :reason_why %>
-        <div>
-          <%= f.submit 'Valider' %>
-        </div>
-      </fieldset>
-    <% end %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <%= simple_form_for [@more_info], url: subscription_more_infos_path(@subscription, @more_info), method: :post do |f| %>
+          <legend>Information Complémentaire</legend>
+            <%= f.input :know_the_school %>
+            <%= f.input :start_date  %>
+            <%= f.input :child_atmosphere %>
+            <%= f.input :reason_why %>
+          <div>
+            <%= f.submit 'Valider' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
