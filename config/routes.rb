@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # subscriptions Routes
 
-  resources :subscriptions, only: [:show, :new, :create, :destroy] do
+  resources :subscriptions, only: [:show, :create, :new, :destroy] do
     resources :child_no_valids, only: [ :new, :create]
     resources :parent_no_valids, only: [ :new, :create]
     resources :more_infos, only: [ :new, :create]
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'informations', to: "pages#informations", as: 'informations'
   get 'tarifs', to: "pages#tarifs", as: 'tarifs'
   get 'contact', to: "contacts#new", as: 'contact'
-  post 'contact/create', to: "contacts#create", as: 'contact_new'
+  post 'contact', to: "contacts#create", as: 'contact_new'
   get 'inscription', to: "pages#inscription", as: 'inscription'
   get 'pedagogie_montessori', to: "pages#pedagogie_montessori", as: 'pedagogie_montessori'
   get 'maria_montessori', to: "pages#maria_montessori", as: 'maria_montessori'
