@@ -20,6 +20,9 @@
 .padding-20 {
   padding: 20px
 }
+.no-padding {
+  padding: 0 !important;
+}
 
 //Flex container
 .flex-center-center {
@@ -69,6 +72,8 @@ a:hover {
 }
 .background-light-gray {
   background-color: $light-gray;
+  // border-top: 1px solid #B3C2CE;
+  // border-bottom: 1px solid #B3C2CE;
 }
 a:hover .icon path {
   fill: $red;
@@ -87,9 +92,19 @@ h3 {
   margin: 0;
   padding: 10px;
 }
+h4 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
 p {
   margin: 0;
   font-size: 18px;
+}
+
+//Border
+.dotted {
+  border-bottom: 1px dotted $blue;
 }
 
 //Background pattern

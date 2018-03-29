@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  // border-bottom: 1px solid #B3C2CE;
 }
 
 /* Logo */
@@ -21,6 +22,22 @@
   &:hover {
     text-decoration: none;
     color: $red;
+  }
+}
+@media screen and (max-width: 320px) {
+  .navbar-montessori-brand h2 {
+    font-size: 22px;
+    width: 150px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .navbar-montessori-brand h2 {
+    font-size: 26px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .navbar-montessori-brand h2 {
+    font-size: 36px;
   }
 }
 
@@ -76,32 +93,79 @@
 }
 
 /* Dropdown menu */
+.dropdown-menu-btn {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  .dropdown-menu-btn-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 40px;
+    svg path {
+      fill: $yellow;
+    }
+    p {
+      z-index: 2;
+      padding-bottom: 5px;
+    }
+  }
+  .demi-rond-dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+  }
+  // &:hover {
+  //   margin-top: 10px;
+  // }
+}
+.dropdown {
+  position: initial;
+}
+.dropdown-open {
+  padding: 0;
+  width: 80px;
+  height: 70px;
+}
 .navbar-montessori-dropdown-menu {
-  margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  margin: 0 20px;
+  top: 70px;
+  width: calc(100% - 40px);
+  padding: 30px 30px 0 30px;
+  box-shadow: none;
+  border-top: 1px solid $light-blue;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background-color: $light-gray;
+  border-radius: 0 0 10px 10px;
 }
 .navbar-montessori-dropdown-menu li > a {
+  text-align: center;
   transition: color 0.3s ease;
-  font-weight: lighter !important;
-  color: #999999 !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
-  padding: 10px 20px;
+  color: $blue;
+  font-size: 18px !important;
+  font-weight: 600;
+  padding: 0;
+  height: auto;
+  margin-bottom: 30px;
 }
-.navbar-montessori-dropdown-menu li > a:hover {
+.navbar-montessori-dropdown-menu li > a:hover,
+.navbar-montessori-dropdown-menu li > a.active {
   background: transparent !important;
-  color: black !important;
+  color: $red !important;
 }
-.navbar-montessori-dropdown-menu:before {
-  content: ' ';
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  right: 10px;
-  top: -6px;
-  background-color: white;
-  transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
-}
+// .navbar-montessori-dropdown-menu:before {
+//   content: ' ';
+//   height: 10px;
+//   width: 10px;
+//   position: absolute;
+//   right: 36px;
+//   top: -6px;
+//   background-color: $yellow;
+//   transform: rotate(45deg);
+//   border-left: 1px solid #E6E6E6;
+//   border-top: 1px solid #E6E6E6;
+// }
