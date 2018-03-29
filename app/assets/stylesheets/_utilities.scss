@@ -72,6 +72,8 @@ a:hover {
 }
 .background-light-gray {
   background-color: $light-gray;
+  // border-top: 1px solid #B3C2CE;
+  // border-bottom: 1px solid #B3C2CE;
 }
 a:hover .icon path {
   fill: $red;

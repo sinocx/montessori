@@ -1,7 +1,72 @@
 #informations-timetable {
-  .timetable-container {
-    margin: 0 2% 0 2%;
-    width: 46%;
+  // .timetable-container {
+  //   margin: 0 2% 0 2%;
+  //   width: 46%;
+  // }
+  .section-row {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  .section-item {
+    width: 250px;
+    flex-grow: 1;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 529px) {
+  #informations-timetable {
+    .section-item p {
+      text-align: center;
+      padding-left: 0;
+    }
+    .title p {
+      font-weight: 600;
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+}
+@media screen and (min-width: 529px) and (max-width: 767px) {
+  #informations-timetable {
+    .section-item p {
+      padding-left: 10px;
+    }
+    .title p {
+      font-weight: 600;
+      text-align: right;
+      padding-right: 10px;
+      padding-bottom: 1px;
+    }
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 991px) {
+  #informations-timetable {
+    .section-item p {
+      text-align: center;
+      padding-left: 0;
+    }
+    .title p {
+      font-weight: 600;
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+}
+@media screen and (min-width: 991px) {
+  #informations-timetable {
+    .section-item p {
+      padding-left: 10px;
+    }
+    .title p {
+      font-weight: 600;
+      text-align: right;
+      padding-right: 10px;
+      padding-bottom: 1px;
+    }
   }
 }
 #informations-calendar {
@@ -41,6 +106,19 @@
       h4, p {
           text-align: center;
         }
+    }
+  }
+}
+#information-workshop {
+  .activities {
+    p {
+      display: inline-block;
+      padding: 0 12px;
+    }
+    // display: inline-block;
+    .activity p {
+      // display: inline-block;
+      // padding: 0 10px;
     }
   }
 }
