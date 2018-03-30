@@ -18,7 +18,8 @@
               <%= f.input :workshop,:label => "Votre enfant aura-t-il besoin des ateliers du mercredi (centre de loisir de 8h30 à 16h) ? "%>
               <%= f.input :nursery,:label => "Votre enfant aura-t-il besoin de garderie ? "%>
               <%= f.input :comment, :label => "Choses à savoir sur votre enfant "%>
-              <%= f.button :submit %>
+              <%= f.submit 'Ajouter un autre enfant', name: "new_child" %>
+              <%= f.submit 'Etape suivante', name: "next_step" %>
             </fieldset>
         <% end %>
       </div>
