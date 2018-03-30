@@ -12,9 +12,17 @@ class ChildNoValidsController < ApplicationController
     @child = ChildNoValid.new(child_no_valids_params)
     @child.subscription_id =  params[:subscription_id]
     if @child.save
-        redirect_to new_subscription_parent_no_valid_path(@subscription,@parent)
+      next_step
     else
       render :new
+    end
+  end
+
+  def next_step
+    if params[:new_child]
+      redirect_to new_subscription_child_no_valid_path(@subscription,@child)
+    else
+      redirect_to new_subscription_parent_no_valid_path(@subscription,@parent)
     end
   end
   private

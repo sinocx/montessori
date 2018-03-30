@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   resources :subscriptions, only: [:show, :create, :new, :destroy] do
     resources :child_no_valids, only: [ :new, :create]
-    resources :parent_no_valids, only: [ :new, :create]
+    resources :parent_no_valids, only: [ :new, :create, :next_step]
     resources :more_infos, only: [ :new, :create]
     resources :second_forms, only: [:new, :create]
   end
+  post '/subscriptions/:subcription_id/parent_no_valids/next_step', to: "parent_no_valids#next_step", as: "next_step"
 
   # Dashboard Route
 

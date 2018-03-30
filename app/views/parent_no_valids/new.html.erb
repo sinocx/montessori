@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-        <%= simple_form_for [@parent], url: subscription_parent_no_valids_path(@subscription, @parent), method: :post do |f| %>
+        <%= simple_form_for [Subscription.new(id: @subscription),@parent], method: :post do |f| %>
           <fieldset>
             <legend>Information du père</legend>
               <%= f.input :role, :label => " Role ", collection: ["Père", "Mère", "Tuteur"] %>
@@ -19,7 +19,8 @@
               <%= f.input :phone, :label => "Numéro de téléphone fixe "%>
               <%= f.input :mobile, :label => "Numéro de téléphone portable "%>
             <div>
-              <%= f.submit 'Ajouter un parent' %>
+              <%= f.submit 'Ajouter un parent', name: "new_parent" %>
+              <%= f.submit 'Prochaine Etape', name: "next_step"  %>
             </div>
           </fieldset>
         <% end %>
