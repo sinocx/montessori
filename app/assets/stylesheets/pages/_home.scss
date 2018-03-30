@@ -1,6 +1,6 @@
 #home-head {
   width: 100%;
-  padding: 160px 0 230px 0;
+  padding: 100px 0 170px 0;
 }
 .home-title,
 .home-img,
@@ -9,7 +9,7 @@
   width: 100%;
 }
 .home-title {
-  h1, h3 {
+  h1 {
     margin: 0;
   }
   h1 {
@@ -19,6 +19,12 @@
   h3 {
     font-size: 20px;
     font-weight: 600;
+    margin: 10px 0 0 0;
+  }
+}
+.home-subtitle {
+  svg {
+    margin: 0 10px;
   }
 }
 .home-img {

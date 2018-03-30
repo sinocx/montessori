@@ -13,6 +13,9 @@
       <%= link_to "Infos pratiques", informations_path, id: 'informations', class: "navbar-montessori-item navbar-montessori-link #{current_class?(informations_path)}"  %>
       <%= link_to "Tarifs", tarifs_path, id: 'tarifs', class: "navbar-montessori-item navbar-montessori-link #{current_class?(tarifs_path)}" %>
       <%= link_to "Contact", contact_path, id: 'contact', class: "navbar-montessori-item navbar-montessori-link #{current_class?(contact_path)}" %>
+      <%= link_to new_subscription_path(@subscription) do %>
+        <button class="btn btn-primary">Inscription</button>
+      <% end %>
     </div>
 
   <!-- Dropdown list appearing on mobile only -->
