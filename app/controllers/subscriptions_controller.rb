@@ -10,9 +10,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.create()
-    @subscription.status = 0
-    @subscription.save
+    @subscription = Subscription.create(status: 0)
     redirect_to  new_subscription_child_no_valid_path(@subscription)
 
   end

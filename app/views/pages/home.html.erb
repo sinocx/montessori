@@ -16,7 +16,7 @@
               <p>Offrez à votre enfant un environnement adapté qui stimule l’apprentissage et l’autonomie.</p>
             </div>
             <div class="home-link flex-center-center">
-              <%= link_to subscriptions_path(@subscription), method: :post do %>
+              <%= link_to new_subscription_path(@subscription) do %>
                 <button class="btn btn-primary">Inscription</button>
               <% end %>
             </div>
