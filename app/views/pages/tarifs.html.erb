@@ -1,4 +1,4 @@
-<div class="wrapper" id="scolar-prices-tabs">
+<div class="wrapper leaf" id="scolar-prices-tabs">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-offset-2 col-sm-8">
@@ -9,7 +9,7 @@
 
           <div class="nav-item active">
             <a class="nav-link desc flex-center-center" data-toggle="tab" href="#tarif-scolarite1" role="tab">
-              <%= inline_svg "demi-rond.svg", size: '80px * 40px', class: 'demi-rond'%>
+              <%= inline_svg "demi-rond.svg", size: '90px * 45px', class: 'demi-rond'%>
               <p>2-3 ans</p>
               <div class="tab-extension"></div>
             </a>
@@ -17,7 +17,7 @@
 
           <div class="nav-item">
             <a class="nav-link projet flex-center-center" data-toggle="tab" href="#tarif-scolarite2" role="tab">
-              <%= inline_svg "demi-rond.svg", size: '80px * 40px', class: 'demi-rond'%>
+              <%= inline_svg "demi-rond.svg", size: '90px * 45px', class: 'demi-rond'%>
               <p> 3-6 ans <p>
               <div class="tab-extension"></div>
             </a>
@@ -25,7 +25,7 @@
 
           <div class="nav-item">
             <a class="nav-link pedago flex-center-center" data-toggle="tab" href="#tarif-scolarite3" role="tab">
-              <%= inline_svg "demi-rond.svg", size: '80px * 40px', class: 'demi-rond'%>
+              <%= inline_svg "demi-rond.svg", size: '90px * 45px', class: 'demi-rond'%>
               <p>6-9 ans</p>
               <div class="tab-extension"></div>
             </a>
@@ -90,16 +90,20 @@
         <h2 class="text-center"> Modalités de paiement</h2>
 
         <div class="tarif-modality text-center">
-          <p>Les frais de scolarité sont payables le 1er de chaque mois sur une durée de 10 mois. <br>
-          Vous recevez une chaque mois une facture dont le règlement peut se faire
-          par chèque ou bien par virement bancaire. <br> <br>
-
-          Lors de l’inscription, le paiement des frais d’inscription (450€) et du 1er mois de
-          scolarité vous est demandé. Ces frais sont non remboursables en cas de désistement. <br><br>
-
-          Tarifs dégressifs : -10% pour le 2ème enfant et -15% pour le 3ème enfant. <br> <br>
-
-          Les frais de scolarité n’incluent pas les fournitures et les activités scolaires.</p>
+          <p>
+            Les frais de scolarité sont payables le 1er de chaque mois sur une durée de 10 mois. Vous recevez une chaque mois une facture dont le règlement peut se faire par chèque ou bien par virement bancaire.
+          </p>
+          <p>
+            Lors de l’inscription, le paiement des frais d’inscription (450€) et du 1er mois de scolarité vous est demandé. Ces frais sont non remboursables en cas de désistement.
+          </p>
+          <div class="inline-block">
+            <h4>Tarifs dégressifs :</h4>
+            <p>-10% pour le 2ème enfant</p>
+            <p>et -15% pour le 3ème enfant.</p>
+          </div>
+          <p>
+            Les frais de scolarité n’incluent pas les fournitures et les activités scolaires.
+          </p>
         </div>
 
       </div>
@@ -108,7 +112,7 @@
 </div>
 
 
-<div class="wrapper" id="other-prices-tabs">
+<div class="wrapper dots" id="other-prices-tabs">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-offset-2 col-sm-8">
@@ -119,15 +123,15 @@
 
           <div class="nav-item active">
             <a class="nav-link desc flex-center-center" data-toggle="tab" href="#tarif1" role="tab">
-              <%= inline_svg "demi-rond.svg", size: '80px * 40px', class: 'demi-rond'%>
-              <p>Restaurant</p>
+              <%= inline_svg "demi-rond.svg", size: '90px * 45px', class: 'demi-rond'%>
+              <p>Cantine</p>
               <div class="tab-extension"></div>
             </a>
           </div>
 
           <div class="nav-item">
             <a class="nav-link projet flex-center-center" data-toggle="tab" href="#tarif2" role="tab">
-              <%= inline_svg "demi-rond.svg", size: '80px * 40px', class: 'demi-rond'%>
+              <%= inline_svg "demi-rond.svg", size: '90px * 45px', class: 'demi-rond'%>
               <p>Garderie</p>
               <div class="tab-extension"></div>
             </a>
@@ -135,7 +139,7 @@
 
           <div class="nav-item">
             <a class="nav-link pedago flex-center-center" data-toggle="tab" href="#tarif3" role="tab">
-              <%= inline_svg "demi-rond.svg", size: '80px * 40px', class: 'demi-rond'%>
+              <%= inline_svg "demi-rond.svg", size: '90px * 45px', class: 'demi-rond'%>
               <p>Atelier</p>
               <div class="tab-extension"></div>
             </a>
@@ -143,7 +147,7 @@
 
         </div>
 
-        <div class="background-light-gray tab-content-container other-prices" id="home-tabs-content">
+        <div class="background-light-gray tab-content-container school-prices">
           <div class="row">
             <div class="col-xs-12">
 
@@ -151,28 +155,35 @@
               <div class="tab-content">
 
                 <!--Panel 1-->
-                <div class="tab-pane fade in active text-center school-price-tabs flex-center-center" id="tarif1" role="tabpanel">
+                <div class="tab-pane active text-center school-price-tabs flex-center-center" id="tarif1" role="tabpanel">
                   <h3>Repas traiteur</h3>
-                  <p> 7€ / repas  -  Forfait 100€ / mois soit
-                  1000€ / an</p>
+                  <p class="inblock">7€ / repas</p>
+                  <p>Forfait 100€ / mois</p>
+                  <p>soit 1000€ / an</p>
                 </div>
                 <!--/.Panel 1-->
 
                 <!--Panel 2-->
-                <div class="tab-pane fade school-price-tabs flex-center-center text-center" id="tarif2" role="tabpanel">
-
-                  <h3>Tarifs garderie</h3>
-                  <p> Matin (8h00 à 8h30) : 8€€pour tout enfant arrivant à 8h. <br>
-                      Après-midi (16h30 à 17h30) : 8€€pour 1 heure - 14€ pour 2 heures. <br>
-                      Forfait 100€ / mois soit
-                      1000€ / an.</p>
+                <div class="tab-pane school-price-tabs flex-center-center text-center" id="tarif2" role="tabpanel">
+                  <h3>Garderie</h3>
+                  <h4>Matin (8h00 à 8h30) :</h4>
+                  <p>8€ pour tout enfant</p>
+                  <p>arrivant à 8h.</p>
+                  <h4 class="margintarif2">Après-midi (16h30 à 17h30) :</h4>
+                  <div>
+                    <p>8€ pour 1 heure</p>
+                    <p>ou 14€ pour 2 heures.</p>
+                  </div>
+                  <p>Forfait 100€ / mois</p>
+                  <p>soit 1000€ / an.</p>
                 </div>
                 <!--/.Panel 2-->
 
                 <!--Panel 3-->
-                <div class="tab-pane fade school-price-tabs flex-center-center text-center" id="tarif3" role="tabpanel">
-                  <h3> Tarifs atelier du mercredi</h3>
-                  <p>1224€ / semestre ou 2232€ / an.</p>
+                <div class="tab-pane school-price-tabs flex-center-center text-center" id="tarif3" role="tabpanel">
+                  <h3>Atelier du mercredi</h3>
+                  <p>1224€ / semestre</p>
+                  <p>ou 2232€ / an.</p>
                 </div>
                 <!--/.Panel 3-->
               </div>
@@ -187,4 +198,4 @@
   </div>
 </div>
 
-<%= javascript_pack_tag 'tabs' %>
+<%= javascript_pack_tag 'tabs-tarifs' %>

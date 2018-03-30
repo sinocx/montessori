@@ -37,7 +37,15 @@
 }
 #home-tabs {
   margin-top: -80px;
+  span {
+    display: block;
+  }
 }
 #home-infos {
   height: 200px;
+}
+@media screen and (max-width: 375px) {
+  #accueil {
+    width: 100%;
+  }
 }
