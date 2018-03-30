@@ -9,7 +9,6 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem 'postmark-rails'
-gem "inline_svg"
 gem "geocoder"
 
 gem 'autoprefixer-rails'
