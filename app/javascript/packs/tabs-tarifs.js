@@ -98,24 +98,40 @@ if ( typeof define === 'function' && define.amd ) {
     }
   });
 }));
+// const tabA = document.getElementById('scolar-prices-tabs');
+const tabContentA = $('#scolar-prices-tabs .tab-content');
+console.log(tabContentA);
+const initialHeightA = tabContentA.children(".tab-pane").actual('outerHeight');
+console.log(initialHeightA);
+tabContentA.outerHeight(initialHeightA);
 
-const tabContent = $('.tab-content');
-console.log(tabContent);
-const initialHeight = tabContent.children(".tab-pane").actual('outerHeight');
-tabContent.outerHeight(initialHeight);
+const tabContentB = $('#other-prices-tabs .tab-content');
+const initialHeightB = tabContentB.children(".tab-pane").actual('outerHeight');
+console.log(initialHeightB);
+tabContentB.outerHeight(initialHeightB);
 
 $(document).ready(function(){
-  $(".nav-item").click(function(){
-    $(".nav-item").removeClass('active');
-    $(".nav-item").removeClass('white');
+  $('#scolar-prices-tabs .nav-item').click(function(){
+    $('#scolar-prices-tabs .nav-item').removeClass('active');
     $(this).addClass("active");
-    $(this).addClass("white");
-    const hashit = $(this).find('a').attr('href');
-    const autoHeight = $(hashit).actual('outerHeight');
-    const content = tabContent.children(".tab-pane").children();
-    content.animate({opacity: "0"}, 0);
-    tabContent.animate({height: autoHeight}, 100, function(){
-      content.animate({opacity: "1"}, 100);
+    const hashitA = $(this).find('a').attr('href');
+    const autoHeightA = $(hashitA).actual('outerHeight');
+    const contentA = tabContentA.children(".tab-pane").children();
+    contentA.animate({opacity: "0"}, 0);
+    tabContentA.animate({height: autoHeightA}, 100, function(){
+      contentA.animate({opacity: "1"}, 100);
+    });
+  });
+  $('#other-prices-tabs .nav-item').click(function(){
+    $('#other-prices-tabs .nav-item').removeClass('active');
+    $(this).addClass("active");
+    const hashitB = $(this).find('a').attr('href');
+    const autoHeightB = $(hashitB).actual('outerHeight');
+    const contentB = tabContentB.children(".tab-pane").children();
+    contentB.animate({opacity: "0"}, 0);
+    tabContentB.animate({height: autoHeightB}, 100, function(){
+      contentB.animate({opacity: "1"}, 100);
     });
   });
 });
+

@@ -5,7 +5,9 @@
 }
 .btn-primary {
   color: $light-gray;
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: $yellow;
     color: $blue;
   }
@@ -90,7 +92,7 @@ h2 {
 h3 {
   font-size: 26px;
   margin: 0;
-  padding: 10px;
+  padding: 0;
 }
 h4 {
   font-size: 18px;
@@ -106,35 +108,32 @@ p {
 .dotted {
   border-bottom: 1px dotted $blue;
 }
+.rounded {
+  border-radius: $r-md;
+}
 
 //Background pattern
 .hideout {
   background-color: white;
   background-image: url("backgrounds/hideout.svg");
   background-size: 2.5%;
-  background-position-y: 10px;
+  background-position: center;
 }
-.point-stars {
+.triangles {
   background-color: white;
-  background-image: url("backgrounds/point-stars.svg");
-  background-size: 2%;
-  background-position-y: 10px;
-}
-.plus {
-  background-color: white;
-  background-image: url("backgrounds/plus.svg");
-  background-size: 3.5%;
-  background-position-y: 10px;
+  background-image: url("backgrounds/triangles.svg");
+  background-size: 2.1%;
+  background-position: center;
 }
 .leaf {
   background-color: white;
   background-image: url("backgrounds/leaf.svg");
   background-size: 3.5%;
-  background-position-y: 13px;
+  background-position: center;
 }
 .dots {
   background-color: white;
   background-image: url("backgrounds/dots.svg");
   background-size: 2.8%;
-  background-position-y: 6px;
+  background-position: center;
 }
