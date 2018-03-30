@@ -1,0 +1,1 @@
+push all api key: figaro heroku:set -e production
