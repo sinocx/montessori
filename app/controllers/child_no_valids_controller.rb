@@ -4,7 +4,6 @@ class ChildNoValidsController < ApplicationController
   def new
     @child = ChildNoValid.new()
     @subscription = params[:subscription_id]
-
   end
 
   def create
@@ -28,6 +27,7 @@ class ChildNoValidsController < ApplicationController
                                            :first_lang,
                                            :snd_lang,
                                            :montessori_before,
+                                           :montessori_name,
                                            :workshop,
                                            :nursery,
                                            :comment,

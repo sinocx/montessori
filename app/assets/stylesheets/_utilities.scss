@@ -3,6 +3,9 @@
   font-weight: 600;
   border: none;
   border-radius: $r-sm;
+  &:focus {
+    outline: none;
+  }
 }
 .btn-primary {
   color: $light-gray;
