@@ -1,10 +1,10 @@
-<div class="wrapper" id="new-child">
+<div class="wrapper dots" id="new-child">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
         <%= simple_form_for [@child], url: subscription_child_no_valids_path(@subscription, @child),method: :post do |f| %>
-          <h2>Votre enfant</h2>
+          <h2>Enfant</h2>
           <hr>
           <div class="col-xs-12 col-sm-6">
             <%= f.input :first_name, label: "Prénom", required: true %>
@@ -29,7 +29,7 @@
                         start_year: Date.today.year - 12,
                         end_year: Date.today.year - 1,
                         order: [:day, :month, :year],
-                        :label => "Date de naissance",
+                        label: "Date de naissance",
                         required: true %>
             <%= f.input :nationality, label: "Nationalité", required: true %>
           </div>
@@ -90,10 +90,13 @@
                 <button id="n-non" class="btn btn-primary" type="button">Non</button>
               </div>
             </div>
-            <%= f.input :comment, :label => "Choses à savoir sur votre enfant "%>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.button :submit, "Étape suivante", class: "btn-success btn-block" %>
-            </div>
+            <%= f.input :comment, label: "Choses à savoir sur votre enfant" %>
+          </div>
+          <div class="col-xs-12 col-sm-6" style="margin-top: 15px;">
+            <%= f.button :submit, "Valider et ajouter un enfant", class: "btn-success btn-block" %>
+          </div>
+          <div class="col-xs-12 col-sm-6" style="margin-top: 15px;">
+            <%= f.button :submit, "Valider et ajouter un parent", class: "btn-success btn-block" %>
           </div>
         <% end %>
 

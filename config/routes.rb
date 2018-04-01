@@ -32,5 +32,6 @@ Rails.application.routes.draw do
   get 'inscription', to: "pages#inscription", as: 'inscription'
   get 'pedagogie_montessori', to: "pages#pedagogie_montessori", as: 'pedagogie_montessori'
   get 'maria_montessori', to: "pages#maria_montessori", as: 'maria_montessori'
+  get 'subscription_success', to: "pages#subscription_success", as: 'subscription_success'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
