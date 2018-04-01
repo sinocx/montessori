@@ -10,9 +10,17 @@ class ParentNoValidsController < ApplicationController
     @subscription = params[:subscription_id]
     @parent.subscription_id = params[:subscription_id]
     if @parent.save
-      role_check
+      next_step
     else
       render :new
+    end
+  end
+
+  def next_step
+    if params[:new_parent]
+      role_check
+    else
+      redirect_to new_subscription_more_info_path(@subscription, @more_info)
     end
   end
 

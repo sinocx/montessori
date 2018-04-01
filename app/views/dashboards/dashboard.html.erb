@@ -1,39 +1,55 @@
-<div class="wrap">
+<div class="wrapper">
   <div class="container">
-    <% @subscriptions.each do |subscription| %>
-      <div class="dash-subcription", id="subscription-<%= subscription.id %>">
-          <h3><%= subscription.id %></h3>
-          <p><%= link_to "Info", subscription_path(subscription) %></p>
-        <% subscription.parent_no_valids.each do |parent| %>
-          <div class="dash-subcription-parentNoValid">
-            <h4> <%= parent.role %> </h4>
-            <p><%= parent.last_name %> |
-            <%= parent.first_name %></p>
+    <div class="row">
+        <% @subscriptions.each do |subscription| %>
+      <div class="col-sm-6 col-xs-12">
+          <div class="flex-center-space-around shadow padding-20 sub", id="subscription-<%= subscription.id %>">
+            <div class="dash-info">
+              <div class="sub-info">
+                <h3> <%= subscription.id %></h3>
+              </div>
+              <% subscription.parent_no_valids.each do |parent| %>
+                <div class="separate">
+                  <h4> <%= parent.role %> </h4>
+                  <p><%= parent.last_name.capitalize %> <%= parent.first_name.capitalize %></p>
+                  <p> <%= parent.email %> </p>
+                  <p> <%= parent.mobile %> </p>
+              </div>
+              <% end %>
+              <% subscription.child_no_valids.each do |child| %>
+                <div class="separate">
+                  <div class="flex-center-space-between">
+                    <div class="child">
+                    <h4> Enfant </h4>
+                    <p><%= child.first_name.capitalize %> <%= child.last_name.capitalize %></p>
+
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="s">
+            </div>
+                <div class="dash-subcription-link padding-20">
+                  <p><%= link_to "Info", subscription_path(subscription) %></p>
+                  <% if  subscription.status == "Etape 0" %>
+                    <p> <%= link_to "Rendez-vous validé ?", rendez_vous_path(subscription) %> </p>
+                  <% elsif subscription.status == "Etape 1" %>
+                   <p><%= link_to "GO to Etape 2", etape_1_to_2_path(subscription) %></p>
+                   <p><%= link_to "Refuser", subscription_path(subscription), method: :delete %></p>
+                  <% elsif subscription.status == "Etape 2" %>
+                    <p><%= link_to "Go to Etape 3", etape_2_to_3_path(subscription) %></p>
+                    <p><%= link_to "Refuser", subscription_path(subscription), method: :delete %></p>
+                  <% else %>
+                    <p><%= link_to "Valider Etape 3", etape_3_path(subscription) %></p>
+                    <p><%= link_to "Refuser", subscription_path(subscription), method: :delete %></p>
+                  <% end %>
+                  <%= link_to "Supprimer", subscription_path(subscription), method: :delete  %>
+                </div>
           </div>
-        <% end %>
-        <% subscription.child_no_valids.each do |child| %>
-          <div class="dash-subcription-childNoValid">
-            <h4> Enfant </h4>
-            <p><%= child.first_name %> | 
-            <%= child.last_name %></p>
-          </div>
-          <div class="dash-subcription-link">
-            <% if  subscription.status == "Etape 0" %>
-              <p> <%= link_to "Rendez-vous validé ?", rendez_vous_path(subscription) %> </p>
-            <% elsif subscription.status == "Etape 1" %>
-             <p><%= link_to "GO to Etape 2", etape_1_to_2_path(subscription) %></p>
-             <p><%= link_to "Refuser", subscription_path(subscription), method: :delete %></p>
-            <% elsif subscription.status == "Etape 2" %>
-              <p><%= link_to "Go to Etape 3", etape_2_to_3_path(subscription) %></p>
-              <p><%= link_to "Refuser", subscription_path(subscription), method: :delete %></p>
-            <% else %>
-              <p><%= link_to "Valider Etape 3", etape_3_path(subscription) %></p>
-              <p><%= link_to "Refuser", subscription_path(subscription), method: :delete %></p>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 

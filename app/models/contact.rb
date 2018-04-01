@@ -5,5 +5,4 @@ class Contact < ApplicationRecord
   validates :subject, presence: true, inclusion: { in: ["Inscription", "Restauration", "Garderie", "Atelier du mercredi", "Autre" ],
     message: "%{value} n'est pas un objet valide" }
   validates :message, presence: true, length: {minimum: 15}
-
 end
