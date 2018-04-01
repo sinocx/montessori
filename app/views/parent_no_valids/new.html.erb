@@ -1,27 +1,30 @@
-<div class="wrapper">
+<div class="wrapper" id="new-parent">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
         <%= simple_form_for [@parent], url: subscription_parent_no_valids_path(@subscription, @parent), method: :post do |f| %>
-          <fieldset>
-            <legend>Information du père</legend>
-              <%= f.input :role, :label => " Role ", collection: ["Père", "Mère", "Tuteur"] %>
-              <%= f.input :first_name, :label => "Prenom " %>
-              <%= f.input :last_name, :label => "Nom de famille "  %>
-              <%= f.input :lang, :label => "Langue maternelle " %>
-              <%= f.input :situation, :label => "Situation familiale ", collection: ["Mariée", "Séparée", "Divorcée", "Veuf", "Concubinage", "célibataire"] %>
-              <%= f.input :job, :label => "Profession" %>
-              <%= f.input :fiscal, :label => "Revenu fiscal de référence figurant sur le dernier avis d'imposition "%>
-              <%= f.input :address, :label => "Adresse " %>
-              <%= f.input :city, :label => "Ville " %>
-              <%= f.input :zip_code, :label => "Code postal " %>
-              <%= f.input :email, :label => "Adresse e-mail " %>
-              <%= f.input :phone, :label => "Numéro de téléphone fixe "%>
-              <%= f.input :mobile, :label => "Numéro de téléphone portable "%>
+          <h2>Information du père</h2>
+          <hr>
+
+            <%= f.input :role, :label => " Role ", collection: ["Père", "Mère", "Tuteur"] %>
+            <%= f.input :first_name, :label => "Prenom " %>
+            <%= f.input :last_name, :label => "Nom de famille "  %>
+            <%= f.input :lang, :label => "Langue maternelle " %>
+            <%= f.input :situation, :label => "Situation familiale ", collection: ["Mariée", "Séparée", "Divorcée", "Veuf", "Concubinage", "célibataire"] %>
+            <%= f.input :job, :label => "Profession" %>
+            <%= f.input :fiscal, :label => "Revenu fiscal de référence figurant sur le dernier avis d'imposition "%>
+            <%= f.input :address, :label => "Adresse " %>
+            <%= f.input :city, :label => "Ville " %>
+            <%= f.input :zip_code, :label => "Code postal " %>
+            <%= f.input :email, :label => "Adresse e-mail " %>
+            <%= f.input :phone, :label => "Numéro de téléphone fixe "%>
+            <%= f.input :mobile, :label => "Numéro de téléphone portable "%>
             <div>
+              <%= f.button :submit, "Étape suivante", class: "btn-success btn-block" %>
               <%= f.submit 'Ajouter un parent' %>
             </div>
-          </fieldset>
+
         <% end %>
       </div>
     </div>

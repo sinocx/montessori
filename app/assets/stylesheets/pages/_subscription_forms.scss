@@ -1,4 +1,5 @@
-#new-child {
+#new-child,
+#new-parent {
   h2 {
     margin: 0;
     text-align: center;
@@ -18,7 +19,6 @@
   .child_no_valid_nursery {
     margin: 0;
     span {
-      // visibility: hidden;
       display: none;
     }
   }
