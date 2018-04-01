@@ -1,5 +1,6 @@
 #new-child,
-#new-parent {
+#new-parent,
+#more-info {
   h2 {
     margin: 0;
     text-align: center;
@@ -38,14 +39,16 @@
       color: $blue;
     }
   }
-  .child_no_valid_birth_date .form-inline {
+  .child_no_valid_birth_date .form-inline,
+  .more_info_start_date .form-inline {
     display: flex;
     align-items: center;
     justify-content: center;
     select {
       flex-grow: 1;
     }
-    #child_no_valid_birth_date_2i {
+    #child_no_valid_birth_date_2i,
+    #more_info_start_date_2i {
       margin: 0 5px;
     }
   }
@@ -53,5 +56,23 @@
     input {
       min-height: 100px;
     }
+  }
+}
+#more-info,
+#subscription_success {
+  min-height: calc(100vh - 140px);
+}
+#subscription_success {
+  h1, h3 {
+    margin: 0;
+  }
+  .success-title {
+    margin-top: 25%;
+  }
+  .success-text {
+    margin-top: 30px;
+  }
+  button {
+    margin-top: 50px;
   }
 }

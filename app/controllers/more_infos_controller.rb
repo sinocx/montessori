@@ -10,7 +10,7 @@ class MoreInfosController < ApplicationController
     @more_info = MoreInfo.new(params_more_infos)
     @more_info.subscription_id = @subscription
     if @more_info.save
-      redirect_to root_path
+      redirect_to subscription_success_path
     else
       render :new
     end
