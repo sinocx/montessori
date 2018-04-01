@@ -1,0 +1,57 @@
+#new-child,
+#new-parent {
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+  label {
+    font-weight: normal;
+  }
+  hr {
+    margin-top: 10px;
+  }
+  .control-label {
+    width: 100%;
+  }
+  .child_no_valid_gender,
+  .child_no_valid_montessori_before,
+  .child_no_valid_workshop,
+  .child_no_valid_nursery {
+    margin: 0;
+    span {
+      display: none;
+    }
+  }
+  .child-gender,
+  .montessori-before,
+  .workshop,
+  .nursery {
+    margin-bottom: 15px;
+    button {
+      height: 39px;
+      background-color: $light-gray;
+      color: $blue;
+    }
+    button.selected,
+    button:hover {
+      background-color: $yellow;
+      color: $blue;
+    }
+  }
+  .child_no_valid_birth_date .form-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    select {
+      flex-grow: 1;
+    }
+    #child_no_valid_birth_date_2i {
+      margin: 0 5px;
+    }
+  }
+  .child_no_valid_comment {
+    input {
+      min-height: 100px;
+    }
+  }
+}

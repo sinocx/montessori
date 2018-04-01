@@ -2,6 +2,10 @@
 .btn {
   font-weight: 600;
   border: none;
+  border-radius: $r-sm;
+  &:focus {
+    outline: none;
+  }
 }
 .btn-primary {
   color: $light-gray;
@@ -13,15 +17,27 @@
   }
 }
 
+//Forms
+.form-control {
+  border-radius: $r-sm;
+  box-shadow: none;
+  color: $blue;
+  border: 1px solid $light-blue;
+  &:focus {
+    border-color: $yellow;
+    box-shadow: inset 0 1px 1px rgba(240, 215, 119, 0.075), 0 0 8px rgba(240, 215, 119, 0.6);
+  }
+}
+textarea.form-control {
+  min-height: 150px;
+}
+
 //Wrapper
 .wrapper {
   padding: 70px 0;
 }
 
 //Positions
-.padding-20 {
-  padding: 20px
-}
 .no-padding {
   padding: 0 !important;
 }

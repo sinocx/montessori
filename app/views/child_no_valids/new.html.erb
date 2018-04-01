@@ -1,28 +1,106 @@
-<div class="wrapper">
+<div class="wrapper" id="new-child">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
         <%= simple_form_for [@child], url: subscription_child_no_valids_path(@subscription, @child),method: :post do |f| %>
-          <fieldset>
-            <legend>Pet Identity</legend>
-              <%= f.input :first_name,:label => "Prénom"%>
-              <%= f.input :last_name %>
-              <div class="child-gender">
-                <%= f.input :gender, as: :radio_buttons, collection: [['Féminin','Féminin'], ['Masculin','Masculin']], label_method: :second, value_method: :first %>
+          <h2>Votre enfant</h2>
+          <hr>
+          <div class="col-xs-12 col-sm-6">
+            <%= f.input :first_name, label: "Prénom", required: true %>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <%= f.input :last_name, label: "Nom", required: true %>
+          </div>
+          <div class="col-xs-12">
+            <%= f.input :gender, as: :radio_buttons, collection: [['Féminin','Fille'], ['Masculin','Garçon']], label: "Sexe", label_method: :second, value_method: :first, required: true %>
+            <div class="child-gender btn-group btn-group-justified">
+              <div class="btn-group">
+                <button id="fille" class="btn btn-primary" type="button">Fille</button>
               </div>
-              <%= f.input :birth_date,:label => "Date de naissance" %>
-              <%= f.input :nationality,:label => "Nationalité" %>
-              <%= f.input :first_lang,:label => "Langue maternelle" %>
-              <%= f.input :snd_lang,:label => "Seconde langue" %>
-              <%= f.input :montessori_before,:label => "Votre enfant a-t-il déjà été scolarisé dans une école Montessori ? Si oui, laquelle ? " %>
-              <%= f.input :workshop,:label => "Votre enfant aura-t-il besoin des ateliers du mercredi (centre de loisir de 8h30 à 16h) ? "%>
-              <%= f.input :nursery,:label => "Votre enfant aura-t-il besoin de garderie ? "%>
-              <%= f.input :comment, :label => "Choses à savoir sur votre enfant "%>
-              <%= f.submit 'Ajouter un autre enfant', name: "new_child" %>
-              <%= f.submit 'Etape suivante', name: "next_step" %>
-            </fieldset>
+              <div class="btn-group">
+                <button id="garcon" class="btn btn-primary" type="button">Garçon</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <%= f.input :birth_date,
+                        as: :date,
+                        start_year: Date.today.year - 12,
+                        end_year: Date.today.year - 1,
+                        order: [:day, :month, :year],
+                        :label => "Date de naissance",
+                        required: true %>
+            <%= f.input :nationality, label: "Nationalité", required: true %>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <%= f.input :first_lang, label: "Langue maternelle", required: true %>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <%= f.input :snd_lang, label: "Seconde langue" %>
+          </div>
+          <div class="col-xs-12">
+            <%= f.input :montessori_before,
+                      as: :radio_buttons,
+                      collection: [[true,'Oui'], [false,'Non']],
+                      label: "Votre enfant a-t-il déjà été scolarisé dans une école Montessori ?",
+                      label_method: :second,
+                      value_method: :first,
+                      required: true %>
+            <div class="montessori-before btn-group btn-group-justified">
+              <div class="btn-group">
+                <button id="mb-oui" class="btn btn-primary" type="button">Oui</button>
+              </div>
+              <div class="btn-group">
+                <button id="mb-non" class="btn btn-primary" type="button">Non</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <%= f.input :montessori_name, label: "Laquelle ?", wrapper_html: { id: 'montessori-name', class: 'hidden' } %>
+            <%= f.input :workshop,
+                        as: :radio_buttons,
+                        item_wrapper_class: 'inline',
+                        collection: [[true,'Oui'], [false,'Non']],
+                        label: "Votre enfant aura-t-il besoin des ateliers du mercredi (centre de loisir de 8h30 à 16h) ?",
+                        label_method: :second,
+                        value_method: :first,
+                        required: true %>
+            <div class="workshop btn-group btn-group-justified">
+              <div class="btn-group">
+                <button id="w-oui" class="btn btn-primary" type="button">Oui</button>
+              </div>
+              <div class="btn-group">
+                <button id="w-non" class="btn btn-primary" type="button">Non</button>
+              </div>
+            </div>
+            <%= f.input :nursery,
+                        as: :radio_buttons,
+                        item_wrapper_class: 'inline',
+                        collection: [[true,'Oui'], [false,'Non']],
+                        label: "Votre enfant aura-t-il besoin de garderie ?",
+                        label_method: :second,
+                        value_method: :first,
+                        required: true %>
+            <div class="nursery btn-group btn-group-justified">
+              <div class="btn-group">
+                <button id="n-oui" class="btn btn-primary" type="button">Oui</button>
+              </div>
+              <div class="btn-group">
+                <button id="n-non" class="btn btn-primary" type="button">Non</button>
+              </div>
+            </div>
+            <%= f.input :comment, :label => "Choses à savoir sur votre enfant "%>
+            <div class="col-xs-12 col-sm-6">
+              <%= f.button :submit, "Étape suivante", class: "btn-success btn-block" %>
+            </div>
+          </div>
         <% end %>
-      </div>
+
       </div>
     </div>
   </div>
+</div>
+
+<%= javascript_pack_tag 'montessori-before' %>
+

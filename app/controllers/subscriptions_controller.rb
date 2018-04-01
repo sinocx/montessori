@@ -12,7 +12,6 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.create(status: 0)
     redirect_to  new_subscription_child_no_valid_path(@subscription)
-
   end
 
   def destroy

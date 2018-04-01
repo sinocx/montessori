@@ -1,95 +1,112 @@
-<%= simple_form_for(@subscription) do |f| %>
-  <div class="wrapper" id="inscription-welcome">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="inscription-welcome-title text-center">
-            <h2> Bienvenu sur notre espace <br> de pré-inscription</h2>
-             <%= inline_svg "guirlande-drapeaux.svg", size: "475px * 75px", class: 'some-class' %>
-          </div>
-          <div class="col-xs-8 col-xs-offset-2">
-            <div class="inscription-welcome-tagline text-center">
-              <p>Vous trouverez ici toutes les informations nécessaires pour inscrire <br> votre/vos enfant(s), ainsi que l’ensemble des tarifs liés à la scolarité.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrapper hideout" id="inscription-welcome">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-  <div class="wrapper background-light-gray" id="inscription-politique">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="inscription-welcome-title text-center">
-            <h2> Politique d’admission</h2>
-          </div>
-          <div class="col-xs-8 col-xs-offset-2">
-            <div class="inscription-welcome-tagline text-center">
-              <p>L'école souhaite construire un partenariat solide entre les éducateurs, les enfants et leurs parents autour de valeurs communes.
-              Plusieurs critères d'admission permettent d'évaluer votre demande d'inscription, tels que : les places disponibles, les fratries, l’équilibre filles/garçons dans l’ambiance, l’équilibre du mélange des âges dans l’ambiance,
-              ou encore la cohérence des valeurs de la famille et celles de l'école. <br>
-              Les inscriptions en cours d’année sont acceptées.</p>
-            </div>
-          </div>
+        <div class="text-center">
+          <h2>Bienvenu sur notre espace<br>de pré-inscription</h2>
+          <%= inline_svg "guirlande-drapeaux.svg", class: 'some-class' %>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="wrapper" id="inscription-list">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="inscription-list-title1 text-center">
-            <h2> 1. Pré-inscription en ligne</h2>
-          </div>
-          <div class="col-xs-8 col-xs-offset-2">
-            <div class="inscription-list-tagline text-center">
-              <p>Pour préparer l’arrivée de votre enfant, remplissez le formulaire de préinscription en ligne. Cette démarche ne représente aucun engagement, elle permet la préparation d’un entretien ultérieur. Elle n’a pas valeur d’inscription, cependant, en cas de liste d’attente, nous prenons en compte l’ordre dans lequel les préinscriptions ont été réalisées.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12">
-          <div class="inscription-list-title2 text-center">
-            <h2> 2. Visite de l’école et entretien d’accueil </h2>
-          </div>
-          <div class="col-xs-8 col-xs-offset-2">
-            <div class="inscription-list-tagline text-center">
-              <p>Dans un délai de 48h après réception de votre demande de préinscription, nous vous contactons pour convenir d’un rdv. Ce sera l’occasion de visiter l’école et ses installations, de rencontrer l’équipe pédagogique et la Direction, puis de réaliser un entretien d’accueil.
-              Des portes-ouvertes sont également organisées au cours de l’année,
-              pour connaitre les dates, rendez-vous dans notre rubrique "Actualités".</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12">
-          <div class="inscription-list-title2 text-center">
-            <h2> 3. Inscription définitive </h2>
-          </div>
-          <div class="col-xs-8 col-xs-offset-2">
-            <div class="inscription-list-tagline text-center">
-              <p>Votre dossier a été accepté ? À réception du règlement des frais d’inscription et des pièces justificatives demandées, la place de votre/vos enfant(s) est confirmée de manière définitive. Un lien permettant d’activer l’accès à l’Espace Parents est alors envoyé à chacun des parents dont vous avez transmis l’email.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-8 col-xs-offset-2">
-          <div class="inscription-list-tagline text-center">
-            <p>Le formulaire à remplir n’a pas valeur d’inscription. Nous vous informons que les informations demandées sont destinées au seul usage confidentiel de l’école.</p>
-            <div class="padding-20">
-              <%= f.button :submit, "Commencer la pré-inscription" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="wrapper" id="home-tabs">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
 
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+          <div class="text-center" style="margin-top: 20px;">
+            <p>
+              Vous trouverez ici toutes les informations nécessaires pour inscrire votre/vos enfant(s), ainsi que l’ensemble des tarifs liés à la scolarité.
+            </p>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
-<% end %>
+</div>
 
+<div class="wrapper background-light-gray" id="inscription-politique">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+        <div class="text-center">
+          <h2> Politique d’admission</h2>
+          <p>
+            L'école souhaite construire un partenariat solide entre les éducateurs, les enfants et leurs parents autour de valeurs communes. Plusieurs critères d'admission permettent d'évaluer votre demande d'inscription, tels que : les places disponibles, les fratries, l’équilibre filles/garçons dans l’ambiance, l’équilibre du mélange des âges dans l’ambiance, ou encore la cohérence des valeurs de la famille et celles de l'école.
+            <br>
+            <br>
+            Les inscriptions en cours d’année sont acceptées.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper leaf" id="inscription-list1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+        <div class="text-center">
+          <div class="inscription-list-label flex-center-center">
+            <%= inline_svg "demi-rond.svg", size: '120px * 60px' %>
+            <h2>1</h2>
+          </div>
+          <h2>Pré-inscription en ligne</h2>
+          <p>Pour préparer l’arrivée de votre enfant, remplissez le formulaire de préinscription en ligne. Cette démarche ne représente aucun engagement, elle permet la préparation d’un entretien ultérieur. Elle n’a pas valeur d’inscription, cependant, en cas de liste d’attente, nous prenons en compte l’ordre dans lequel les préinscriptions ont été réalisées.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper background-light-gray" id="inscription-list2">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+        <div class="text-center">
+          <div class="inscription-list-label flex-center-center">
+            <%= inline_svg "demi-rond.svg", size: '120px * 60px' %>
+            <h2>2</h2>
+          </div>
+          <h2>Visite de l’école et entretien d’accueil</h2>
+          <p>Dans un délai de 48h après réception de votre demande de préinscription, nous vous contactons pour convenir d’un rdv. Ce sera l’occasion de visiter l’école et ses installations, de rencontrer l’équipe pédagogique et la Direction, puis de réaliser un entretien d’accueil.
+          Des portes-ouvertes sont également organisées au cours de l’année,
+          pour connaitre les dates, rendez-vous dans notre rubrique "Actualités".</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper dots" id="inscription-list3">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+        <div class="text-center">
+          <div class="inscription-list-label flex-center-center">
+            <%= inline_svg "demi-rond.svg", size: '120px * 60px' %>
+            <h2>3</h2>
+          </div>
+          <h2>Inscription définitive</h2>
+          <p>Votre dossier a été accepté ? À réception du règlement des frais d’inscription et des pièces justificatives demandées, la place de votre/vos enfant(s) est confirmée de manière définitive. Un lien permettant d’activer l’accès à l’Espace Parents est alors envoyé à chacun des parents dont vous avez transmis l’email.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 100px;">
+          <%= simple_form_for(@subscription) do |f| %>
+            <%= f.button :submit, "Commencer la pré-inscription", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div class="text-center" style="margin-top: 20px;">
+            <p><i>Le formulaire à remplir n’a pas valeur d’inscription. Nous vous informons que les informations demandées sont destinées au seul usage confidentiel de l’école.</i></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

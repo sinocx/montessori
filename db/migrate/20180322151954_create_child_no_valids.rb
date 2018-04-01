@@ -3,14 +3,15 @@ class CreateChildNoValids < ActiveRecord::Migration[5.1]
     create_table :child_no_valids do |t|
       t.string :first_name
       t.string :last_name
-      t.date :birth_date
       t.string :gender
-      t.string :nursery
-      t.text :montessori_before
+      t.date :birth_date
       t.string :nationality
       t.string :first_lang
       t.string :snd_lang
-      t.string :workshop
+      t.boolean :montessori_before
+      t.string :montessori_name
+      t.boolean :nursery
+      t.boolean :workshop
       t.string :comment
       t.references :subscription, foreign_key: true
 

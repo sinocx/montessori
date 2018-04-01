@@ -16,6 +16,8 @@ module Montessori
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :fr
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_token => "8ee0c788-c940-47a0-b74a-a163e0cf36d5" }
     config.action_mailer.default_url_options = { host: "ecole-montessori.herokuapp.com" }
