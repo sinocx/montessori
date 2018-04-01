@@ -19,7 +19,7 @@ class ChildNoValidsController < ApplicationController
       render :new
     end
   end
-  
+
   def next_step
     if params[:new_child]
       redirect_to new_subscription_child_no_valid_path(@subscription,@child)
@@ -82,7 +82,8 @@ class ChildNoValidsController < ApplicationController
                                            :workshop,
                                            :nursery,
                                            :comment,
-                                           :subscription_id)
+                                           :subscription_id,
+                                           :child_atmosphere)
   end
 
 end

@@ -40,6 +40,12 @@
             <%= f.input :snd_lang, label: "Seconde langue" %>
           </div>
           <div class="col-xs-12">
+            <%= f.input :child_atmosphere,
+                      collection: [[0,'La Communauté Enfantine (2-3 ans)'], [1,'La Maison des Enfants (2 - 6 ans)']],
+                      label: "Classe ?",
+                      label_method: :second,
+                      value_method: :first,
+                      required: true %>
             <%= f.input :montessori_before,
                       as: :radio_buttons,
                       collection: [[true,'Oui'], [false,'Non']],
@@ -57,7 +63,7 @@
             </div>
           </div>
           <div class="col-xs-12">
-            <%= f.input :montessori_name, label: "Laquelle ?", wrapper_html: { id: 'montessori-name', class: 'hidden' } %>
+            <%#= f.input :montessori_name, label: "Laquelle ?", wrapper_html: { id: 'montessori-name', class: 'hidden' } %>
             <%= f.input :workshop,
                         as: :radio_buttons,
                         item_wrapper_class: 'inline',
