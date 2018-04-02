@@ -1,4 +1,6 @@
 import "bootstrap";
+// import { initUpdateNavbarOnScroll } from '../components/navbar';
+// initUpdateNavbarOnScroll();
 
  // Add slideDown animation to Bootstrap dropdown when expanding.
 $('.dropdown').on('show.bs.dropdown', function() {
