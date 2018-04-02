@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugin/flatpickr";
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
 // initUpdateNavbarOnScroll();
 

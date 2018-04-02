@@ -41,11 +41,16 @@
           </div>
           <div class="col-xs-12">
             <%= f.input :child_atmosphere,
-                      collection: [[0,'La Communauté Enfantine (2-3 ans)'], [1,'La Maison des Enfants (2 - 6 ans)']],
-                      label: "Classe ?",
-                      label_method: :second,
-                      value_method: :first,
-                      required: true %>
+                        label: "Choix de classe",
+                        collection: [ "2-3 ans - La Communauté Enfantine", "3-6 ans - La maison des Enfants" ],
+                        required: true %>
+            <%= f.input :start_date,
+                        as: :date,
+                        start_year: Date.today.year,
+                        end_year: Date.today.year + 2,
+                        order: [:day, :month, :year],
+                        label: "Date souhaitée pour le début de la scolarité :",
+                        required: true %>
             <%= f.input :montessori_before,
                       as: :radio_buttons,
                       collection: [[true,'Oui'], [false,'Non']],
