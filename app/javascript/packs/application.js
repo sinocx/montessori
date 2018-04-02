@@ -1,4 +1,6 @@
 import "bootstrap";
+import "../plugin/flatpickr";
+
 
  // Add slideDown animation to Bootstrap dropdown when expanding.
 $('.dropdown').on('show.bs.dropdown', function() {
