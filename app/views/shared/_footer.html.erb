@@ -1,17 +1,24 @@
-<div id="footer" class="flex-center-space-between footer">
-  <div class="footer-title text-left">
+<div id="footer">
+
+  <div class="footer-title">
     <p>Les petites graines - École Motessori à Montrouge depuis 2018</p>
   </div>
 
-  <div class="footer-links flex-center-space-between">
-    <div class="footer-link">
+  <div class="footer-links-container">
+
+    <div class="footer-links">
       <%= link_to "Nous contacter" %>
       <%= link_to "Nous rejoindre" %>
     </div>
+
     <div class="footer-social-network">
-      <%= link_to "#" do %>
-        <%= inline_svg "fb.svg", size: "35px * 35px", class: 'icon' %>
+      <%= link_to "#", { class: "instagram" } do %>
+        <%= inline_svg "instagram-b.svg", size: "35px" %>
+      <% end %>
+      <%= link_to "#", { class: "facebook" } do %>
+        <%= inline_svg "facebook.svg", size: "35px" %>
       <% end %>
     </div>
+
   </div>
 </div>
