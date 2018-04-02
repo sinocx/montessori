@@ -40,7 +40,7 @@
     }
   }
   .child_no_valid_birth_date .form-inline,
-  .more_info_start_date .form-inline {
+  .child_no_valid_start_date .form-inline {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +48,7 @@
       flex-grow: 1;
     }
     #child_no_valid_birth_date_2i,
-    #more_info_start_date_2i {
+    #child_no_valid_start_date_2i {
       margin: 0 5px;
     }
   }
