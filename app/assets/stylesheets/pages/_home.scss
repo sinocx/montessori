@@ -48,7 +48,45 @@
   }
 }
 #home-infos {
-  height: 200px;
+  h2 {
+    margin-bottom: 50px;
+  }
+  .staf-cards-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .staf-card {
+    width: 140px;
+    background-color: $yellow;
+    color: $blue;
+    border-radius: $r-lg;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .avatar {
+    // img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    // }
+    overflow: hidden;
+    margin-bottom: 20px;
+    img {
+      width: 180px;
+      margin-left: -35px;
+    }
+  }
+  .staf-desc {
+
+  }
+  .staf-role p {
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 375px) {
   #accueil {
