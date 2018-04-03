@@ -1,5 +1,8 @@
 <p>
-  Chère famille, <br><br>Nous vous remercions pour l’intérêt que vous portez à l’école l’Ecole Montessori bilingue Les Petites Graines. <br> Nous vous informons que votre demande de préinscription a bien été validée. Pour réaliser votre inscription définitive, veuillez cliquer sur le lien suivant : <%= link_to "Formulaire complémentaire", new_subscription_second_form_url(@subscription, @second_form)  %>
+  Chère famille, <br><br>Nous vous remercions pour l’intérêt que vous portez à l’école l’Ecole Montessori bilingue Les Petites Graines. <br> Nous vous informons que votre demande de préinscription a bien été validée. Pour réaliser votre inscription définitive, veuillez cliquer sur le lien suivant :
+  <% @child_no_valids.each do |child_no_valid| %>
+    <%= link_to "Formulaire complemetaire pour #{child_no_valid.first_name}", new_subscription_child_no_valid_second_form_url(@subscription, child_no_valid, @second_form)  %>
+  <% end %>
    <br>INSCRIPTION <br> La Direction <br> Les Petites Graines <br> Ecole Montessori Bilingue - Montrouge
 
 </p>
