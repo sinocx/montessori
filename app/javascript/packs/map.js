@@ -5,62 +5,8 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0, styles:
 [
     {
-        "stylers": [
-            {
-                "saturation": 0
-            },
-            {
-                "gamma": 1
-            }
-        ]
-    },
-    {
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.place_of_worship",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.place_of_worship",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry",
+        "featureType": "administrative",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "simplified"
@@ -68,52 +14,74 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         ]
     },
     {
-        "featureType": "water",
+        "featureType": "landscape",
+        "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "on"
+                "visibility": "simplified"
             },
             {
-                "saturation": 50
-            },
-            {
-                "gamma": 0
-            },
-            {
-                "hue": "#50a5d1"
+                "color": "#fcfcfc"
             }
         ]
     },
     {
-        "featureType": "administrative.neighborhood",
-        "elementType": "labels.text.fill",
+        "featureType": "poi",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#F0EBE4"
+                "visibility": "simplified"
+            },
+            {
+                "color": "#fcfcfc"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            },
+            {
+                "color": "#dddddd"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            },
+            {
+                "color": "#dddddd"
             }
         ]
     },
     {
         "featureType": "road.local",
-        "elementType": "labels.text",
+        "elementType": "geometry",
         "stylers": [
             {
-                "weight": 0.5
+                "visibility": "simplified"
             },
             {
-                "color": "#F0EBE4"
+                "color": "#eeeeee"
             }
         ]
     },
     {
-        "featureType": "transit.station",
-        "elementType": "labels.icon",
+        "featureType": "water",
+        "elementType": "geometry",
         "stylers": [
             {
-                "gamma": 1
+                "visibility": "simplified"
             },
             {
-                "saturation": 50
+                "color": "#dddddd"
             }
         ]
     }
