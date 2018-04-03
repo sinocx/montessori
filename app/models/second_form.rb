@@ -1,5 +1,6 @@
 class SecondForm < ApplicationRecord
   belongs_to :subscription
+
   def price_canteen
     if self.canteen == 100
       "100 € / mois"
@@ -11,6 +12,7 @@ class SecondForm < ApplicationRecord
       "0€"
     end
   end
+
   def price_workshop
     if self.workshop == 1224
       "1124 € / semestre"
@@ -20,6 +22,7 @@ class SecondForm < ApplicationRecord
       "0€"
     end
   end
+
   def price_nursery
     if self.nusery == 100
       "100 € / semestre"
