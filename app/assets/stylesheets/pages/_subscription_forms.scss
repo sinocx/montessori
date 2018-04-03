@@ -1,6 +1,7 @@
 #new-child,
 #new-parent,
-#more-info {
+#more-info,
+#second-form {
   h2 {
     margin: 0;
     text-align: center;
@@ -26,7 +27,8 @@
   .child-gender,
   .montessori-before,
   .workshop,
-  .nursery {
+  .nursery,
+  .canteen {
     margin-bottom: 15px;
     button {
       height: 39px;
@@ -59,10 +61,11 @@
   }
 }
 #more-info,
-#subscription_success {
+#subscription-success,
+#inscription-success {
   min-height: calc(100vh - 140px);
 }
-#subscription_success {
+#subscription-success {
   h1, h3 {
     margin: 0;
   }
@@ -74,5 +77,14 @@
   }
   button {
     margin-top: 50px;
+  }
+}
+#second-form {
+  #c-b, #c-c {
+    border-top: 1px solid $light-blue;
+    &:hover,
+    .selected {
+      border: none;
+    }
   }
 }
