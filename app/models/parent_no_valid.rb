@@ -1,6 +1,6 @@
 class ParentNoValid < ApplicationRecord
   belongs_to :subscription
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   validates :role, presence: true, inclusion: { in: [ "Père", "Mère", "Tuteur" ] }
   validates :first_name, presence: true
