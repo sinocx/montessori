@@ -1,8 +1,9 @@
 class SecondFormsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def new
     @second_form = SecondForm.new
     @subscription = params[:subscription_id]
-
   end
 
   def create
@@ -10,11 +11,12 @@ class SecondFormsController < ApplicationController
     @subscription = params[:subscription_id]
     @second_form.subscription_id = @subscription
     if @second_form.save
-      redirect_to root_path
+      redirect_to inscription_success_path
     else
       render :new
     end
   end
+
   private
 
   def second_form_params
