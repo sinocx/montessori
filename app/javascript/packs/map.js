@@ -5,14 +5,11 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0, styles:
 [
     {
-        "featureType": "water",
-        "elementType": "geometry",
+        "featureType": "administrative",
+        "elementType": "all",
         "stylers": [
             {
-                "color": "#e9e9e9"
-            },
-            {
-                "lightness": 17
+                "visibility": "simplified"
             }
         ]
     },
@@ -21,61 +18,10 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "F0EBE4"
+                "visibility": "simplified"
             },
             {
-                "lightness": 20
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 17
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 29
-            },
-            {
-                "weight": 0.2
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 18
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
+                "color": "#fcfcfc"
             }
         ]
     },
@@ -84,97 +30,58 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "F0EBE4"
+                "visibility": "simplified"
             },
             {
-                "lightness": 21
+                "color": "#fcfcfc"
             }
         ]
     },
     {
-        "featureType": "poi.park",
+        "featureType": "road.highway",
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#dedede"
+                "visibility": "simplified"
             },
             {
-                "lightness": 21
+                "color": "#dddddd"
             }
         ]
     },
     {
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "saturation": 36
-            },
-            {
-                "color": "#333333"
-            },
-            {
-                "lightness": 40
-            }
-        ]
-    },
-    {
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
+        "featureType": "road.arterial",
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#f2f2f2"
+                "visibility": "simplified"
             },
             {
-                "lightness": 19
+                "color": "#dddddd"
             }
         ]
     },
     {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
+        "featureType": "road.local",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#fefefe"
+                "visibility": "simplified"
             },
             {
-                "lightness": 20
+                "color": "#eeeeee"
             }
         ]
     },
     {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
+        "featureType": "water",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#fefefe"
+                "visibility": "simplified"
             },
             {
-                "lightness": 17
-            },
-            {
-                "weight": 1.2
+                "color": "#dddddd"
             }
         ]
     }
