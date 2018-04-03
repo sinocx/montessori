@@ -5,101 +5,12 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0, styles:
 [
     {
-        "featureType": "water",
-        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#e9e9e9"
+                "saturation": -100
             },
             {
-                "lightness": 17
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "F0EBE4"
-            },
-            {
-                "lightness": 20
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 17
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 29
-            },
-            {
-                "weight": 0.2
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 18
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "F0EBE4"
-            },
-            {
-                "lightness": 21
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#dedede"
-            },
-            {
-                "lightness": 21
+                "gamma": 1
             }
         ]
     },
@@ -107,31 +18,21 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         "elementType": "labels.text.stroke",
         "stylers": [
             {
-                "visibility": "on"
-            },
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
+                "visibility": "off"
             }
         ]
     },
     {
-        "elementType": "labels.text.fill",
+        "featureType": "poi.business",
+        "elementType": "labels.text",
         "stylers": [
             {
-                "saturation": 36
-            },
-            {
-                "color": "#333333"
-            },
-            {
-                "lightness": 40
+                "visibility": "off"
             }
         ]
     },
     {
+        "featureType": "poi.business",
         "elementType": "labels.icon",
         "stylers": [
             {
@@ -140,41 +41,79 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         ]
     },
     {
-        "featureType": "transit",
+        "featureType": "poi.place_of_worship",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.place_of_worship",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#f2f2f2"
-            },
-            {
-                "lightness": 19
+                "visibility": "simplified"
             }
         ]
     },
     {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
+        "featureType": "water",
         "stylers": [
             {
-                "color": "#fefefe"
+                "visibility": "on"
             },
             {
-                "lightness": 20
+                "saturation": 50
+            },
+            {
+                "gamma": 0
+            },
+            {
+                "hue": "#50a5d1"
             }
         ]
     },
     {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels.text.fill",
         "stylers": [
             {
-                "color": "#fefefe"
+                "color": "#333333"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "weight": 0.5
             },
             {
-                "lightness": 17
+                "color": "#333333"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "gamma": 1
             },
             {
-                "weight": 1.2
+                "saturation": 50
             }
         ]
     }
