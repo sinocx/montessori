@@ -7,7 +7,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     {
         "stylers": [
             {
-                "saturation": -100
+                "saturation": -25
             },
             {
                 "gamma": 1
@@ -89,7 +89,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         "elementType": "labels.text.fill",
         "stylers": [
             {
-                "color": "#333333"
+                "color": "#F0EBE4"
             }
         ]
     },
@@ -101,7 +101,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
                 "weight": 0.5
             },
             {
-                "color": "#333333"
+                "color": "#F0EBE4"
             }
         ]
     },
