@@ -80,11 +80,11 @@
   }
 }
 #second-form {
-  #c-b, #c-c {
+  button.border {
     border-top: 1px solid $light-blue;
-    &:hover,
-    .selected {
-      border: none;
-    }
+  }
+  button:hover,
+  button.selected {
+    border: none;
   }
 }

@@ -3,7 +3,8 @@ class SecondFormsController < ApplicationController
 
   def new
     @second_form = SecondForm.new
-    @subscription = params[:subscription_id]
+    @subscription = Subscription.find(params[:subscription_id])
+    @child = ChildNoValid.find(params[:child_no_valid_id])
   end
 
   def create
