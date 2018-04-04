@@ -164,20 +164,11 @@
   height: auto;
   margin-bottom: 30px;
 }
+.navbar-montessori-dropdown-menu li {
+  border: none;
+}
 .navbar-montessori-dropdown-menu li > a:hover,
 .navbar-montessori-dropdown-menu li > a.active {
   background: transparent !important;
   color: $red !important;
 }
-// .navbar-montessori-dropdown-menu:before {
-//   content: ' ';
-//   height: 10px;
-//   width: 10px;
-//   position: absolute;
-//   right: 36px;
-//   top: -6px;
-//   background-color: $yellow;
-//   transform: rotate(45deg);
-//   border-left: 1px solid #E6E6E6;
-//   border-top: 1px solid #E6E6E6;
-// }

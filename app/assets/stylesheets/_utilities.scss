@@ -109,6 +109,9 @@ hr {
   border-color: $blue;
   opacity: 0.5;
 }
+.border {
+  border-top: 1px solid $light-blue;
+}
 
 //Title
 h1{
@@ -149,6 +152,9 @@ li {
   padding: 5px;
   width: 100%;
   border-top: 1px solid $light-blue;
+  &:first-child {
+    border: none;
+  }
 }
 
 //Border
