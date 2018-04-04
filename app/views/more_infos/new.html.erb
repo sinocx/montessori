@@ -9,22 +9,10 @@
         <%= simple_form_for [@more_info], url: subscription_more_infos_path(@subscription, @more_info), method: :post do |f| %>
           <div class="col-xs-12">
             <%= f.input :know_the_school, label: "Comment avez-vous connu notre école ?", required: true %>
-            <%= f.input :start_date,
-                        as: :date,
-                        start_year: Date.today.year,
-                        end_year: Date.today.year + 2,
-                        order: [:day, :month, :year],
-                        label: "Date souhaitée pour le début de la scolarité :",
-                        required: true %>
-            <%= f.input :child_atmosphere,
-                        label: "Choix de classe",
-                        collection: [ "2-3 ans - La Communauté Enfantine", "3-6 ans - La maison des Enfants" ],
-                        required: true %>
             <%= f.input :reason_why, as: :text, label: "Pourquoi choisir notre école ?" %>
             <%= f.button :submit, "Valider", class: "btn-success btn-block" %>
           </div>
         <% end %>
-
       </div>
     </div>
   </div>

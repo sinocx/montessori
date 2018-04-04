@@ -100,14 +100,11 @@ if ( typeof define === 'function' && define.amd ) {
 }));
 // const tabA = document.getElementById('scolar-prices-tabs');
 const tabContentA = $('#scolar-prices-tabs .tab-content');
-console.log(tabContentA);
 const initialHeightA = tabContentA.children(".tab-pane").actual('outerHeight');
-console.log(initialHeightA);
 tabContentA.outerHeight(initialHeightA);
 
 const tabContentB = $('#other-prices-tabs .tab-content');
 const initialHeightB = tabContentB.children(".tab-pane").actual('outerHeight');
-console.log(initialHeightB);
 tabContentB.outerHeight(initialHeightB);
 
 $(document).ready(function(){

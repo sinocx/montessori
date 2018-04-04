@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   skip_before_action :authenticate_user!, only: [
     :maria_montessori ,
     :home,
@@ -9,12 +10,11 @@ class PagesController < ApplicationController
     :contact,
     :inscription,
     :subscription_success,
+    :inscription_success,
     :pedagogie,
     :ambiance_montessori,
     :materiel,
     :bibliographie
   ]
 
-  def home
-  end
 end

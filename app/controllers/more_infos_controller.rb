@@ -19,6 +19,6 @@ class MoreInfosController < ApplicationController
   private
 
   def params_more_infos
-    params.require(:more_info).permit(:know_the_school, :start_date, :child_atmosphere, :reason_why)
+    params.require(:more_info).permit(:know_the_school, :reason_why)
   end
 end

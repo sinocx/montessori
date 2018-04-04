@@ -13,6 +13,10 @@ class DashboardsController < ApplicationController
     @subscription = Subscription.find(params[:id])
     @second_parent = @subscription.parent_no_valids.last
   end
+  def childs
+    @subscription = Subscription.find(params[:id])
+    ChildNoValid.where(subscription_id: @subscription)
+  end
 
   def rendez_vous
     @subscription = Subscription.find(params[:id])
@@ -23,12 +27,13 @@ class DashboardsController < ApplicationController
   end
 
   def etape_1_to_2
+    @child_no_valid = childs
     @subscription = Subscription.find(params[:id])
     if first_parent_of_the_subscription == second_parent_of_the_subscription
-      SubscriptionMailer.etape_1_2(first_parent_of_the_subscription, @subscription).deliver_now
+      SubscriptionMailer.etape_1_2(first_parent_of_the_subscription, @subscription, @child_no_valid).deliver_now
     else
-      SubscriptionMailer.etape_1_2(first_parent_of_the_subscription, @subscription).deliver_now
-      SubscriptionMailer.etape_1_2(second_parent_of_the_subscription, @subscription).deliver_now
+      SubscriptionMailer.etape_1_2(first_parent_of_the_subscription, @subscription, @child_no_valid).deliver_now
+      SubscriptionMailer.etape_1_2(second_parent_of_the_subscription, @subscription, @child_no_valid).deliver_now
     end
     @subscription.update(status: 2)
 
