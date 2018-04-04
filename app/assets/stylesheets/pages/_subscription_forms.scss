@@ -18,7 +18,10 @@
   .child_no_valid_gender,
   .child_no_valid_montessori_before,
   .child_no_valid_workshop,
-  .child_no_valid_nursery {
+  .child_no_valid_nursery,
+  .second_form_nursery,
+  .second_form_workshop,
+  .second_form_canteen {
     margin: 0;
     span {
       display: none;
@@ -80,11 +83,11 @@
   }
 }
 #second-form {
-  #c-b, #c-c {
+  button.border {
     border-top: 1px solid $light-blue;
-    &:hover,
-    .selected {
-      border: none;
-    }
+  }
+  button:hover,
+  button.selected {
+    border: none;
   }
 }
