@@ -21,8 +21,7 @@ module Montessori
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_token => "8ee0c788-c940-47a0-b74a-a163e0cf36d5" }
     config.action_mailer.default_url_options = { host: "ecole-montessori.herokuapp.com" }
-
-
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
