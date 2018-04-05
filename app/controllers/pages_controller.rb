@@ -9,7 +9,17 @@ class PagesController < ApplicationController
                                                   :subscription_success,
                                                   :inscription_success
                                                 ]
-
+  before_action :allow_iframe
   def home
+    response.headers['X-Frame-Options'] = 'ALLOWALL'
+  end
+
+  def embed
+  end
+
+  private
+
+  def allow_iframe
+   response.headers['X-Frame-Options'] = 'ALLOWALL'
   end
 end
