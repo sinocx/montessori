@@ -9,6 +9,7 @@
 
       <!-- Links when logged in -->
       <%= link_to "L'école", root_path, id: 'root', class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}" %>
+      <%= link_to "Pédagogie", pedagogie_path, id: 'pedagogie', class: "navbar-montessori-item navbar-montessori-link #{current_class?(pedagogie_path)}"  %>
       <%= link_to "Programmes", programmes_path, id: 'programmes', class: "navbar-montessori-item navbar-montessori-link #{current_class?(programmes_path)}"  %>
       <%= link_to "Infos pratiques", informations_path, id: 'informations', class: "navbar-montessori-item navbar-montessori-link #{current_class?(informations_path)}"  %>
       <%= link_to "Tarifs", tarifs_path, id: 'tarifs', class: "navbar-montessori-item navbar-montessori-link #{current_class?(tarifs_path)}" %>
@@ -30,6 +31,7 @@
       <!-- <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i> -->
       <ul class="dropdown-menu dropdown-menu-right navbar-montessori-dropdown-menu">
         <li><%= link_to "L'école", root_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}"%></li>
+        <li><%= link_to "Pedagogie", pedagogie_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(pedagogie_path)}" %></li>
         <li><%= link_to "Programmes", programmes_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(programmes_path)}" %></li>
         <li><%= link_to "Infos pratiques", informations_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(informations_path)}" %></li>
         <li><%= link_to "Tarifs", tarifs_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(tarifs_path)}" %></li>

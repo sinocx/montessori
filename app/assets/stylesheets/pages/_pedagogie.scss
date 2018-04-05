@@ -1,11 +1,54 @@
-#mm-head {
-  h2 {
-    margin-bottom: 0;
+#pedagogie {
+  h1 {
+    margin-bottom: 50px;
+  }
+  .button-link {
+    padding: 24px 30px;
+    width: 100%;
+    border-radius: $r-lg;
+    background-color: $yellow;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h3, p {
+      color: $blue;
+    }
+  }
+  a:hover .button-link {
+    background-color: $blue;
+    h3, p {
+      color: $light-gray;
+    }
   }
 }
-#pm-head {
-  padding-bottom: 100px;
+#pedagogie-environement,
+#pedagogie-materiel {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+  }
+  li {
+    padding: 8px 0;
+    text-align: left;
+    border-top: 1px solid $light-blue;
+  }
 }
-#pm-tabs {
-  margin-top: -32px;
+#pedagogie-materiel,
+#prog-communaute-enfantine,
+#prog-maison-enfants,
+#prog-classe-elementaire {
+  h2 {
+    margin-bottom: 10px;
+  }
+  .citation {
+    margin-bottom: 30px;
+  }
+  .author {
+    padding-left: 50%;
+    margin-left: -100px;
+    font-style: italic;
+  }
 }

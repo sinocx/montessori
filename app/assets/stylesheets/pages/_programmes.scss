@@ -1,0 +1,24 @@
+#prog-communaute-enfantine,
+#prog-maison-enfants,
+#prog-classe-elementaire {
+  .daylist-title {
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+  .daylist-item {
+    padding: 5px 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  #prog-communaute-enfantine,
+  #prog-maison-enfants,
+  #prog-classe-elementaire {
+    .daylist-item {
+      flex-direction: column;
+      justify-content: center;
+      .hours {
+        font-weight: 600;
+      }
+    }
+  }
+}
