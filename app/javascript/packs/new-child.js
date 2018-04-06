@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
   }
   chooseButton2('fille', 'garcon', 'child_no_valid_gender_féminin', 'child_no_valid_gender_masculin');
-  chooseButton2('w-oui', 'w-non', 'child_no_valid_workshop_true', 'child_no_valid_workshop_false');
-  chooseButton2('n-oui', 'n-non', 'child_no_valid_nursery_true', 'child_no_valid_nursery_false');
 
 
 
@@ -63,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       if (!montessoriNameInput.classList.contains('hidden')) {
         montessoriNameInput.classList.add('hidden')
       }
-    })
+    });
   }
   montessoriBefore();
 
