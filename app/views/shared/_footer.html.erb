@@ -1,24 +1,26 @@
-<div id="footer">
+<div class="background-light-gray">
+  <div id="footer" class="texture">
 
-  <div class="footer-title">
-    <p>Les petites graines - École Motessori à Montrouge depuis 2018</p>
-  </div>
-
-  <div class="footer-links-container">
-
-    <div class="footer-links">
-      <%= link_to "Nous contacter" %>
-      <%= link_to "Nous rejoindre" %>
+    <div class="footer-title">
+      <p>Les petites graines - École Motessori à Montrouge depuis 2018</p>
     </div>
 
-    <div class="footer-social-network">
-      <%= link_to "https://www.instagram.com/lespetitesgrainesmontessori/", { class: "instagram" } do %>
-        <%= inline_svg "instagram-b.svg", size: "35px" %>
-      <% end %>
-      <%= link_to "https://www.facebook.com/lespetitesgrainesmontessori/", { class: "facebook" } do %>
-        <%= inline_svg "facebook.svg", size: "35px" %>
-      <% end %>
-    </div>
+    <div class="footer-links-container">
 
+      <div class="footer-links">
+        <%= link_to "Nous contacter" %>
+        <%= link_to "Nous rejoindre" %>
+      </div>
+
+      <div class="footer-social-network">
+        <%= link_to "https://www.instagram.com/lespetitesgrainesmontessori/", { class: "instagram" } do %>
+          <%= inline_svg "instagram-b.svg", size: "35px" %>
+        <% end %>
+        <%= link_to "https://www.facebook.com/lespetitesgrainesmontessori/", { class: "facebook" } do %>
+          <%= inline_svg "facebook.svg", size: "35px" %>
+        <% end %>
+      </div>
+
+    </div>
   </div>
 </div>
