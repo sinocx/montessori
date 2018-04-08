@@ -1,11 +1,17 @@
 #prog-communaute-enfantine,
 #prog-maison-enfants,
 #prog-classe-elementaire {
+  h2 {
+    margin-bottom: 10px;
+  }
   .box {
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid $light-blue;
     padding: 10px 20px;
     border-radius: $r-md;
+    &:last-child {
+      background-color: white;
+    }
   }
   .daylist-title {
     background-color: $yellow;
@@ -17,6 +23,11 @@
   }
   .daylist-item {
     padding: 5px 0;
+  }
+}
+#prog-classe-elementaire {
+  .opening-date {
+    margin-top: 30px;
   }
 }
 @media screen and (max-width: 520px) {
