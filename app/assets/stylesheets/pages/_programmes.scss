@@ -5,13 +5,9 @@
     margin-bottom: 10px;
   }
   .box {
-    background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid $light-blue;
     padding: 10px 20px;
     border-radius: $r-md;
-    &:last-child {
-      background-color: white;
-    }
   }
   .daylist-title {
     background-color: $yellow;
@@ -23,6 +19,17 @@
   }
   .daylist-item {
     padding: 5px 0;
+  }
+}
+#prog-communaute-enfantine,
+#prog-classe-elementaire {
+  .box {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+#prog-maison-enfants {
+  .box {
+    background-color: white;
   }
 }
 #prog-classe-elementaire {
