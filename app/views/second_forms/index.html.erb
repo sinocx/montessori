@@ -1,57 +1,19 @@
-<% @parent_no_valids.each do |parent_no_valid| %>
-  <div class="wrapper triangles" id="new-parent">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-          <%= simple_form_for [parent_no_valid], url: subscription_parent_no_valid_path(@subscription,parent_no_valid), method: :patch do |f| %>
-            <h2>Parent</h2>
-            <hr>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :role, label: "Role", collection: ["Père", "Mère", "Tuteur"], required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :first_name, label: "Prénom", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :last_name, label: "Nom", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :situation, label: "Situation familiale", collection: ["Marié(e)", "Pacsé(e)", "Séparé(e)", "Divorcé(e)", "Veuf/Veuve", "Concubinage", "Célibataire"], required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :lang, label: "Langue maternelle", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :job, label: "Profession", required: true %>
-            </div>
-            <div class="col-xs-12">
-              <%= f.input :fiscal, label: "Revenu fiscal de référence figurant sur le dernier avis d'imposition", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :phone, label: "Numéro de téléphone fixe", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :mobile, label: "Numéro de téléphone portable", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :email, label: "Adresse e-mail", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :address, label: "Adresse", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :zip_code, label: "Code postal", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <%= f.input :city, label: "Ville", required: true %>
-            </div>
-            <div class="col-xs-12 col-sm-12" style="margin-top: 15px;">
-              <%= f.button :submit, "Valider - Revenir Au second formulaire", class: "btn-success btn-block" %>
-            </div>
-          <% end %>
-
+<div class="wrapper hideout" id="information-services">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <% @parent_no_valids.each do |parent_no_valid| %>
+          <%= render "parent_no_valids/update", parent_no_valid: parent_no_valid, subscription: params[:subscription_id]%>
+        <% end %>
+        <%= render "child_no_valids/update", child_no_valid: @child_no_valid, subscription: params[:subscription_id]%>
+        <div class="text-center">
+          <%= link_to "Etape Suivante", new_subscription_child_no_valid_second_form_path(@subscription, @child_no_valid),class: "btn-success btn-block" %>
         </div>
       </div>
     </div>
   </div>
-<% end %>
+</div>
+
+<%= javascript_pack_tag 'white-tabs' %>
+<%= javascript_pack_tag 'collapsing-tabs' %>
+

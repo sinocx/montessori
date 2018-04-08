@@ -1,0 +1,9 @@
+function refreshInfo(innerHTML) {
+  console.log("bonjour")
+  const newInfo = document.getElementById("<%= parent_no_valid.id %>");
+  newInfo.innerHTML = innerHTML;
+}
+
+
+
+refreshInfo('<%= j render "parent_no_valids/update", parent_no_valid: @parent_no_valid, subscription: @subscription %>');

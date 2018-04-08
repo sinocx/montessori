@@ -20,6 +20,13 @@ class ChildNoValidsController < ApplicationController
       render :new
     end
   end
+  def update
+    @subscription = params[:subscription_id]
+    @child_no_valid = ChildNoValid.find(params[:id])
+    if @parent_no_valid.update(parent_no_valids_params)
+      render "update.js.erb"
+    end
+  end
 
   def next_step
     if params[:new_child]
