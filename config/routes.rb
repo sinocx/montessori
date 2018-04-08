@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   # subscriptions Routes
   resources :subscriptions, only: [:show, :create, :new, :destroy] do
-    resources :child_no_valids, only: [ :new, :create] do
-      resources :second_forms, only: [:new, :create]
+    resources :child_no_valids, only: [:new, :create, :edit, :update] do
+      resources :second_forms, only: [:new, :create, :index]
     end
-    resources :parent_no_valids, only: [ :new, :create, :next_step]
-    resources :more_infos, only: [ :new, :create]
+    resources :parent_no_valids, only: [:new, :create, :edit, :update]
+    resources :more_infos, only: [:new, :create]
   end
   post '/subscriptions/:subcription_id/parent_no_valids/next_step', to: "parent_no_valids#next_step", as: "next_step"
 
