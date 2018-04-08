@@ -100,7 +100,6 @@ if ( typeof define === 'function' && define.amd ) {
 }));
 
 const tabContent = $('.tab-content');
-console.log(tabContent);
 const initialHeight = tabContent.children(".tab-pane").actual('outerHeight');
 tabContent.outerHeight(initialHeight);
 

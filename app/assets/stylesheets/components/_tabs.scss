@@ -80,16 +80,17 @@
 }
 #home-tabs {
   .nav {
-    height: 73px;
+    height: 80px;
   }
   .nav-item,
   .nav-link {
-    width: 106px;
-    height: 53px;
+    width: 120px;
+    height: 60px;
   }
   .tab-extension {
-    width: 106px;
-    top: 53px;
+    width: 120px;
+    height: 20px;
+    top: 60px;
   }
   .nav-item p {
     margin-top: 20px;
@@ -113,20 +114,4 @@
     margin-top: 16px;
   }
 }
-#pm-tabs {
-  .nav {
-    height: 52px;
-  }
-  .nav-item,
-  .nav-link {
-    width: 64px;
-    height: 32px;
-  }
-  .tab-extension {
-    width: 64px;
-    top: 32px;
-  }
-  .nav-item p {
-    margin-top: 16px;
-  }
-}
+
