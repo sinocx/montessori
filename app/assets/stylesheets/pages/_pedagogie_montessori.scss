@@ -23,6 +23,12 @@
   padding: 30px;
   border-radius: $r-md;
 }
+#mm-pedagogie,
+#mm-heritage {
+  ul {
+    margin-top: 5px;
+  }
+}
 #mm-link .btn-back {
   margin-top: 0;
 }
