@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 
   # Visitor Routes
   root to: 'pages#home'
-  get 'ecole', to: "pages#ecole", as: 'ecole'
   get 'programmes', to: "pages#programmes", as: 'programmes'
   get 'informations', to: "pages#informations", as: 'informations'
   get 'tarifs', to: "pages#tarifs", as: 'tarifs'

@@ -34,13 +34,17 @@
   .canteen {
     margin-bottom: 15px;
     button {
-      height: 39px;
       background-color: $light-gray;
+      height: 39px;
       color: $blue;
+      background-image: image-url("backgrounds/texture.svg");
+      background-size: 2%;
+      background-position: center;
     }
     button.selected,
     button:hover {
       background-color: $yellow;
+      background-image: none;
       color: $blue;
     }
   }

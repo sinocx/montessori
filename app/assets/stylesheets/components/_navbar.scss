@@ -28,13 +28,31 @@
     color: $red;
   }
 }
-@media screen and (max-width: 320px) {
+//Responsive menus
+@media screen and (max-width: 1179.98px) {
+  .navbar-montessori-right {
+    display: none;
+  }
+  .navbar-montessori-item {
+    display: block;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .navbar-montessori-right {
+    display: block;
+  }
+  .navbar-montessori-item {
+    display: none;
+  }
+}
+//Title Responsive
+@media screen and (max-width: 319.98px) {
   .navbar-montessori-brand h2 {
     font-size: 22px;
     width: 150px;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 479.98px) {
   .navbar-montessori-brand h2 {
     font-size: 26px;
   }
@@ -46,7 +64,8 @@
 }
 
 /* Right section */
-.navbar-montessori-right {
+.navbar-montessori-links {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,7 +89,23 @@
   color: $red;
   text-decoration: none;
 }
+#root,
+#ecole,
+#pedagogie,
+#programmes,
+#informations,
+#tarifs,
+#contact {
+  &:focus {
+    text-decoration: none;
+    color: $blue;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
 #root.active,
+#ecole.active,
 #pedagogie.active,
 #programmes.active,
 #informations.active,
@@ -83,6 +118,9 @@
 }
 #root.active {
   background-image: url(asset-path("navbar/ecole-circle.svg"));
+}
+#ecole.active {
+  background-image: url(asset-path("navbar/tarifs-circle.svg"));
 }
 #pedagogie.active {
   background-image: url(asset-path("navbar/pedagogie-circle.svg"));
@@ -162,7 +200,7 @@
   font-weight: 600;
   padding: 0;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .navbar-montessori-dropdown-menu li {
   border: none;
