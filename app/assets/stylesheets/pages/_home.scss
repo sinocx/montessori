@@ -1,6 +1,15 @@
 #home-head {
   width: 100%;
   padding: 150px 0 170px 0;
+  .btn-primary {
+    color: $light-gray;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $yellow;
+      color: $blue;
+    }
+  }
 }
 .home-title,
 .home-img,
