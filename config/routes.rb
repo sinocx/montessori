@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'programmes', to: "pages#programmes", as: 'programmes'
   get 'informations', to: "pages#informations", as: 'informations'
-  get 'tarifs', to: "pages#tarifs", as: 'tarifs'
+  get 'prices', to: "pages#prices", as: 'prices'
   get 'contact', to: "contacts#new", as: 'contact'
   post 'contact', to: "contacts#create", as: 'contact_new'
   get 'inscription', to: "pages#inscription", as: 'inscription'

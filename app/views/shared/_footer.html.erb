@@ -2,21 +2,43 @@
   <div id="footer" class="texture">
 
     <div class="footer-title">
-      <p>Les petites graines - École Motessori à Montrouge depuis 2018</p>
+      <p>Les petites graines - École Montessori à Montrouge depuis 2018</p>
     </div>
 
     <div class="footer-links-container">
 
       <div class="footer-links">
-        <%= link_to "Nous contacter" %>
-        <%= link_to "Nous rejoindre" %>
+        <%= link_to "Nous contacter", contact_path %>
+        <%#= link_to "Nous rejoindre" %>
+
+        <a type="button" data-toggle="modal" data-target="#recrutementModal">
+          Nous rejoindre
+        </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="recrutementModal" tabindex="-1" role="dialog" aria-labelledby="recrutementModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-center" id="recrutementModalLabel">Vous souhaitez nous rejoindre ?</h2>
+              </div>
+              <div class="modal-body text-center">
+                <p>Adressez nous votre candidature par mail à l'adresse</p>
+                <p class="bold">recrutement@lespetitesgraines-montessori.fr</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="footer-social-network">
-        <%= link_to "https://www.instagram.com/lespetitesgrainesmontessori/", { class: "instagram" } do %>
+        <%= link_to "https://www.instagram.com/lespetitesgrainesmontessori/", { class: "instagram", target: '_blank' }  do %>
           <%= inline_svg "instagram-b.svg", size: "35px" %>
         <% end %>
-        <%= link_to "https://www.facebook.com/lespetitesgrainesmontessori/", { class: "facebook" } do %>
+        <%= link_to "https://www.facebook.com/Les-Petites-Graines-183133375645084", { class: "facebook", target: '_blank' } do %>
           <%= inline_svg "facebook.svg", size: "35px" %>
         <% end %>
       </div>
@@ -24,3 +46,4 @@
     </div>
   </div>
 </div>
+
