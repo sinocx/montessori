@@ -8,7 +8,6 @@ class ChildNoValid < ApplicationRecord
   # , format: { with: /\d{2}\-\d{2}\-\d{4}/ }
   validates :nationality, presence: true
   validates :first_lang, presence: true
-  # validates :snd_lang
   validates :montessori_before, inclusion: { in: [ true, false ] }
   validates :montessori_name, presence: true, if: :montessori_before?
   # validates :comment

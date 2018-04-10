@@ -8,7 +8,7 @@ class CreateChildNoValids < ActiveRecord::Migration[5.1]
       t.string :nationality
       t.string :first_lang
       t.string :snd_lang
-      t.boolean :montessori_before ,default: false, null: false
+      t.boolean :montessori_before, null: false, default: false
       t.string :montessori_name
       t.string :comment
       t.references :subscription, foreign_key: true

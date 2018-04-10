@@ -14,6 +14,7 @@ class ChildNoValidsController < ApplicationController
     # strip_boolean_values(good_params)
     @child = ChildNoValid.new(good_params)
     @child.subscription_id =  params[:subscription_id]
+
     if @child.save!
       next_step
     else

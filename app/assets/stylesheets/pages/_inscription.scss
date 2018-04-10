@@ -36,4 +36,13 @@
       font-weight: 600;
     }
   }
+  .btn-primary {
+    color: $light-gray;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $yellow;
+      color: $blue;
+    }
+  }
 }
