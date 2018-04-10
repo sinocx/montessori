@@ -14,11 +14,21 @@ class ChildNoValidsController < ApplicationController
     # strip_boolean_values(good_params)
     @child = ChildNoValid.new(good_params)
     @child.subscription_id =  params[:subscription_id]
-    if @child.save
-      raise
+
+    if @child.save!
       next_step
     else
       render :new
+    end
+  end
+  def update
+    @subscription = params[:subscription_id]
+    @child_no_valid = ChildNoValid.find(params[:id])
+    if @parent_no_valid.update(parent_no_valids_params)
+      respond_to do |format|
+        format.js
+        format.html { render 'parent_no_valids/update'}
+      end
     end
   end
 

@@ -16,6 +16,21 @@ class ParentNoValidsController < ApplicationController
     end
   end
 
+  def edit
+    @subscription = params[:subscription_id]
+    @parent_no_valid = ParentNoValid.find(params[:id])
+  end
+  def update
+    @subscription = params[:subscription_id]
+    @parent_no_valid = ParentNoValid.find(params[:id])
+    if @parent_no_valid.update(parent_no_valids_params)
+      respond_to do |format|
+        format.js
+        format.html { render 'parent_no_valids/update'}
+      end
+    end
+  end
+
   def next_step
     if params[:new_parent]
       role_check

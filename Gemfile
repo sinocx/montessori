@@ -10,7 +10,10 @@ gem 'rails', '5.1.5'
 gem 'redis'
 gem 'postmark-rails'
 gem 'geocoder'
-gem 'hellosign-ruby-sdk'
+gem "pundit"
+gem 'prawn', '~> 2.1'
+gem 'prawn-rails'
+gem 'responders'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
