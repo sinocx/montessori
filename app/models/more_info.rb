@@ -6,7 +6,7 @@ class MoreInfo < ApplicationRecord
   # validates :reason_why, presence: true
 
   def send_welcome_email
-    subscription = self.subscritpion
+    subscription = self.subscription
     parent_no_valids = ParentNoValid.where(subscription: subscription)
     parent_no_valids.each do |parent_no_valid|
       ParentNoValidMailer.welcome(parent_no_valid).deliver_now
