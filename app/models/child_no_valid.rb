@@ -11,8 +11,6 @@ class ChildNoValid < ApplicationRecord
   # validates :snd_lang
   validates :montessori_before, inclusion: { in: [ true, false ] }
   validates :montessori_name, presence: true, if: :montessori_before?
-  validates :workshop, inclusion: { in: [ true, false ] }
-  validates :nursery, inclusion: { in: [ true, false ] }
   # validates :comment
 
   def montessori_before?

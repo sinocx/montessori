@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402104818) do
+ActiveRecord::Schema.define(version: 20180409141308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,21 +18,21 @@ ActiveRecord::Schema.define(version: 20180402104818) do
   create_table "child_no_valids", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "gender"
     t.date "birth_date"
+    t.string "gender"
+    t.string "nursery"
+    t.text "montessori_before"
     t.string "nationality"
     t.string "first_lang"
     t.string "snd_lang"
-    t.boolean "montessori_before"
-    t.string "montessori_name"
-    t.boolean "nursery"
-    t.boolean "workshop"
+    t.string "workshop"
     t.string "comment"
     t.bigint "subscription_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "child_atmosphere"
     t.date "start_date"
+    t.string "montessori_name"
     t.index ["subscription_id"], name: "index_child_no_valids_on_subscription_id"
   end
 
@@ -45,6 +45,19 @@ ActiveRecord::Schema.define(version: 20180402104818) do
     t.string "phone"
     t.string "email"
     t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "doc_to_signs", force: :cascade do |t|
+    t.string "document"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string "signature"
+    t.boolean "sign_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

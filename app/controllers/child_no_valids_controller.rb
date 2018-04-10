@@ -11,10 +11,10 @@ class ChildNoValidsController < ApplicationController
     good_params = child_no_valids_params.reject{ |k, v| k == "birth_date(3i)" || k == "birth_date(2i)" || k == "birth_date(1i)" }
     good_params["birth_date"] = defineBirthDate
 
-    strip_boolean_values(good_params)
+    # strip_boolean_values(good_params)
     @child = ChildNoValid.new(good_params)
     @child.subscription_id =  params[:subscription_id]
-    if @child.save
+    if @child.save!
       next_step
     else
       render :new
@@ -24,7 +24,10 @@ class ChildNoValidsController < ApplicationController
     @subscription = params[:subscription_id]
     @child_no_valid = ChildNoValid.find(params[:id])
     if @parent_no_valid.update(parent_no_valids_params)
-      render "update.js.erb"
+      respond_to do |format|
+        format.js
+        format.html { render 'parent_no_valids/update'}
+      end
     end
   end
 

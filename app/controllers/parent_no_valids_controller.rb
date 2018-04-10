@@ -24,7 +24,10 @@ class ParentNoValidsController < ApplicationController
     @subscription = params[:subscription_id]
     @parent_no_valid = ParentNoValid.find(params[:id])
     if @parent_no_valid.update(parent_no_valids_params)
-      render "update.js.erb"
+      respond_to do |format|
+        format.js
+        format.html { render 'parent_no_valids/update'}
+      end
     end
   end
 
