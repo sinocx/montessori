@@ -3,13 +3,85 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-        <h2 class="text-center">Comment nous trouver ?</h2>
+        <h2>Comment nous trouver ?</h2>
 
         <div class="text-center">
-          <h4>Les petites graines</h4>
+          <h3>Les petites graines</h3>
           <p>37, Avenue de la Marne</p>
           <p>92120 Montrouge</p>
-          <!-- <p>06.37.21.10.94</p> -->
+          <p>06.37.21.10.94</p>
+        </div>
+
+        <div class="transport">
+          <div id="accordion-pedagogie">
+            <div class="panel">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <h4>Bus</h4>
+                  </button>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-pedagogie">
+                <div class="card-body">
+                  <div class="flex-center-space-around">
+                    <%= inline_svg "ratp/ligne68.svg", size: '60px * 34.924px' %>
+                    <!-- <p>n°68</p> -->
+                    <%= inline_svg "ratp/ligne194.svg", size: '60px * 34.924px' %>
+                    <!-- <p>n°194</p> -->
+                    <%= inline_svg "ratp/ligne388.svg", size: '60px * 34.924px' %>
+                    <!-- <p>n°388</p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h4>Métro</h4>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-pedagogie">
+                <div class="card-body">
+                  <div class="flex-center-space-around wrap">
+
+                    <div class="flex-center-center-column lign">
+                      <%= inline_svg "ratp/ligne4.svg", size: '60px' %>
+                      <p class="station">Mairie de Montrouge</p>
+                      <p>14 minutes à pied</p>
+                      <p>1,1 km</p>
+                    </div>
+
+                    <div class="flex-center-center-column lign">
+                      <%= inline_svg "ratp/ligne13.svg", size: '60px' %>
+                      <p class="station">Chatillon-Montrouge</p>
+                      <p>9 minutes à pied</p>
+                      <p>650 mètres</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h4>Voiture</h4>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-pedagogie">
+                <div class="card-body text-center">
+                  <p>BP Sud, sortie Porte de Chatillon-Montrouge</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -29,7 +101,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-        <h2 class="text-center">Contactez-nous  </h2>
+        <h2>Contactez-nous  </h2>
 
         <%= simple_form_for [@contact], url: contact_new_path, method: :post do |f| %>
           <%= f.input :full_name_parent,label: false, placeholder: 'Nom Prénom' %>

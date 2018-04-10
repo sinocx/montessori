@@ -8,14 +8,17 @@
   <div class="navbar-montessori-right">
 
     <div class="navbar-montessori-links">
-      <%= link_to "Accueil", root_path, id: 'root', class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}" %>
+      <%= link_to "L'école", root_path, id: 'root', class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}" %>
       <%= link_to "Pédagogie", pedagogie_path, id: 'pedagogie', class: "navbar-montessori-item navbar-montessori-link #{current_class?(pedagogie_path)}"  %>
       <%= link_to "Programmes", programmes_path, id: 'programmes', class: "navbar-montessori-item navbar-montessori-link #{current_class?(programmes_path)}"  %>
       <%= link_to "Infos pratiques", informations_path, id: 'informations', class: "navbar-montessori-item navbar-montessori-link #{current_class?(informations_path)}"  %>
-      <%= link_to "Tarifs", tarifs_path, id: 'tarifs', class: "navbar-montessori-item navbar-montessori-link #{current_class?(tarifs_path)}" %>
+      <%= link_to "Tarifs", prices_path, id: 'prices', class: "navbar-montessori-item navbar-montessori-link #{current_class?(prices_path)}" %>
       <%= link_to "Contact", contact_path, id: 'contact', class: "navbar-montessori-item navbar-montessori-link #{current_class?(contact_path)}" %>
-      <%= link_to new_subscription_path(@subscription) do %>
+      <%= link_to new_subscription_path(@subscription), id: 'subsciption-link' do %>
         <button class="btn btn-primary">Inscription</button>
+      <% end %>
+      <%= link_to root_path do %>
+        <button class="btn btn-yramirp">Espace parents</button>
       <% end %>
     </div>
 
@@ -32,7 +35,7 @@
       </div>
       <ul class="dropdown-menu dropdown-menu-right navbar-montessori-dropdown-menu">
         <li>
-          <%= link_to "Accueil", root_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}" %>
+          <%= link_to "L'école", root_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}" %>
         </li>
         <li>
           <%= link_to "Pedagogie", pedagogie_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(pedagogie_path)}" %>
@@ -44,13 +47,19 @@
           <%= link_to "Infos pratiques", informations_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(informations_path)}" %>
         </li>
         <li>
-          <%= link_to "Tarifs", tarifs_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(tarifs_path)}" %>
+          <%= link_to "Tarifs", prices_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(prices_path)}" %>
         </li>
         <li>
-          <%= link_to "Contact", contact_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(contact_path)}" %></li>
+          <%= link_to "Contact", contact_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(contact_path)}" %>
+        </li>
         <li>
           <%= link_to new_subscription_path(@subscription) do %>
             <button class="btn btn-primary btn-block">Inscription</button>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to root_path do %>
+            <button class="btn btn-yramirp btn-block">Espace parents</button>
           <% end %>
         </li>
       </ul>

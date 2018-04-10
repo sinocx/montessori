@@ -23,6 +23,12 @@
     }
   }
 }
+#scolar-prices-tabs,
+#other-prices-tabs {
+  h1 {
+    margin-bottom: 50px;
+  }
+}
 #scolar-prices-tabs .tab-content-container {
   border-radius: $r-md $r-md 0 0;
 }
@@ -39,7 +45,8 @@
   border-radius: 0 0 $r-md $r-md;
   p {
     color: $blue;
-    // font-weight: 600;
+    display: inline;
+    white-space: nowrap;
   }
 }
 .school-price-tabs {

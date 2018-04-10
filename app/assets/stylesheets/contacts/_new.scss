@@ -1,5 +1,41 @@
 #contact-head {
-  h4 {
+  h3 {
     margin-bottom: 5px;
+    font-weight: 600;
+  }
+  #bus,
+  #metro,
+  #car {
+    h3 {
+      margin: 0;
+      font-weight: normal;
+    }
+  }
+  .transport {
+    margin-top: 30px;
+  }
+  #metro,
+  #car {
+    // margin-top: 30px;
+  }
+  #metro {
+    .box {
+      // padding: 20px 20px 0 20px;
+    }
+  }
+  .transport-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid $light-blue;
+    border-radius: $r-md;
+    padding: 20px;
+    width: 100%;
+  }
+  .lign {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .station {
+    font-weight: 600;
+    margin-top: 10px;
   }
 }
