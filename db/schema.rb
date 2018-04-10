@@ -49,12 +49,6 @@ ActiveRecord::Schema.define(version: 20180409141308) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "doc_to_signs", force: :cascade do |t|
-    t.string "document"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "documents", force: :cascade do |t|
     t.string "signature"
     t.boolean "sign_on"
