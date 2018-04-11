@@ -4,18 +4,15 @@ class SecondFormsController < ApplicationController
   def index
     @parent_no_valids = ParentNoValid.where(subscription: @subscription)
     @child_no_valid = ChildNoValid.find(params[:child_no_valid_id])
-    # @second_form = policy_scope(SecondForm)
   end
   def new
     @second_form = SecondForm.new
-    authorize @second_form
   end
 
   def create
     @second_form = SecondForm.new(second_form_params)
     @second_form.subscription_id = @subscription
-    authorize @second_form
-    if @second_form.save
+    if @second_form.save!
       redirect_to inscription_success_path
     else
       render :new
