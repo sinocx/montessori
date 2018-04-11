@@ -10,17 +10,17 @@ class ChildNoValidsController < ApplicationController
     @subscription = params[:subscription_id]
     good_params = child_no_valids_params.reject{ |k, v| k == "birth_date(3i)" || k == "birth_date(2i)" || k == "birth_date(1i)" }
     good_params["birth_date"] = defineBirthDate
-
-    # strip_boolean_values(good_params)
+    # good_params["child_atmosphere"] = good_params["child_atmosphere"].to_i
     @child = ChildNoValid.new(good_params)
     @child.subscription_id =  params[:subscription_id]
-
-    if @child.save
+    # raise
+    if @child.save!
       next_step
     else
       render :new
     end
   end
+
   def update
     @subscription = params[:subscription_id]
     @child_no_valid = ChildNoValid.find(params[:id])
@@ -41,17 +41,6 @@ class ChildNoValidsController < ApplicationController
   end
 
   private
-
-  def strip_boolean_values(obj)
-    obj.each do |k, v|
-      if v == "true"
-        obj[k] = true
-      elsif v == "false"
-        obj[k] = false
-      end
-    end
-    obj
-  end
 
   def defineBirthDate
     day = set_day

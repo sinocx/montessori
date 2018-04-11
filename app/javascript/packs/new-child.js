@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
   }
   chooseButton2('fille', 'garcon', 'child_no_valid_gender_féminin', 'child_no_valid_gender_masculin');
+  chooseButton2('c-a', 'c-b', 'child_no_valid_child_atmosphere_0', 'child_no_valid_child_atmosphere_1');
 
 
 

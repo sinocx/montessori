@@ -47,6 +47,24 @@
                         order: [:day, :month, :year],
                         label: "Date souhaitée pour le début de la scolarité :",
                         required: true %>
+
+            <%= f.input :child_atmosphere, as: :radio_buttons,
+                                  collection: [
+                                    [0, "La Communauté Enfantine (2-3 ans)"],
+                                    [1, "La Maison des Enfants (3-6 ans)"]
+                                  ],
+                                  label: "Choix de la classe",
+                                  label_method: :second,
+                                  value_method: :first %>
+            <div class="child_atmosphere btn-group-vertical btn-block">
+              <div class="btn-group">
+                <button id="c-a" class="btn btn-primary" type="button">La Communauté Enfantine (2-3 ans)</button>
+              </div>
+              <div class="btn-group">
+                <button id="c-b" class="btn btn-primary border" type="button">La Maison des Enfants (3-6 ans)</button>
+              </div>
+            </div>
+
             <%= f.input :montessori_before,
                       as: :radio_buttons,
                       collection: [[true,'Oui'], [ false,'Non']],

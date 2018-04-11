@@ -12,6 +12,9 @@
   hr {
     margin-top: 10px;
   }
+  .btn {
+    font-weight: normal;
+  }
   .control-label {
     width: 100%;
   }
@@ -19,6 +22,7 @@
   .child_no_valid_montessori_before,
   .child_no_valid_workshop,
   .child_no_valid_nursery,
+  .child_no_valid_child_atmosphere,
   .second_form_nursery,
   .second_form_workshop,
   .second_form_canteen {
@@ -31,6 +35,7 @@
   .montessori-before,
   .workshop,
   .nursery,
+  .child_atmosphere,
   .canteen {
     margin-bottom: 15px;
     button {
@@ -38,7 +43,7 @@
       height: 39px;
       color: $blue;
       background-image: image-url("backgrounds/texture.svg");
-      background-size: 2%;
+      background-size: 5px;
       background-position: center;
     }
     button.selected,
@@ -46,6 +51,7 @@
       background-color: $yellow;
       background-image: none;
       color: $blue;
+      border-color: $yellow;
     }
   }
   .child_no_valid_birth_date .form-inline,
@@ -75,6 +81,7 @@
 #subscription-success {
   h1, h3 {
     margin: 0;
+    font-weight: normal;
   }
   .success-title {
     margin-top: 25%;
