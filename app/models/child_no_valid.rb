@@ -1,5 +1,6 @@
 class ChildNoValid < ApplicationRecord
   belongs_to :subscription
+  has_one :second_form, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -15,5 +16,12 @@ class ChildNoValid < ApplicationRecord
 
   def montessori_before?
     montessori_before
+  end
+
+  def age
+    birth_date = self.birth_date
+    today = Date.today
+    age = ((today - birth_date) / 365.25).to_i
+    age
   end
 end

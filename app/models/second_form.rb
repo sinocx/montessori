@@ -1,5 +1,6 @@
 class SecondForm < ApplicationRecord
   belongs_to :subscription
+  belongs_to :more_info
 
   def price_canteen
     if self.canteen == 100

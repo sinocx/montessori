@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 
-        <div class="col-xs-12" id="dashboard_admin_search">
+        <div id="dashboard_admin_search">
           <input class="search btn" placeholder="Search" />
           <button class="sort btn btn-primary" data-sort="child-name">Trier par Nom</button>
           <button class="sort btn btn-primary" data-sort="sub-id">Trier par date</button>
@@ -19,35 +19,43 @@
 
         <div class="list">
           <% @subscriptions.each do |subscription| %>
-            <div class="col-xs-12" id="sub-<%= subscription.id %>">
-              <div class="sub-card">
+
+            <div class="sub-card" id="sub-<%= subscription.id %>">
+
+              <div class="sub-body flex-start-space-between">
                 <div class="sub-info">
 
-                  <p class="sub-id hidden"><%= subscription.id %></p>
-                  <h3 class="sub-date"><%= subscription.created_at.strftime("%d-%m-%Y") %></h3>
+                  <div class="children">
+                    <% subscription.child_no_valids.each do |child| %>
+                      <div class="child">
+                        <h3 class="child-name">
+                          <%= child.first_name.capitalize %> <%= child.last_name.capitalize %>
+                        </h3>
+                        <p>
+                          <%= child.birth_date.strftime("%d-%m-%Y") %> (<%= child.age %> ans)
+                        </p>
+                      </div>
+                    <% end %>
+                  </div>
 
-                  <% subscription.parent_no_valids.each do |parent| %>
-                    <div class="parent">
-                      <h4><%= parent.role %></h4>
-                      <p><%= parent.last_name.capitalize %> <%= parent.first_name.capitalize %></p>
-                      <p><%= parent.email %></p>
-                      <p><%= parent.mobile %></p>
-                    </div>
-                  <% end %>
-
-                  <% subscription.child_no_valids.each do |child| %>
-                    <div class="child">
-                      <h4>Enfant</h4>
-                      <p class="child-name">
-                        <%= child.first_name.capitalize %> <%= child.last_name.capitalize %>
-                      </p>
-                    </div>
-                  <% end %>
+                  <div class="parents flex-start-start">
+                    <% subscription.parent_no_valids.each do |parent| %>
+                      <div class="parent">
+                        <h4><%= parent.role %></h4>
+                        <p><%= parent.last_name.capitalize %> <%= parent.first_name.capitalize %></p>
+                        <p><%= parent.email %></p>
+                        <p><%= parent.mobile %></p>
+                      </div>
+                    <% end %>
+                  </div>
 
                 </div>
 
                 <div class="sub-links">
-                  <%= link_to "Info", subscription_path(subscription) %>
+
+                  <%= link_to subscription_path(subscription) do %>
+                    <button class="btn btn-primary">Voir le dossier</button>
+                  <% end %>
                   <% if subscription.status == "Etape 0" %>
                     <%= link_to rendez_vous_path(subscription) do %>
                       <p class="sub_status hidden">0</p>
@@ -98,8 +106,14 @@
                   </div>
 
                 </div>
-
               </div>
+              <div class="sub-footer">
+                <p class="sub-id hidden"><%= subscription.id %></p>
+                <div class="sub-date text-center">
+                  <p><p class="bold">Date de la demande :</p> <%= subscription.created_at.strftime("%d-%m-%Y") %></p>
+                </div>
+              </div>
+
             </div>
           <% end %>
         </div>
