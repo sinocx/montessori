@@ -37,6 +37,16 @@
       fill: $red;
     }
   }
+  .modal-content {
+    border-radius: $r-md;
+  }
+  .modal-header,
+  .modal-footer {
+    border: none;
+  }
+  .modal-body {
+    margin-bottom: 20px;
+  }
 }
 @media (max-width: 424.98px) {
   #footer {

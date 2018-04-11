@@ -16,11 +16,17 @@
   border-bottom: 1px solid white;
   .btn-primary {
     color: $light-gray;
-    &:hover,
-    &:active,
-    &:focus {
+    &:hover {
       background-color: $yellow;
       color: $blue;
+    }
+  }
+  .btn-yramirp {
+    background-color: $yellow;
+    color: $blue;
+    &:hover {
+      background-color: $blue;
+      color: $light-gray;
     }
   }
 }
@@ -31,6 +37,7 @@
     font-size: 36px;
     font-weight: 600;
     margin: 0 0 5px 0;
+    text-align: left;
   }
   &:hover {
     text-decoration: none;
@@ -38,7 +45,7 @@
   }
 }
 //Responsive menus
-@media screen and (max-width: 1179.98px) {
+@media screen and (max-width: 1329.98px) {
   .navbar-montessori-right {
     display: none;
   }
@@ -46,7 +53,7 @@
     display: block;
   }
 }
-@media screen and (min-width: 1180px) {
+@media screen and (min-width: 1330px) {
   .navbar-montessori-right {
     display: block;
   }
@@ -78,6 +85,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .btn-yramirp {
+    margin-left: 5px;
+  }
 }
 
 /* Basic navbar item */
@@ -103,7 +113,7 @@
 #pedagogie,
 #programmes,
 #informations,
-#tarifs,
+#prices,
 #contact {
   &:focus {
     text-decoration: none;
@@ -118,7 +128,7 @@
 #pedagogie.active,
 #programmes.active,
 #informations.active,
-#tarifs.active,
+#prices.active,
 #contact.active {
   color: $red;
   text-decoration: none;
@@ -127,9 +137,6 @@
 }
 #root.active {
   background-image: url(asset-path("navbar/ecole-circle.svg"));
-}
-#ecole.active {
-  background-image: url(asset-path("navbar/tarifs-circle.svg"));
 }
 #pedagogie.active {
   background-image: url(asset-path("navbar/pedagogie-circle.svg"));
@@ -140,8 +147,8 @@
 #informations.active {
   background-image: url(asset-path("navbar/infos-circle.svg"));
 }
-#tarifs.active {
-  background-image: url(asset-path("navbar/tarifs-circle.svg"));
+#prices.active {
+  background-image: url(asset-path("navbar/prices-circle.svg"));
 }
 #contact.active {
   background-image: url(asset-path("navbar/contact-circle.svg"));
@@ -172,9 +179,6 @@
     left: 0;
     transform: rotate(180deg);
   }
-  // &:hover {
-  //   margin-top: 10px;
-  // }
 }
 .dropdown {
   position: initial;
@@ -190,10 +194,6 @@
   width: calc(100% - 40px);
   padding: 30px 30px 0 30px;
   box-shadow: none;
-  // border-top: 1px solid $light-blue;
-  // border-left: none;
-  // border-right: none;
-  // border-bottom: none;
   border-top: none;
   border-left: 1px solid $light-blue;
   border-right: 1px solid $light-blue;

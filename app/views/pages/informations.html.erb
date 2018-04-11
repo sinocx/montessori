@@ -1,10 +1,10 @@
-<div class="wrapper dots" id="informations-timetable">
+<div class="wrapper triangles" id="informations-timetable">
   <div class="container">
     <div class="row">
 
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-        <h2 class="text-center"> Les Horaires</h2>
+        <h2>Les Horaires</h2>
 
         <div class="section-row">
           <div class="section-item title">
@@ -39,144 +39,142 @@
   </div>
 </div>
 
-<div class="background-light-gray">
-  <div class="wrapper texture" id="informations-calendar">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+<div class="wrapper background-light-gray texture" id="informations-calendar">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-          <h2 class="text-center">Le Calendrier scolaire</h2>
+        <h2>Le Calendrier scolaire</h2>
 
-          <div class="nav flex-no-center" role="tablist">
-            <div class="nav-item white active">
-              <a class="nav-link desc flex-center-center" data-toggle="tab" href="#info1" role="tab">
-                <%= inline_svg "demi-rond.svg", size: '120px * 60px', class: 'demi-rond calendar'%>
-                <p>Vacances</p>
-                <div class="tab-extension"></div>
-              </a>
-            </div>
-
-            <div class="nav-item">
-              <a class="nav-link projet flex-center-center" data-toggle="tab" href="#info2" role="tab">
-                <%= inline_svg "demi-rond.svg", size: '120px * 60px', class: 'demi-rond calendar'%>
-                <p>Jours fériés</p>
-                <div class="tab-extension"></div>
-              </a>
-            </div>
+        <div class="nav flex-no-center" role="tablist">
+          <div class="nav-item white active">
+            <a class="nav-link desc flex-center-center" data-toggle="tab" href="#info1" role="tab">
+              <%= inline_svg "demi-rond.svg", size: '120px * 60px', class: 'demi-rond calendar'%>
+              <p>Vacances</p>
+              <div class="tab-extension"></div>
+            </a>
           </div>
 
-          <div class="tab-content-container">
-            <div class="row">
-              <div class="col-xs-12">
+          <div class="nav-item">
+            <a class="nav-link projet flex-center-center" data-toggle="tab" href="#info2" role="tab">
+              <%= inline_svg "demi-rond.svg", size: '120px * 60px', class: 'demi-rond calendar'%>
+              <p>Jours fériés</p>
+              <div class="tab-extension"></div>
+            </a>
+          </div>
+        </div>
 
-                <!-- Tab panels -->
-                <div class="tab-content calendar-tabs">
+        <div class="tab-content-container">
+          <div class="row">
+            <div class="col-xs-12">
 
-                  <!--Panel 1-->
-                  <div class="tab-pane active white-tabs-content" id="info1" role="tabpanel">
-                    <div class="hollidays">
-                      <div class="tab">
-                        <h4 class="dotted">Rentrée</h4>
-                        <p>Lundi 3 Sept 2018</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Toussaint</h4>
-                        <p>Samedi 20 Oct 2018</p>
-                        <p>Lundi 5 Nov 2018</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Noël</h4>
-                        <p>Samedi 22 Déc 2018</p>
-                        <p>Lundi 7 Jan 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Février</h4>
-                        <p>Samedi 23 Fév 2019</p>
-                        <p>Lundi 11 Mars 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Pâques</h4>
-                        <p>Samedi 20 Avr 2019</p>
-                        <p>Lundi 6 Mai 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Fin de l'année</h4>
-                        <p>Samedi 6 Juil 2019</p>
-                      </div>
+              <!-- Tab panels -->
+              <div class="tab-content calendar-tabs">
+
+                <!--Panel 1-->
+                <div class="tab-pane active white-tabs-content" id="info1" role="tabpanel">
+                  <div class="hollidays">
+                    <div class="tab">
+                      <h4 class="dotted">Rentrée</h4>
+                      <p>Lundi 3 Sept 2018</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Toussaint</h4>
+                      <p>Samedi 20 Oct 2018</p>
+                      <p>Lundi 5 Nov 2018</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Noël</h4>
+                      <p>Samedi 22 Déc 2018</p>
+                      <p>Lundi 7 Jan 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Février</h4>
+                      <p>Samedi 23 Fév 2019</p>
+                      <p>Lundi 11 Mars 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Pâques</h4>
+                      <p>Samedi 20 Avr 2019</p>
+                      <p>Lundi 6 Mai 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Fin de l'année</h4>
+                      <p>Samedi 6 Juil 2019</p>
                     </div>
                   </div>
-                  <!--/.Panel 1-->
-
-                  <!--Panel 2-->
-                  <div class="tab-pane white-tabs-content" id="info2" role="tabpanel">
-                    <div class="ferie">
-                      <div class="tab">
-                        <h4 class="dotted">Toussaint</h4>
-                        <p>Jeudi 1er Nov 2018</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Armistice</h4>
-                        <p>Dimanche 11 Nov 2018</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Noël</h4>
-                        <p>Mardi 25 Déc 2018</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">St Sylvestre</h4>
-                        <p>Mardi 1er Jan 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Pâques</h4>
-                        <p>Dimanche 21 Avr 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Lundi de Pâques</h4>
-                        <p>Lundi 22 Avr 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Fête du travail</h4>
-                        <p>Mercredi 1er Mai 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Victoire de 1945</h4>
-                        <p>Mercredi 8 Mai 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Ascension</h4>
-                        <p>Jeudi 30 Mai 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Pentecôte</h4>
-                        <p>Dimanche 9 Juin 2019</p>
-                      </div>
-                      <div class="tab">
-                        <h4 class="dotted">Lundi de Pentecôte</h4>
-                        <p>Lundi 10 Juin 2019</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--/.Panel 2-->
-
                 </div>
-                <!--/.Tab panels -->
+                <!--/.Panel 1-->
+
+                <!--Panel 2-->
+                <div class="tab-pane white-tabs-content" id="info2" role="tabpanel">
+                  <div class="ferie">
+                    <div class="tab">
+                      <h4 class="dotted">Toussaint</h4>
+                      <p>Jeudi 1er Nov 2018</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Armistice</h4>
+                      <p>Dimanche 11 Nov 2018</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Noël</h4>
+                      <p>Mardi 25 Déc 2018</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">St Sylvestre</h4>
+                      <p>Mardi 1er Jan 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Pâques</h4>
+                      <p>Dimanche 21 Avr 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Lundi de Pâques</h4>
+                      <p>Lundi 22 Avr 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Fête du travail</h4>
+                      <p>Mercredi 1er Mai 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Victoire de 1945</h4>
+                      <p>Mercredi 8 Mai 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Ascension</h4>
+                      <p>Jeudi 30 Mai 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Pentecôte</h4>
+                      <p>Dimanche 9 Juin 2019</p>
+                    </div>
+                    <div class="tab">
+                      <h4 class="dotted">Lundi de Pentecôte</h4>
+                      <p>Lundi 10 Juin 2019</p>
+                    </div>
+                  </div>
+                </div>
+                <!--/.Panel 2-->
 
               </div>
+              <!--/.Tab panels -->
+
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
   </div>
 </div>
 
-<div class="wrapper hideout" id="information-services">
+<div class="wrapper dots" id="information-services">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-        <h2 class="text-center">Les services</h2>
+        <h2>Les services</h2>
 
         <div class="panel-group" id="accordion">
 
@@ -188,7 +186,7 @@
             </div>
 
             <div id="collapseOne" class="panel-collapse collapse">
-              <div class="card-body text-center">
+              <div class="card-body">
                 <p>
                   Nous proposons à tous les enfants de l’école, un repas équilibré et varié, partiellement bio, livré tous les jours par notre partenaire traiteur et chauffé au sein de l’école. Pour les enfants qui suivent un régime alimentaire particulier (allergies, religion...), nous demandons aux parents de fournir une lunchbox.
                 </p>
@@ -210,7 +208,7 @@
             </div>
 
             <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="card-body text-center">
+              <div class="card-body">
                 <p>
                   Les Ateliers du Mercredi accueillent les enfants de 8h30 à 16h tous les mercredis (hors vacances scolaires Zone C). Ces ateliers sont ouverts aussi bien aux enfants scolarisés dans notre établissement qu’aux externes et cela quelle que soit leur langue maternelle.
                 </p>
@@ -226,7 +224,7 @@
               </div>
             </div>
             <button class="card-bottom btn-tabs collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"></button>
-            <h3 class="tab-title">L’atelier du mercredi</h3>
+            <h3 class="tab-title">Les ateliers du mercredi</h3>
           </div>
 
           <div class="panel closed">
@@ -237,7 +235,7 @@
             </div>
 
             <div id="collapseThree" class="panel-collapse collapse">
-              <div class="card-body text-center">
+              <div class="card-body">
                 <p>
                   L’école vous offre la possibilité d’accueillir vos enfants le lundi, le mardi, le jeudi et le vendredi des périodes scolaires de 8h à 8h30 et de 16h30 à 18h30. Pour la garderie de l’après-midi, les parents doivent fournir un goûter pour leur enfant.
                 </p>

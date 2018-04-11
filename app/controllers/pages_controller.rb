@@ -7,7 +7,7 @@ class PagesController < ApplicationController
                                                   :ambiance_montessori,
                                                   :bibliographie,
                                                   :informations,
-                                                  :tarifs,
+                                                  :prices,
                                                   :contact,
                                                   :inscription,
                                                   :subscription_success,

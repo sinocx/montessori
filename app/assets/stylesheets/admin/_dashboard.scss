@@ -1,4 +1,5 @@
 #dashboard_admin {
+  min-height: calc(100vh - 140px);
   .sub-card {
     height: 200px;
     border: 1px solid $light-blue;
