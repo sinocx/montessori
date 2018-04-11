@@ -10,7 +10,7 @@ gem 'rails', '5.1.5'
 gem 'redis'
 gem 'postmark-rails'
 gem 'geocoder'
-gem "pundit"
+gem 'pundit'
 gem 'prawn', '~> 2.1'
 gem 'prawn-rails'
 gem 'responders'
@@ -26,7 +26,7 @@ gem 'inline_svg'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem "letter_opener"
+  gem 'letter_opener'
 end
 
 group :development, :test do

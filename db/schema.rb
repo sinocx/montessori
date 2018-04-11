@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409141308) do
+ActiveRecord::Schema.define(version: 20180402104818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,22 +18,19 @@ ActiveRecord::Schema.define(version: 20180409141308) do
   create_table "child_no_valids", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.date "birth_date"
     t.string "gender"
-    t.string "nursery"
-    t.text "montessori_before"
+    t.date "birth_date"
     t.string "nationality"
     t.string "first_lang"
     t.string "snd_lang"
-    t.boolean "montessori_before", null: false, default: false
+    t.boolean "montessori_before", default: false, null: false
     t.string "montessori_name"
     t.string "comment"
     t.bigint "subscription_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "child_atmosphere"
+    t.integer "child_atmosphere"
     t.date "start_date"
-    t.string "montessori_name"
     t.index ["subscription_id"], name: "index_child_no_valids_on_subscription_id"
   end
 
@@ -46,13 +43,6 @@ ActiveRecord::Schema.define(version: 20180409141308) do
     t.string "phone"
     t.string "email"
     t.text "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "documents", force: :cascade do |t|
-    t.string "signature"
-    t.boolean "sign_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -125,7 +115,7 @@ ActiveRecord::Schema.define(version: 20180409141308) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", null: false, default: false
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

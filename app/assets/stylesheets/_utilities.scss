@@ -11,6 +11,9 @@
   margin-top: 90px;
   width: 150px;
 }
+.btn-success {
+  font-weight: 600 !important;
+}
 
 //Forms
 .form-control {
@@ -193,84 +196,87 @@ li {
 }
 
 //Background pattern
-.hideout {
-    background-color: white;
-    background-image: image-url("backgrounds/hideout.svg");
-    background-position: center;
-  }
-  .triangles {
-    background-color: white;
-    background-image: image-url("backgrounds/triangles.svg");
-    background-position: center;
-  }
-  .leaf {
-    background-color: white;
-    background-image: image-url("backgrounds/leaf.svg");
-    background-position: center;
-  }
-  .dots {
-    background-color: white;
-    background-image: image-url("backgrounds/dots.svg");
-    background-position: center;
-  }
-  .quadrillage {
-    background-image: image-url("backgrounds/quadrillage.svg");
-    background-position: center;
-  }
-  .quadrillage_gold {
-    background-image: image-url("backgrounds/quadrillage_gold.svg");
-    background-position: center;
-  }
-  .texture {
-    background-image: image-url("backgrounds/texture.svg");
-    background-position: center;
-  }
-@media screen and (max-width: 599.98px) {
-  .hideout {
-    background-size: 2%;
-  }
-  .triangles {
-    background-size: 1.6%;
-  }
-  .leaf {
-    background-size: 2.3%;
-  }
-  .dots {
-    background-size: 2.2%;
-  }
-  .quadrillage {
-    background-size: 20%;
-  }
-  .quadrillage_gold {
-    background-size: 20%;
-  }
-  .texture {
-    background-size: 1%;
-  }
+.dots {
+  background-color: white;
+  background-image: image-url("backgrounds/dots.svg");
+  background-position: center;
+  background-size: 11px;
 }
-@media screen and (min-width: 600px) {
-  .hideout {
-    background-size: 1%;
-  }
-  .triangles {
-    background-size: 0.8%;
-  }
-  .leaf {
-    background-size: 1.25%;
-  }
-  .dots {
-    background-size: 1.1%;
-  }
-  .quadrillage {
-    background-size: 10%;
-  }
-  .quadrillage_gold {
-    background-size: 10%;
-  }
-  .texture {
-    background-size: 0.5%;
-  }
+.triangles {
+  background-color: white;
+  background-image: image-url("backgrounds/triangles.svg");
+  background-position: center;
+  background-size: 8px;
 }
+.texture {
+  background-image: image-url("backgrounds/texture.svg");
+  background-position: center;
+  background-size: 5px;
+}
+// .hideout {
+//   background-color: white;
+//   background-image: image-url("backgrounds/hideout.svg");
+//   background-position: center;
+// }
+// .leaf {
+//   background-color: white;
+//   background-image: image-url("backgrounds/leaf.svg");
+//   background-position: center;
+// }
+// .quadrillage {
+//   background-image: image-url("backgrounds/quadrillage.svg");
+//   background-position: center;
+// }
+// .quadrillage_gold {
+//   background-image: image-url("backgrounds/quadrillage_gold.svg");
+//   background-position: center;
+// }
+// @media screen and (max-width: 599.98px) {
+//   .hideout {
+//     background-size: 2%;
+//   }
+//   .triangles {
+//     background-size: 1.6%;
+//   }
+//   .leaf {
+//     background-size: 2.3%;
+//   }
+//   .dots {
+//     background-size: 2.2%;
+//   }
+//   .quadrillage {
+//     background-size: 20%;
+//   }
+//   .quadrillage_gold {
+//     background-size: 20%;
+//   }
+//   .texture {
+//     background-size: 1%;
+//   }
+// }
+// @media screen and (min-width: 600px) {
+//   .texture {
+//     background-size: 5px;
+//   }
+//   .dots {
+//     background-size: 11px;
+//   }
+//   .triangles {
+//     background-size: 8px;
+//   }
+  // .hideout {
+  //   background-size: 10px;
+  // }
+  // .quadrillage {
+  //   background-size: 100px;
+  // }
+  // .quadrillage_gold {
+  //   background-size: 10%;
+  // }
+  // .leaf {
+  //   background-size: 20px;
+  // }
+// }
 //Shadow
 .shadow {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
