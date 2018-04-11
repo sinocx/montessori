@@ -33,7 +33,7 @@ class ParentNoValidsController < ApplicationController
 
   def next_step
     if params[:new_parent]
-      role_check
+      redirect_to new_subscription_parent_no_valid_path(@subscription, @parent)
     else
       redirect_to new_subscription_more_info_path(@subscription, @more_info)
     end
@@ -52,14 +52,6 @@ class ParentNoValidsController < ApplicationController
     end
   end
 
-  def no_more_parent?
-    i = 0
-    @parent_no_valid = ParentNoValid.where(subscription_id: @subscription)
-    @parent_no_valid.each do |parent|
-      (i += 1) if parent.subscription_id == params[:subscription_id].to_i
-    end
-    return true if i >= 2
-  end
 
   private
   def parent_no_valids_params
