@@ -1,6 +1,6 @@
 class ChildNoValid < ApplicationRecord
   belongs_to :subscription
-
+  has_one :second_form
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :gender, presence: true, inclusion: { in: [ "Masculin", "Féminin" ] }
