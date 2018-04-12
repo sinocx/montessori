@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="sub-links">
-                  <%= link_to "Info", subscription_path(subscription) %>
+                  <%= link_to "Info", info_subscription_path(subscription) %>
                   <% if subscription.status == "Etape 0" %>
                     <%= link_to rendez_vous_path(subscription) do %>
                       <p class="sub_status hidden">0</p>

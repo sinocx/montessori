@@ -12,7 +12,7 @@ class SecondFormsController < ApplicationController
   def create
     @child_no_valid = ChildNoValid.find(params[:child_no_valid_id])
     @second_form = SecondForm.new(second_form_params)
-    @second_form.subscription = @subscription
+    @second_form.child_no_valid = @child_no_valid
     if @second_form.save
       @subscription.update(status: 3)
       @subscription.parent_no_valids.each do|parent_no_valid|
