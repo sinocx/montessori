@@ -39,18 +39,18 @@ ChildNoValid.create!(first_name:"Joseph", last_name: "Sarfati", gender: "Masculi
                             subscription: sub6, child_atmosphere: 1, start_date: '01/07/2018')
 ChildNoValid.create!(first_name:"Nicolas", last_name: "Amstrong", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub5, child_atmosphere: 0, start_date: '01/07/2018')
 ChildNoValid.create!(first_name:"Jean", last_name: "DuPont", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub4, child_atmosphere: 0, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Hugo", last_name: "Bacard", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub3, child_atmosphere: 0, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Anais", last_name: "Bacard", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub3, child_atmosphere: 0, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Matthew", last_name: "Balker", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: true, montessori_name: "Montessori101", comment: "Aucun commentaire", subscription: sub15, child_atmosphere: 1, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Luc", last_name: "Belair", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub7, child_atmosphere: 1, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Vladirmir", last_name: "Berkovich", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub8, child_atmosphere: 1, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Benoit", last_name: "Bertrand", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub9, child_atmosphere: 0, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"bhowil", last_name: "Prasenjit", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub13, child_atmosphere: 0, start_date: '01/07/2018')
+child1 = ChildNoValid.create!(first_name:"Hugo", last_name: "Bacard", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub3, child_atmosphere: 0, start_date: '01/07/2018')
+child2 = ChildNoValid.create!(first_name:"Anais", last_name: "Bacard", gender: "Féminin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub3, child_atmosphere: 0, start_date: '01/07/2018')
+ChildNoValid.create!(first_name:"Matthew", last_name: "Balker", gender: "Masculin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: true, montessori_name: "Montessori101", comment: "Aucun commentaire", subscription: sub15, child_atmosphere: 1, start_date: '01/07/2018')
+child3 = ChildNoValid.create!(first_name:"Luc", last_name: "Belair", gender: "Masculin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub7, child_atmosphere: 1, start_date: '01/07/2018')
+ChildNoValid.create!(first_name:"Vladirmir", last_name: "Berkovich", gender: "Masculin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub8, child_atmosphere: 1, start_date: '01/07/2018')
+ChildNoValid.create!(first_name:"Benoit", last_name: "Bertrand", gender: "Masculin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub9, child_atmosphere: 0, start_date: '01/07/2018')
+ChildNoValid.create!(first_name:"bhowil", last_name: "Prasenjit", gender: "Masculin", birth_date: "20/02/2016", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub13, child_atmosphere: 0, start_date: '01/07/2018')
 ChildNoValid.create!(first_name:"Zoe", last_name: "Chatzidzakis", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub14, child_atmosphere: 1, start_date: '01/07/2018')
 ChildNoValid.create!(first_name:"ke", last_name: "Chen", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub10, child_atmosphere: 1, start_date: '01/07/2018')
 ChildNoValid.create!(first_name:"Miaofen", last_name: "Chen", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub10, child_atmosphere: 1, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Pietro", last_name: "Dello", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub11, child_atmosphere: 1, start_date: '01/07/2018')
-ChildNoValid.create!(first_name:"Daniel", last_name: "Dello", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub11, child_atmosphere: 1, start_date: '01/07/2018')
+child5 = ChildNoValid.create!(first_name:"Pietro", last_name: "Dello", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub11, child_atmosphere: 1, start_date: '01/07/2018')
+child6 = ChildNoValid.create!(first_name:"Daniel", last_name: "Dello", gender: "Féminin", birth_date: "20/02/2012", nationality: "Française", first_lang: "Francais", snd_lang: "Anglais", montessori_before: false, comment: "Aucun commentaire", subscription: sub11, child_atmosphere: 1, start_date: '01/07/2018')
 p "Child Created"
 
 p "Parent Create"
@@ -96,4 +96,12 @@ MoreInfo.create!(know_the_school: "Internet", reason_why: "Site parfait ! :)", s
 MoreInfo.create!(know_the_school: "Internet", reason_why: "Site parfait ! :)", subscription: sub15)
 
 p "MoreInfo Created"
+p "secondForm Create"
 
+SecondForm.create!(canteen: 1, workshop: 1, nursery: 2, child_no_valid: child1)
+SecondForm.create!(canteen: 1, workshop: 0, nursery: 1, child_no_valid: child2)
+SecondForm.create!(canteen: 2, workshop: 2, nursery: 2, child_no_valid: child3)
+SecondForm.create!(canteen: 1, workshop: 0, nursery: 0, child_no_valid: child4)
+SecondForm.create!(canteen: 0, workshop: 2, nursery: 1, child_no_valid: child5)
+
+p "secondForm Created!"
