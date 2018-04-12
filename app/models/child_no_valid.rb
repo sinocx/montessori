@@ -24,4 +24,20 @@ class ChildNoValid < ApplicationRecord
     age = ((today - birth_date) / 365.25).to_i
     age
   end
+
+  def atmosphere
+    n = self.child_atmosphere
+    case n
+    when 0
+      child_class = "Communauté Enfantine"
+    when 1
+      child_class = "Maison des Enfants"
+    when 2
+      child_class = "Classe Élémentaire"
+    else
+      child_class = "Erreur !"
+    end
+    child_class
+  end
+
 end

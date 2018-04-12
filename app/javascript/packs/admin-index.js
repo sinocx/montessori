@@ -1,77 +1,78 @@
-// import List from 'list';
+const options = {
+  valueNames: [ 'child-name', 'sub-id', 'sub_status', 'sex' ],
+  page: 10,
+  pagination: true
+};
 
-document.addEventListener("DOMContentLoaded", function(event) {
+const subCards = new List('dashboard_admin', options);
 
-  const DeleteBtns = document.querySelectorAll('.btn-delete');
+const e = document.getElementById("step-select");
+e.addEventListener('change', function() {
 
-  for (var btn of DeleteBtns) {
-    const cardId = btn.dataset.cardId;
-    const card = document.getElementById(cardId);
-    btn.addEventListener('click', function() {
-      card.parentNode.removeChild(card);
+  const strUser = e.value;
+  console.log(strUser);
+
+  if (strUser == "") {
+    subCards.filter();
+  } else if (strUser == 0) {
+    subCards.filter(function(item) {
+      if (item.values().sub_status == strUser) {
+        return true;
+      } else {
+        return false;
+      }
     });
-  };
-
-  // let e = document.getElementById("step-select").value;
-  // const strUser = e.options[e.selectedIndex].value;
-  // console.log(e);
-
-  function filter() {
-    const e = document.getElementById("step-select");
-    e.addEventListener('change', function() {
-
-      const strUser = e.options[e.selectedIndex].value;
-      console.log(strUser);
-
-      // if (this.attr('class') == "step-0") {
-      //   console.log("etape 0")
-      //   subCards.filter();
-      // } else if (this.attr('class') == "step-1") {
-      //   var sub_status = item.values().sub_status;
-      //   console.log(sub_status);
-      // } else if (this.attr('class') == "step-2") {
-
-      // } else if (this.attr('class') == "step-3") {
-
-      // } else if (this.attr('class') == "step-4") {
-
-      // }
+  } else if (strUser == 1) {
+    subCards.filter(function(item) {
+      if (item.values().sub_status == strUser) {
+        return true;
+      } else {
+        return false;
+      }
     });
-    // console.log(strUser);
+  } else if (strUser == 2) {
+    subCards.filter(function(item) {
+      if (item.values().sub_status == strUser) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  } else if (strUser == 3) {
+    subCards.filter(function(item) {
+      if (item.values().sub_status == strUser) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
-  filter();
-  // const e = document.getElementById("step-select");
-  // const strUser = e.options[e.selectedIndex].value;
-  // console.log(strUser);
+});
 
-  const options = {
-    valueNames: [ 'child-name', 'sub-id', 'sub_status' ],
-    page: 10,
-    pagination: true
-  };
+const girlButton = document.getElementById('girl');
+const boyButton = document.getElementById('boy');
+const allButton = document.getElementById('all');
 
-  const subCards = new List('dashboard_admin', options);
+girlButton.addEventListener('click', function() {
+  subCards.filter(function(item) {
+    if (item.values().sex.replace(/^\s+|\s+$/gm,'') == "Fille") {
+      return true;
+    } else {
+      return false;
+    }
+  });
+});
 
-  // $('select').on('change', function () {
-  //   // var optionSelected = $("option:selected", this);
-  //   // var valueSelected = this.value;
+boyButton.addEventListener('click', function() {
+  subCards.filter(function(item) {
+    if (item.values().sex.replace(/^\s+|\s+$/gm,'') == "Garçon") {
+      return true;
+    } else {
+      return false;
+    }
+  });
+});
 
-  //   console.log("change");
-  //   console.log(this.attr('class'));
-
-  //   if (this.attr('class') == "step-0") {
-  //     console.log("etape 0")
-  //     subCards.filter();
-  //   } else if (this.attr('class') == "step-1") {
-  //     var sub_status = item.values().sub_status;
-  //     console.log(sub_status);
-  //   } else if (this.attr('class') == "step-2") {
-
-  //   } else if (this.attr('class') == "step-3") {
-
-  //   } else if (this.attr('class') == "step-4") {
-
-  //   }
-  // });
-
+allButton.addEventListener('click', function() {
+  subCards.filter();
 });
