@@ -1,108 +1,144 @@
 <div class="wrapper dots" id="dashboard_admin">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
 
-        <div class="col-xs-12" id="dashboard_admin_search">
+        <div id="dashboard_admin_search" class="flex-center-space-between">
           <input class="search btn" placeholder="Search" />
-          <button class="sort btn btn-primary" data-sort="child-name">Trier par Nom</button>
-          <button class="sort btn btn-primary" data-sort="sub-id">Trier par date</button>
+          <div class="btn-group">
+            <button class="sort btn btn-primary" data-sort="child-name">Trier par Nom</button>
+            <button class="sort btn btn-primary" data-sort="sub-id">Trier par date</button>
+            <button id="girl" class="btn btn-primary">Fille</button>
+            <button id="boy" class="btn btn-primary">Garçon</button>
+            <button id="all" class="btn btn-primary">Tous</button>
+          </div>
           <!-- <button class="sort btn btn-primary" data-sort="sub-id">Trier par date</button> -->
           <select id="step-select">
-            <option class="step-0" selected>Aucun</option>
-            <option class="step-1">Nouvelles demandes</option>
-            <option class="step-2">Valider le rendez-vous</option>
-            <option class="step-3">Attente de réponse</option>
-            <option class="step-4">Créer les comptes</option>
+            <option value="" selected>Aucun</option>
+            <option value="0">Nouvelles demandes</option>
+            <option value="1">Valider le rendez-vous</option>
+            <option value="2">Attente de réponse</option>
+            <option value="3">Créer les comptes</option>
           </select>
         </div>
 
         <div class="list">
           <% @subscriptions.each do |subscription| %>
-            <div class="col-xs-12" id="sub-<%= subscription.id %>">
-              <div class="sub-card">
-                <div class="sub-info">
 
-                  <p class="sub-id hidden"><%= subscription.id %></p>
-                  <h3 class="sub-date"><%= subscription.created_at.strftime("%d-%m-%Y") %></h3>
+            <div class="sub-card" id="sub-<%= subscription.id %>">
+              <p class="sub-id hidden"><%= subscription.id %></p>
 
-                  <% subscription.parent_no_valids.each do |parent| %>
-                    <div class="parent">
-                      <h4><%= parent.role %></h4>
-                      <p><%= parent.last_name.capitalize %> <%= parent.first_name.capitalize %></p>
-                      <p><%= parent.email %></p>
-                      <p><%= parent.mobile %></p>
-                    </div>
-                  <% end %>
+              <div class="sub-body">
 
-                  <% subscription.child_no_valids.each do |child| %>
-                    <div class="child">
-                      <h4>Enfant</h4>
-                      <p class="child-name">
-                        <%= child.first_name.capitalize %> <%= child.last_name.capitalize %>
-                      </p>
-                    </div>
-                  <% end %>
+                <div class="sub-date text-center">
+                  <div class="sub-create">
+                    <p class="bold">Demande du</p>
+                    <p><%= subscription.created_at.strftime("%d-%m-%Y") %></p>
+                  </div>
 
+                  <div class="sub-update">
+                    <p class="bold">Modifiée le</p>
+                    <p><%= subscription.updated_at.strftime("%d-%m-%Y") %></p>
+                  </div>
                 </div>
 
-                <div class="sub-links">
-                  <%= link_to "Info", info_subscription_path(subscription) %>
-                  <% if subscription.status == "Etape 0" %>
-                    <%= link_to rendez_vous_path(subscription) do %>
-                      <p class="sub_status hidden">0</p>
-                      <button class="btn btn-success">Accepter le dossier</button>
-                    <% end %>
-                  <% elsif subscription.status == "Etape 1" %>
-                    <%= link_to etape_1_to_2_path(subscription) do %>
-                      <p class="sub-status hidden">1</p>
-                      <button class="btn btn-success">Valider le rendez-vous</button>
-                    <% end %>
-                  <% elsif subscription.status == "Etape 2" %>
-                    <!-- cette validation se fait lorsque les parents submit le second_form -->
-                    <%#= link_to "Go to Etape 3", etape_2_to_3_path(subscription) %>
-                    <p class="sub-status hidden">2</p>
-                    <button class="btn btn-warning" disabled>Attente de réponse</button>
-                    <%# end %>
-                  <% else %>
-                    <%= link_to etape_3_path(subscription) do %>
-                      <p class="sub-status hidden">3</p>
-                      <button class="btn btn-success">Créer les comptes</button>
-                    <% end %>
-                  <% end %>
+                <div class="sub-infos">
 
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<%= subscription.id %>">Refuser et supprimer</button>
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="deleteModal<%= subscription.id %>" tabindex="-1" role="dialog" aria-labelledby="deleteModal<%= subscription.id %>Label" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h3 class="modal-title" id="deleteModal<%= subscription.id %>Label">ATTENTION !</h3>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Vous êtes sur le point de supprimer un dossier d'inscription !</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler et revenir</button>
-                          <%= link_to subscription_path(subscription), method: :delete do %>
-                            <button class="btn btn-danger btn-delete" data-dismiss="modal" data-card-id="sub-<%= subscription.id %>">Confirmer et supprimer</button>
-                          <% end %>
+                  <div class="children">
+                    <% subscription.child_no_valids.each do |child| %>
+                      <div class="child">
+                        <h3 class="child-name">
+                          <%= child.first_name.capitalize %> <%= child.last_name.capitalize %>
+                        </h3>
+                        <div class="child-details flex-center-space-between">
+                          <h4 class="child-birth">
+                            <%= child.birth_date.strftime("%d-%m-%Y") %> (<%= child.age %> ans)
+                          </h4>
+                          <h4 class="sex">
+                            <% if child.gender == "Masculin" %>
+                              Garçon
+                            <% else %>
+                              Fille
+                            <% end %>
+                          </h4>
                         </div>
                       </div>
-                    </div>
+                    <% end %>
+                  </div>
+
+                  <div class="parents">
+                    <% subscription.parent_no_valids.each do |parent| %>
+                      <div class="parent-card">
+                        <div class="parent">
+                          <h4><%= parent.role %></h4>
+                          <p><%= parent.last_name.capitalize %> <%= parent.first_name.capitalize %></p>
+                          <p><%= parent.email %></p>
+                          <p><%= parent.mobile %></p>
+                        </div>
+                      </div>
+                    <% end %>
                   </div>
 
                 </div>
 
+
+                <%= link_to "", subscription_path(subscription), class: 'info-link' %>
               </div>
+
+              <!-- Status button -->
+              <div class="sub-actions flex-center-center">
+
+                <% if subscription.status == "Etape 0" %>
+                  <div class="first-action flex-center-space-around active">
+                    <p class="sub_status">0</p>
+                    <%= link_to "Accepter le dossier", rendez_vous_path(subscription) %>
+                  </div>
+                <% else %>
+                  <div class="first-action flex-center-space-around">
+                    <p>Accepter le dossier</p>
+                  </div>
+                <% end %>
+
+                <% if subscription.status == "Etape 1" %>
+                  <div class="action flex-center-space-around active">
+                    <p class="sub_status">1</p>
+                    <%= link_to "Valider le rendez-vous", etape_1_to_2_path(subscription) %>
+                  </div>
+                <% else %>
+                  <div class="action flex-center-space-around">
+                    <p>Valider le rendez-vous</p>
+                  </div>
+                <% end %>
+
+                <% if subscription.status == "Etape 2" %>
+                  <div class="action flex-center-space-around waiting">
+                    <p class="sub_status">2</p>
+                    <p>Attente de réponse</p>
+                  </div>
+                <% else %>
+                  <div class="action flex-center-space-around">
+                    <p>Attente de réponse</p>
+                  </div>
+                <% end %>
+
+                <% if subscription.status == "Etape 3" %>
+                  <div class="last-action flex-center-space-around active">
+                    <p class="sub_status">3</p>
+                    <%= link_to "Créer les comptes", etape_3_path(subscription) %>
+                  </div>
+                <% else %>
+                  <div class="last-action flex-center-space-around">
+                    <p>Créer les comptes</p>
+                  </div>
+                <% end %>
+
+              </div>
+
             </div>
           <% end %>
         </div>
+
+        <ul class="pagination"></ul>
 
       </div>
     </div>

@@ -71,7 +71,17 @@ body {
 .wrap {
   flex-wrap: wrap;
 }
-.flex-center-space-between{
+.flex-start-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.flex-start-space-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.flex-center-space-between {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,6 +108,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column
+}
+.flex-end-space-between-column {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   flex-direction: column
 }
 
@@ -231,52 +247,7 @@ li {
 //   background-image: image-url("backgrounds/quadrillage_gold.svg");
 //   background-position: center;
 // }
-// @media screen and (max-width: 599.98px) {
-//   .hideout {
-//     background-size: 2%;
-//   }
-//   .triangles {
-//     background-size: 1.6%;
-//   }
-//   .leaf {
-//     background-size: 2.3%;
-//   }
-//   .dots {
-//     background-size: 2.2%;
-//   }
-//   .quadrillage {
-//     background-size: 20%;
-//   }
-//   .quadrillage_gold {
-//     background-size: 20%;
-//   }
-//   .texture {
-//     background-size: 1%;
-//   }
-// }
-// @media screen and (min-width: 600px) {
-//   .texture {
-//     background-size: 5px;
-//   }
-//   .dots {
-//     background-size: 11px;
-//   }
-//   .triangles {
-//     background-size: 8px;
-//   }
-  // .hideout {
-  //   background-size: 10px;
-  // }
-  // .quadrillage {
-  //   background-size: 100px;
-  // }
-  // .quadrillage_gold {
-  //   background-size: 10%;
-  // }
-  // .leaf {
-  //   background-size: 20px;
-  // }
-// }
+
 //Shadow
 .shadow {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -413,3 +384,47 @@ li {
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate;
 }
+//Delete Modal
+// .modal-content {
+//   border-radius: $r-md;
+// }
+// .modal-header {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//   border: none;
+//   .modal-title {
+//     font-weight: 600;
+//   }
+//   .close {
+//     position: absolute;
+//     top: 25px;
+//     right: 20px;
+//     font-size: 27px;
+//     font-weight: bold;
+//     line-height: 0;
+//     color: $blue;
+//   }
+// }
+// .modal-body {
+//   p {
+//     font-weight: 600;
+//     text-align: center;
+//   }
+// }
+// .modal-footer {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   border: none;
+//   padding-top: 30px;
+//   &:before,
+//   &:after {
+//     display: none;
+//   }
+//   button {
+//     width: 210px;
+//   }
+//   .btn-primary {}
+// }

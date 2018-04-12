@@ -1,13 +1,6 @@
 #dashboard_admin {
   min-height: calc(100vh - 140px);
-  .sub-card {
-    height: 200px;
-    border: 1px solid $light-blue;
-    border-radius: $r-md;
-    padding: 20px;
-    margin-bottom: 10px;
-    background-color: white;
-  }
+  padding: 20px 0;
   #dashboard_admin_search {
     margin-bottom: 20px;
     input {
@@ -15,73 +8,146 @@
       text-align: left;
       font-weight: normal;
     }
-  }
-  // .dash-info {
-  // flex: 1 0 auto
-  // }
-  // .dash-subcription {
-  //   box-shadow: 3px 3px 5px rgb(200,200,200);
-  //   margin-top: 30px;
-  //   display: flex;
-  //   justify-content: space-around;
-  //   .dash-subcription-childNoValid {
-  //     h4 {
-  //       margin-top: 12.5px;
-  //     }
-  //   }
-  // }
-  // .sub {
-  //   position: relative;
-  //   .sub-info{
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //   }
-  // }
-  // .separate {
-  //   border-bottom:1px solid #c8d2db
-  // }
-  .modal-content {
-    border-radius: $r-md;
-  }
-  .modal-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border: none;
-    .modal-title {
-      font-weight: 600;
+    .btn {
+      margin-top: 0;
+      padding: 6px 18px;
     }
-    .close {
-      position: absolute;
-      top: 25px;
-      right: 20px;
-      font-size: 27px;
-      font-weight: bold;
-      line-height: 0;
+    .btn:hover,
+    .btn:active,
+    .btn:focus {
+      background-color: $yellow;
       color: $blue;
     }
+    #step-select {
+      height: 37px;
+    }
   }
-  .modal-body {
-    p {
+  .sub-card {
+    margin-bottom: 10px;
+    background-color: white;
+  }
+  .sub-body {
+    border-top: 1px solid $light-blue;
+    border-left: 1px solid $light-blue;
+    border-right: 1px solid $light-blue;
+    border-radius: $r-md $r-md 0 0;
+    position: relative;
+  }
+  .sub-date {
+    width: calc(24.9% - 40px);
+    float: right;
+    margin: 20px;
+    padding: 10px;
+    border-radius: $r-sm;
+    border: 1px solid $light-blue;
+    .sub-update {
+      margin-top: 10px;
+    }
+  }
+  .sub-infos {
+    width: 75%;
+  }
+  .children,
+  .parents {
+    width: 100%;
+  }
+  .children {
+    margin-top: 20px;
+  }
+  .parents {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    div {
+      display: inline-block;
+    }
+  }
+  .child {
+    h3, div {
+      display: inline-block;;
+    }
+  }
+  .child-name {
+    width: 50%;
+    padding-left: 20px;
+  }
+  .child-details {
+    width: 49%;
+    h4 {
+      display: inline-block;
+    }
+    .sex {
+      float: right;
+    }
+  }
+  .parent-card {
+    width: 49%;
+    &:first-child {
+      padding-left: 20px;
+      width: 50%;
+    }
+  }
+  .parent {
+    border-left: 1px solid $light-blue;
+    padding-left: 5px;
+  }
+  .info-link {
+    position: absolute;
+    border-radius: $r-md $r-md 0 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .sub-actions {
+    width: 100%;
+    .sub_status {
+      display: none;
+    }
+    .first-action,
+    .action,
+    .last-action {
+      width: 25%;
+      height: 35px;
+      background-color: $light-gray;
+      color: $blue;
+      font-weight: normal;
+    }
+    .first-action {
+      border-radius: 0 0 0 $r-md;
+    }
+    .action {
+      border-left: 1px solid $light-blue;
+    }
+    .last-action {
+      border-left: 1px solid $light-blue;
+      border-radius: 0 0 $r-md 0;
+    }
+    .active {
+      background-color: $blue;
+      color: white;
       font-weight: 600;
+      a {
+        color: white;
+      }
+      &:hover {
+        background-color: $yellow;
+        color: $blue;
+      }
+      &:hover a {
+        color: $blue;
+      }
+    }
+    .waiting {
+      background-color: $orange;
+      color: white;
+      font-weight: 600;
+    }
+    a, p {
       text-align: center;
     }
   }
-  .modal-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
-    padding-top: 30px;
-    &:before,
-    &:after {
-      display: none;
-    }
-    button {
-      width: 210px;
-    }
-    .btn-primary {}
+  .pagination li {
+    display:inline-block;
+    padding:5px;
   }
 }
