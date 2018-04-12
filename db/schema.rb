@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20180402104818) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "workshop"
-    t.bigint "subscription_id"
-    t.index ["subscription_id"], name: "index_second_forms_on_subscription_id"
+    t.bigint "child_no_valid_id"
+    t.index ["child_no_valid_id"], name: "index_second_forms_on_child_no_valid_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -123,5 +123,5 @@ ActiveRecord::Schema.define(version: 20180402104818) do
   add_foreign_key "child_no_valids", "subscriptions"
   add_foreign_key "more_infos", "subscriptions"
   add_foreign_key "parent_no_valids", "subscriptions"
-  add_foreign_key "second_forms", "subscriptions"
+  add_foreign_key "second_forms", "child_no_valids"
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # subscriptions Routes
-  resources :subscriptions, only: [:show, :create, :new, :destroy] do
+  resources :subscriptions, only: [:create, :new, :destroy] do
     resources :child_no_valids, only: [:new, :create, :edit, :update] do
       resources :second_forms, only: [:new, :create, :index]
       resources :doc_to_signs, only: [:index, :show]
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   # Dashboard Route
   get "/dashboard", to: "dashboards#dashboard"
+  get "/dashboard/:id", to: "subscriptions#show", as: "info_subscription"
   get "/dashboard/subscriptions/:id/rendez_vous", to: "dashboards#rendez_vous", as: "rendez_vous"
   get "/dashboard/subscriptions/:id/etape_1_to_2", to: "dashboards#etape_1_to_2", as: "etape_1_to_2"
   get "/dashboard/subscriptions/:id/etape_2_to_3", to: "dashboards#etape_2_to_3", as: "etape_2_to_3"

@@ -1,7 +1,7 @@
 class ChildNoValid < ApplicationRecord
   belongs_to :subscription
   has_one :second_form, dependent: :destroy
-
+  
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :gender, presence: true, inclusion: { in: [ "Masculin", "Féminin" ] }
@@ -38,6 +38,14 @@ class ChildNoValid < ApplicationRecord
       child_class = "Erreur !"
     end
     child_class
+  end
+
+  def atmosphere_price
+    if self.child_atmosphere == 0
+      "Un chèque de 800€ pour La Communauté Enfantine"
+    else
+      "Un chèque de 740 € pour La Maison des Enfants"
+    end
   end
 
 end

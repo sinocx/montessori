@@ -39,20 +39,6 @@ class ParentNoValidsController < ApplicationController
     end
   end
 
-  def role_check
-    @more_info = MoreInfo.new()
-    if @parent.role == "Tuteur"
-      redirect_to new_subscription_more_info_path(@subscription, @more_info)
-    else
-      if no_more_parent?
-        redirect_to new_subscription_more_info_path(@subscription, @more_info)
-      else
-        redirect_to new_subscription_parent_no_valid_path(@subscription, @parent)
-      end
-    end
-  end
-
-
   private
   def parent_no_valids_params
     params.require(:parent_no_valid).permit(:first_name,
