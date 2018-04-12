@@ -10,9 +10,14 @@ class SecondFormsController < ApplicationController
   end
 
   def create
+    @child_no_valid = ChildNoValid.find(params[:child_no_valid_id])
     @second_form = SecondForm.new(second_form_params)
-    @second_form.subscription_id = @subscription
-    if @second_form.save!
+    @second_form.subscription = @subscription
+    if @second_form.save
+      @subscription.update(status: 3)
+      @subscription.parent_no_valids.each do|parent_no_valid|
+        SubscriptionMailer.etape_2_3(parent_no_valid, @subscription, @child_no_valid).deliver_now
+      end
       redirect_to inscription_success_path
     else
       render :new

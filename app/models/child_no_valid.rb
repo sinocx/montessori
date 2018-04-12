@@ -16,4 +16,11 @@ class ChildNoValid < ApplicationRecord
   def montessori_before?
     montessori_before
   end
+  def atmosphere
+    if self.child_atmosphere == 0
+      "Un chèque de 800€ pour La Communauté Enfantine"
+    else
+      "Un chèque de 740 € pour La Maison des Enfants"
+    end
+  end
 end
