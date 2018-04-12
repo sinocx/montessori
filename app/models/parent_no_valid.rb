@@ -18,7 +18,6 @@ class ParentNoValid < ApplicationRecord
             presence: true,
             format: { with: /0[1-5|9](\d{2}){4}/ },
             presence: { message: 'Téléphone fixe uniquement' },
-            uniqueness: true,
             unless: ->(parent_no_valid){parent_no_valid.mobile.present?}
   validates :mobile,
             presence: true,
