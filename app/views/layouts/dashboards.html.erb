@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'dashboard', media: 'all' %>
+  </head>
+  <body>
+    <div class="wrapper dots">
+      <div class="container">
+        <div class="row">
+          <%= render 'shared/admin_navbar' %>
+          <%= render 'shared/flashes' %>
+
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%#= javascript_include_tag 'application' %>
+    <%#= javascript_pack_tag 'application' %>
+  </body>
+</html>

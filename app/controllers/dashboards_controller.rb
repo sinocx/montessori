@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
 
   def dashboard
-    @subscriptions = Subscription.all.includes(:child_no_valids, :parent_no_valids, :more_info, :second_forms)
+    @subscriptions = Subscription.all.includes(:child_no_valids, :parent_no_valids)
   end
 
   def rendez_vous

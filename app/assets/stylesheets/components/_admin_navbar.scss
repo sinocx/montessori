@@ -1,0 +1,28 @@
+#admin-nav-container {
+  height: 100%;
+  background-color: $light-gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  h3 {
+    margin-top: 20px;
+    padding-left: 20px;
+    font-weight: 600;
+  }
+  hr {
+    margin: 20px 0 0 0;
+  }
+  .admin-link {
+    height: 35px;
+    padding-left: 20px;
+    border-bottom: 1px solid $light-blue;
+    &:hover,
+    &.active {
+      background-color: $blue;
+      color: $light-gray;
+      font-weight: 600;
+    }
+  }
+
+}
