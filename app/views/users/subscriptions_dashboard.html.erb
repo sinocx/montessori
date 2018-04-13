@@ -1,4 +1,4 @@
-<div class="col-xs-10 col-xs-offset-2" id="dashboard_admin">
+<div class="user-wrapper dots" id="dashboard_admin">
 
   <div id="dashboard_admin_search" class="flex-center-space-between">
     <input class="search btn" placeholder="Search" />
@@ -86,7 +86,7 @@
               <% end %>
             </div>
           </div>
-          <%= link_to "", info_subscription_path(subscription), class: 'info-link' %>
+          <%= link_to "", subscription_show_path(subscription), class: 'info-link' %>
         </div>
 
         <!-- Status button -->
@@ -147,5 +147,5 @@
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-<%= javascript_pack_tag 'admin-index' %>
+<%= javascript_pack_tag 'subscriptions_dashboard' %>
 

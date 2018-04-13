@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   def index
 
   end
-  def subscription
+  def subscriptions_dashboard
     @subscriptions = Subscription.all.includes(:child_no_valids, :parent_no_valids)
   end
 
-  def show_subscription
+  def subscription_show
     @subscription = Subscription.find(params[:id])
   end
 

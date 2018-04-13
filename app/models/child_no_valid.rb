@@ -1,7 +1,7 @@
 class ChildNoValid < ApplicationRecord
   belongs_to :subscription
   has_one :second_form, dependent: :destroy
-  
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :gender, presence: true, inclusion: { in: [ "Masculin", "Féminin" ] }
@@ -23,6 +23,14 @@ class ChildNoValid < ApplicationRecord
     today = Date.today
     age = ((today - birth_date) / 365.25).to_i
     age
+  end
+
+  def sex
+    if self.gender == "Feminin"
+      "Fille"
+    else
+      "Garçon"
+    end
   end
 
   def atmosphere

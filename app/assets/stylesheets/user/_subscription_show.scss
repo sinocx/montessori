@@ -1,0 +1,48 @@
+#sub-show {
+  .column1,
+  .column2 {
+    width: 50%;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+  .row.delete {
+    margin: 0;
+    width: 100%;
+    height: 37px;
+    position: relative;
+    .btn-delete {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .card {
+    position: relative;
+    background: white;
+    border: 1px solid #B3C2CE;
+    border-radius: $r-sm;
+    padding: 20px;
+  }
+
+  .delete-child {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    i {
+      font-size: 20px;
+    }
+  }
+
+}
+  .title-role {
+    margin-bottom: 20px;
+    margin-left: 15px;
+  }
+  .font-icon {
+    font-size: 20px;
+    color: $blue;
+  }
+  .enveloppe {
+    margin-right: 5px;
+  }

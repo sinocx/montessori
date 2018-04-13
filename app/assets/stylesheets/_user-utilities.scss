@@ -37,9 +37,12 @@ textarea.form-control {
 body {
   // margin-left: 200px;
 }
-#admin-main-wrapper {
+.user-wrapper {
+  margin-left: 200px;
   min-height: 100vh;
+  padding: 30px;
 }
+
 //Flex container
 .flex-center-center {
   display: flex;
