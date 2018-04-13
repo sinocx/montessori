@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   # Dashboard Route
   get "/dashboard", to: "dashboards#dashboard"
-  get "/dashboard/:id", to: "subscriptions#show", as: "info_subscription"
+  get "/dashboard/:id", to: "dashboards#show_subscription", as: "info_subscription"
   get "/dashboard/subscriptions/:id/rendez_vous", to: "dashboards#rendez_vous", as: "rendez_vous"
   get "/dashboard/subscriptions/:id/etape_1_to_2", to: "dashboards#etape_1_to_2", as: "etape_1_to_2"
   get "/dashboard/subscriptions/:id/etape_2_to_3", to: "dashboards#etape_2_to_3", as: "etape_2_to_3"
