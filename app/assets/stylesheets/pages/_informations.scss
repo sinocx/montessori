@@ -66,8 +66,13 @@
   }
 }
 #informations-calendar {
-  h1 {
-    margin-bottom: 50px;
+  h2 {
+    margin-bottom: 5px;
+  }
+  .subtitle {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
   }
   .hollidays,
   .ferie {
