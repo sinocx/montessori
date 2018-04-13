@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   margin: 20px;
   background: white;
   border: 1px solid #B3C2CE;
@@ -6,5 +7,20 @@
   .title-role {
     margin-bottom: 20px;
     margin-left: 15px;
+  }
+  .font-icon {
+    font-size: 20px;
+    color: $blue
+  }
+  .delete-child {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+  .font-delete {
+    font-size: 30px;
+  }
+  .enveloppe {
+    margin-right: 5px;
   }
 }

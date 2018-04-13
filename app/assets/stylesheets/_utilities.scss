@@ -76,6 +76,12 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
 }
+.flex-start-space-around {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
 .flex-start-space-between {
   display: flex;
   align-items: flex-start;
@@ -113,6 +119,12 @@ body {
 .flex-end-space-between-column {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column
+}
+.flex-start-space-between-column {
+  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   flex-direction: column
 }
