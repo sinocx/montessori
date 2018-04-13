@@ -10,10 +10,8 @@ class ChildNoValidsController < ApplicationController
     @subscription = params[:subscription_id]
     good_params = child_no_valids_params.reject{ |k, v| k == "birth_date(3i)" || k == "birth_date(2i)" || k == "birth_date(1i)" }
     good_params["birth_date"] = defineBirthDate
-    # good_params["child_atmosphere"] = good_params["child_atmosphere"].to_i
     @child = ChildNoValid.new(good_params)
     @child.subscription_id =  params[:subscription_id]
-    # raise
     if @child.save!
       next_step
     else
@@ -29,6 +27,17 @@ class ChildNoValidsController < ApplicationController
         format.js
         format.html { render 'parent_no_valids/update'}
       end
+    end
+  end
+
+  def destroy
+    @subscription = Subscription.find(params[:subscription_id])
+    if @subscription.child_no_valids.length <= 1
+      redirect_to info_subscription_path(@subscription)
+    else
+      @child_no_valid = ChildNoValid.find(params[:id])
+      @child_no_valid.destroy
+      redirect_to info_subscription_path(@subscription)
     end
   end
 
