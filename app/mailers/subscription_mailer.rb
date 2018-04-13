@@ -23,7 +23,9 @@ class SubscriptionMailer < ApplicationMailer
     @subscription = subscription
     @parent_no_valid = parent_no_valid
     @greeting = "Hi"
-    attachments['test1.pdf'] = File.read("app/assets/images/test1.pdf")
+    attachments['Autorisation-Parentale-intervention.pdf'] = File.read("app/assets/images/mail/Autorisation-Parentale-intervention.pdf")
+    attachments['Autorisation-droit-image.pdf'] = File.read("app/assets/images/mail/Autorisation-droit-image.pdf")
+    attachments['autorisation_écrite_et_permanente_de_sorties.pdf'] = File.read("app/assets/images/mail/autorisation_écrite_et_permanente_de_sorties.pdf")
     mail to: @parent_no_valid.email, subject: "Confirmation de votre demande d'inscription à l'école Les Petites Graines"
   end
 
