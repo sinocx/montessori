@@ -5,7 +5,10 @@ class UsersController < ApplicationController
 
   end
   def subscription
-    @subscriptions = Subscription.all.includes(:child_no_valids, :parent_no_valids)
+    @subscription_filtereds = Subscription.includes(:child_no_valids, :parent_no_valids).where(:more_info.present?)
+    # @subscription_filtereds = @subscriptions.select do |sub|
+    #                           sub.more_info.present?
+    #                         end
   end
 
   def show_subscription
