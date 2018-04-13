@@ -50,20 +50,18 @@
       </div>
     </div>
     <div class="subscription-show-more-info">
-      <% @subscription.more_infos.each do |more_info| %>
-        <p><%= more_info.reason_why %></p>
-      <% end %>
+      <p><%= @subscription.more_info.reason_why %></p>
     </div>
 
     <!-- Button modal delete -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<%= subscription.id %>">Refuser et supprimer</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<%= @subscription.id %>">Refuser et supprimer</button>
 
     <!-- Delete Modal -->
-    <div class="modal fade" id="deleteModal<%= subscription.id %>" tabindex="-1" role="dialog" aria-labelledby="deleteModal<%= subscription.id %>Label" aria-hidden="true">
+    <div class="modal fade" id="deleteModal<%= @subscription.id %>" tabindex="-1" role="dialog" aria-labelledby="deleteModal<%= @subscription.id %>Label" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="deleteModal<%= subscription.id %>Label">ATTENTION !</h3>
+            <h3 class="modal-title" id="deleteModal<%= @subscription.id %>Label">ATTENTION !</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -74,7 +72,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler et revenir</button>
             <%= link_to subscription_path(@subscription), method: :delete do %>
-              <button class="btn btn-danger btn-delete" data-dismiss="modal" data-card-id="sub-<%= subscription.id %>">Confirmer et supprimer</button>
+              <button class="btn btn-danger btn-delete" data-dismiss="modal" data-card-id="sub-<%= @subscription.id %>">Confirmer et supprimer</button>
             <% end %>
           </div>
         </div>

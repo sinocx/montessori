@@ -9,11 +9,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS partials
-@import "layouts/index";
-@import "components/index";
-@import "pages/index";
-@import "contacts/index";
-@import "devise/index";
+@import "admin-utilities";
+@import "components/index_admin";
 
-@import "utilities";
+@import "admin/index";
