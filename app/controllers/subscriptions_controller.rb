@@ -1,10 +1,6 @@
 class SubscriptionsController < ApplicationController
    skip_before_action :authenticate_user!
 
-  def show
-    @subscription = Subscription.find(params[:id])
-  end
-
   def new
     @subscription = Subscription.new()
   end
