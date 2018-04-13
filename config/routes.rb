@@ -15,13 +15,14 @@ Rails.application.routes.draw do
   get '/subscriptions/:subscription_id/child_no_valids/:child_no_valid_id/authorisation_de_sortie', to: "doc_to_signs#sortie", as: "doc1"
 
 
-  # Dashboard Route
-  get "/dashboard", to: "dashboards#dashboard"
-  get "/dashboard/:id", to: "dashboards#show_subscription", as: "info_subscription"
-  get "/dashboard/subscriptions/:id/rendez_vous", to: "dashboards#rendez_vous", as: "rendez_vous"
-  get "/dashboard/subscriptions/:id/etape_1_to_2", to: "dashboards#etape_1_to_2", as: "etape_1_to_2"
-  get "/dashboard/subscriptions/:id/etape_2_to_3", to: "dashboards#etape_2_to_3", as: "etape_2_to_3"
-  get "/dashboard/subscriptions/:id/validate_etape_3", to: "dashboards#validate_etape_3", as: "etape_3"
+  # Admin Route
+  get "/admin", to: "users#index"
+  get "/admin/subscriptions", to: "users#subscription", as: "subscription_admin"
+  get "/admin/subscriptions/:id", to: "users#show_subscription", as: "info_subscription"
+  get "/admin/subscriptions/:id/rendez_vous", to: "users#rendez_vous", as: "rendez_vous"
+  get "/admin/subscriptions/:id/etape_1_to_2", to: "users#etape_1_to_2", as: "etape_1_to_2"
+  get "/admin/subscriptions/:id/etape_2_to_3", to: "users#etape_2_to_3", as: "etape_2_to_3"
+  get "/admin/subscriptions/:id/validate_etape_3", to: "users#validate_etape_3", as: "etape_3"
 
   # Visitor Routes
   root to: 'pages#home'

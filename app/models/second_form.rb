@@ -1,6 +1,5 @@
 class SecondForm < ApplicationRecord
   belongs_to :child_no_valid
-  belongs_to :more_info
 
   def price_canteen
     if self.canteen == 1
