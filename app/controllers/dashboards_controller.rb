@@ -4,6 +4,10 @@ class DashboardsController < ApplicationController
     @subscriptions = Subscription.all.includes(:child_no_valids, :parent_no_valids)
   end
 
+  def show_subscription
+    @subscription = Subscription.find(params[:id])
+  end
+
   def rendez_vous
     @subscription = Subscription.find(params[:id])
     @subscription.status = 1
