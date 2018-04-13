@@ -1,8 +1,10 @@
 .card {
   margin: 20px;
-  background: $blue;
-  color: $light-gray;
+  background: white;
+  border: 1px solid #B3C2CE;
+  border-radius: 10px;
   .title-role {
     margin-bottom: 20px;
+    margin-left: 15px;
   }
 }
