@@ -2,8 +2,8 @@
   <div class="container">
     <div class="flex-center-space-between ">
       <% @subscription.parent_no_valids.each do |parent| %>
-        <div class="shadow padding-50 card">
-          <div class="col-xs-12 title-role">
+        <div class="padding-50 card">
+          <div class="title-role">
             <h4><%= parent.role.capitalize %></h4>
           </div>
           <div class="col-xs-6">
@@ -17,28 +17,37 @@
             <p><%= parent.address.capitalize %></p>
             <p><%= parent.zip_code.capitalize %> <%= parent.city.capitalize %></p>
             <p><%= parent.phone.capitalize %></p>
+            <div class="flex-center-start">
+              <i class="fas fa-mobile"></i>
             <p><%= parent.mobile.capitalize %></p>
-            <p><%= parent.email %></p>
+
+            </div>
+             <div class="flex-center-start">
+              <i class="far fa-envelope"></i>
+              <p><%= parent.email.capitalize %></p>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
     <div class="row">
-      <% @subscription.child_no_valids.each do |child| %>
-        <div class="flex-center-center shadow card">
-          <div class="col-xs-6">
-            <h4><%= child.first_name.capitalize %> <%= child.last_name.capitalize %></h4>
+      <div class="col-xs-12">
+        <% @subscription.child_no_valids.each do |child| %>
+          <div class="col-xs-12 card padding-50">
+            <div class="title-role">
+              <h4 ><%= child.first_name.capitalize %> <%= child.last_name.capitalize %></h4>
+            </div>
+            <div class="col-xs-12">
+              <p><%= child.birth_date %></p>
+              <p><%= child.gender.capitalize %></p>
+              <p><%= child.nationality.capitalize %></p>
+              <p><%= child.first_lang.capitalize %></p>
+              <p><%= child.snd_lang.capitalize %></p>
+              <p><%= child.comment.capitalize %></p>
+            </div>
           </div>
-          <div class="col-xs-12">
-            <p><%= child.birth_date %></p>
-            <p><%= child.gender.capitalize %></p>
-            <p><%= child.nationality.capitalize %></p>
-            <p><%= child.first_lang.capitalize %></p>
-            <p><%= child.snd_lang.capitalize %></p>
-            <p><%= child.comment.capitalize %></p>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="subscription-show-more-info">
       <% @subscription.more_infos.each do |more_info| %>
@@ -47,5 +56,3 @@
     </div>
   </div>
 </div>
-        </div>
-        <div class="col-xs-12">
