@@ -13,12 +13,12 @@
           </div>
 
           <div class="form-actions">
-            <%#= f.button :submit, "Log in", class: "btn btn-success btn-block" %>
+            <%= f.button :submit, "Log in", class: "btn btn-success btn-block" %>
           </div>
         <% end %>
-
+        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
         <div class="text-center" style="margin-top: 20px;">
-          <%= render "devise/shared/links" %>
+          <%#= render "devise/shared/links" %>
         </div>
 
       </div>
