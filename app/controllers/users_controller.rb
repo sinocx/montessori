@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
 
   end
+
   def subscription
     @subscriptions = Subscription.includes(:child_no_valids, :parent_no_valids, :more_info)
     @subscription_filtereds = @subscriptions.select do |sub|
@@ -41,7 +42,6 @@ class UsersController < ApplicationController
     @subscription.parent_no_valids.each do|parent_no_valid|
       SubscriptionMailer.etape_1_2(parent_no_valid, @subscription, @child_no_valids).deliver_now
     end
-    @subscription.destroy
 
     redirect_to subscription_admin_path
   end
