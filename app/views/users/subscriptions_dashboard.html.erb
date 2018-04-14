@@ -30,8 +30,7 @@
   </div>
 
   <div class="list">
-    <% @subscriptions.each do |subscription| %>
-
+    <% @subscription_filtereds.each do |subscription| %>
       <div class="sub-card" id="sub-<%= subscription.id %>">
         <p class="sub-id hidden"><%= subscription.id %></p>
 
@@ -135,15 +134,11 @@
               <p>Créer les comptes</p>
             </div>
           <% end %>
-
         </div>
-
       </div>
     <% end %>
   </div>
-
   <ul class="pagination"></ul>
-
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>

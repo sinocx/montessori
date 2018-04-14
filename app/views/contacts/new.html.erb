@@ -105,8 +105,8 @@
 
         <%= simple_form_for [@contact], url: contact_new_path, method: :post do |f| %>
           <%= f.input :full_name_parent,label: false, placeholder: 'Nom Prénom' %>
-          <%= f.input :phone,label: false, placeholder: 'Votre numéro de téléphone' %>
-          <%= f.input :email,label: false, placeholder: 'votre@email.com' %>
+          <%= f.input :phone,label: false, placeholder: 'Numéro de téléphone' %>
+          <%= f.input :email,label: false, placeholder: 'Email' %>
           <%= f.input :subject,
             label: false,
             collection: ["Demande d'informations", "Inscription", "Restauration", "Garderie", "Atelier du mercredi", "Autre" ],
