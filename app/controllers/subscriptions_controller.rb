@@ -13,5 +13,7 @@ class SubscriptionsController < ApplicationController
   def destroy
     @subscription = Subscription.find(params[:id])
     @subscription.destroy
+
+    redirect_to subscriptions_dashboard_path
   end
 end

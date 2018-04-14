@@ -37,9 +37,12 @@ textarea.form-control {
 body {
   // margin-left: 200px;
 }
-#admin-main-wrapper {
+.user-wrapper {
+  margin-left: 200px;
   min-height: 100vh;
+  padding: 30px 50px;
 }
+
 //Flex container
 .flex-center-center {
   display: flex;
@@ -65,6 +68,11 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+.flex-end-space-between {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
 .wrap {
   flex-wrap: wrap;
 }
@@ -76,7 +84,7 @@ body {
 .flex-start-space-between {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .flex-center-space-between {
   display: flex;
