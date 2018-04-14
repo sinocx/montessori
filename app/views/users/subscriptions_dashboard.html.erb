@@ -1,4 +1,4 @@
-<div class="user-wrapper dots" id="dashboard_admin">
+<div class="wrapper user-wrapper dots" id="dashboard_admin">
 
   <div id="dashboard_admin_search" class="flex-center-space-between">
     <input class="search" placeholder="Search" />
@@ -30,7 +30,7 @@
   </div>
 
   <div class="list">
-    <% @subscription_filtereds.each do |subscription| %>
+    <% @subscriptions.each do |subscription| %>
       <div class="sub-card" id="sub-<%= subscription.id %>">
         <p class="sub-id hidden"><%= subscription.id %></p>
 
