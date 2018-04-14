@@ -1,12 +1,18 @@
 #sub-show {
+  padding: 30px 50px;
   .column1,
   .column2 {
     width: 50%;
   }
   .card {
     margin-bottom: 20px;
+    .second-form {
+      padding-top: 8px;
+      margin-top: 10px;
+      border-top: 1px solid $light-blue;
+    }
   }
-  .row.delete {
+  .row.sub-actions-delete {
     margin: 0;
     width: 100%;
     height: 37px;
@@ -22,9 +28,14 @@
     background: white;
     border: 1px solid #B3C2CE;
     border-radius: $r-sm;
-    padding: 20px;
+    padding: 15px 20px;
+    h3 {
+      font-weight: 600;
+    }
   }
-
+  .comment-text {
+    margin-top: 5px;
+  }
   .delete-child {
     position: absolute;
     top: 20px;
@@ -33,16 +44,113 @@
       font-size: 20px;
     }
   }
-
-}
-  .title-role {
-    margin-bottom: 20px;
-    margin-left: 15px;
+  .list-item {
+    padding-bottom: 5px;
+    // margin-bottom: 8px;
+    // border-bottom: 1px solid $light-blue;
   }
-  .font-icon {
-    font-size: 20px;
+  .list-item-head {
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid $light-blue;
+  }
+  .sub-actions {
+    width: calc(100% - 199.58px);
+    border: 1px solid $light-blue;
+    border-radius: $r-sm;
+    .sub_status {
+      display: none;
+    }
+    .first-action,
+    .action,
+    .last-action {
+      width: 25%;
+      height: 35px;
+      background-color: $light-gray;
+      color: $blue;
+      font-weight: normal;
+    }
+    .first-action {
+      border-radius: $r-sm 0 0 $r-sm;
+    }
+    .action {
+      border-left: 1px solid $light-blue;
+    }
+    .last-action {
+      border-left: 1px solid $light-blue;
+      border-radius: 0 $r-sm $r-sm 0;
+    }
+    .active {
+      background-color: $blue;
+      color: white;
+      font-weight: 600;
+      a {
+        color: white;
+      }
+      &:hover {
+        background-color: $yellow;
+        color: $blue;
+      }
+      &:hover a {
+        color: $blue;
+      }
+    }
+    .waiting {
+      background-color: $orange;
+      color: white;
+      font-weight: 600;
+    }
+    a, p {
+      text-align: center;
+    }
+  }
+}
+.font-icon {
+  font-size: 20px;
+  color: $blue;
+}
+.enveloppe {
+  margin-right: 5px;
+}
+.modal-content {
+  border-radius: $r-md;
+}
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  .modal-title {
+    font-weight: 600;
+  }
+  .close {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 0;
     color: $blue;
   }
-  .enveloppe {
-    margin-right: 5px;
+}
+.modal-body {
+  p {
+    font-weight: 600;
+    text-align: center;
   }
+}
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  padding-top: 30px;
+  &:before,
+  &:after {
+    display: none;
+  }
+  button {
+    width: 210px;
+  }
+}
