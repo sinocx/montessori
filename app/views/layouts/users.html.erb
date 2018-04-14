@@ -5,22 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'dashboard', media: 'all' %>
+    <%= stylesheet_link_tag 'user', media: 'all' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   </head>
   <body>
-    <div id="admin-main-wrapper" class="wrapper dots">
-      <div class="container">
-        <div class="row">
-          <%= render 'shared/admin_navbar' %>
-          <%= render 'shared/flashes' %>
+    <%= render 'shared/user_navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
 
-          <%= yield %>
-        </div>
-      </div>
-    </div>
-
-    <%#= javascript_include_tag 'application' %>
-    <%#= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'user' %>
   </body>
 </html>

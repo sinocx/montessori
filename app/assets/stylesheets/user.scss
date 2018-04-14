@@ -9,7 +9,9 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "admin-utilities";
-@import "components/index_admin";
+@import "devise/index";
 
-@import "admin/index";
+@import "user-utilities";
+@import "components/index_user";
+
+@import "user/index";

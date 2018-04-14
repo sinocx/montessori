@@ -1,12 +1,13 @@
 #dashboard_admin {
-  min-height: calc(100vh - 140px);
-  padding: 30px 0;
   #dashboard_admin_search {
     margin-bottom: 30px;
     input {
       border: 1px solid $light-blue;
       text-align: left;
       font-weight: normal;
+      border-radius: $r-sm;
+      height: 37px;
+      padding: 0 10px;
     }
     .btn-group {
       flex-grow: 1;
@@ -14,21 +15,28 @@
         padding: 0 10px;
       }
     }
-    .btn {
+    .btn-primary {
       margin-top: 0;
+      background-color: $light-gray;
+      color: $blue;
+      font-weight: normal;
+    }
+    .border-right {
+      border-right: 1px solid $light-blue;
     }
     .btn:hover,
     .btn:active,
     .btn:focus {
-      background-color: $yellow;
-      color: $blue;
+      background-color: $blue;
+      color: $light-gray;
+      font-weight: 600;
     }
     #step-select {
       height: 37px;
     }
   }
   .sub-card {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: white;
   }
   .sub-body {
@@ -153,8 +161,11 @@
       text-align: center;
     }
   }
-  .pagination li {
-    display:inline-block;
-    padding:5px;
+  .pagination {
+    width: 100%;
+    li {
+      border: none;
+    }
   }
+
 }

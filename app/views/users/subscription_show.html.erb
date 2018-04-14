@@ -1,0 +1,202 @@
+<div class="user-wrapper dots" id="sub-show">
+
+  <div class="row">
+    <% @child_no_valids.each do |child| %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="card">
+
+          <% if @subscription.child_no_valids.count > 1 %>
+            <div class="delete-child">
+              <%= link_to subscription_child_no_valid_path(@subscription,child), method: :delete do  %>
+                <i class="far fa-trash-alt font-delete"></i>
+              <% end %>
+            </div>
+          <% end %>
+
+          <div class="flex-end-space-between list-item-head">
+            <h3><%= child.first_name.capitalize %> <%= child.last_name.capitalize %></h3>
+            <p><%= child.sex.capitalize %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Né(e) le :</p>
+            <p><%= child.birth_date.strftime("%d-%m-%Y") %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Nationalité :</p>
+            <p><%= child.nationality.capitalize %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Langues :</p>
+            <div>
+              <% unless child.snd_lang.nil? %>
+                <p><%= child.first_lang.capitalize %>, <%= child.snd_lang.capitalize %></p>
+              <% else %>
+                <p><%= child.first_lang.capitalize %></p>
+              <% end %>
+            </div>
+          </div>
+          <div>
+            <p class="bold">Commentaires :</p>
+            <p class="comment-text"><%= child.comment.capitalize %></p>
+          </div>
+
+          <% unless child.second_form.nil? %>
+            <div class="second-form">
+              <div class="flex-center-space-between list-item">
+                <p class="bold">Cantine :</p>
+                <p><%= child.second_form.canteen_text %></p>
+              </div>
+              <div class="flex-center-space-between list-item">
+                <p class="bold">Garderie :</p>
+                <p><%= child.second_form.nursery_text %></p>
+              </div>
+              <div class="flex-center-space-between">
+                <p class="bold">Ateliers :</p>
+                <p><%= child.second_form.workshop_text %></p>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% @parent_no_valids.each do |parent| %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="card">
+
+          <div class="flex-end-space-between list-item-head">
+            <h3><%= parent.first_name.capitalize %> <%= parent.last_name.capitalize %></h3>
+            <p><%= parent.role.capitalize %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Langue :</p>
+            <p><%= parent.lang.capitalize %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Situation :</p>
+            <p><%= parent.situation.capitalize %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Profession :</p>
+            <p><%= parent.job.capitalize %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Revenu Fiscal de référence :</p>
+            <p><%= parent.fiscal.capitalize %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Téléphone :</p>
+            <p><%= parent.phone.gsub(/(.{2})(?=.)/, '\1 \2') %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Mobile :</p>
+            <p><%= parent.mobile.gsub(/(.{2})(?=.)/, '\1 \2') %></p>
+          </div>
+          <div class="flex-center-space-between list-item">
+            <p class="bold">Email :</p>
+            <p><%= parent.email.capitalize %></p>
+          </div>
+          <div class="flex-start-space-between">
+            <p class="bold">Adresse :</p>
+            <p><%= parent.address.capitalize %>, <%= parent.zip_code.capitalize %> <%= parent.city.capitalize %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card sub-more-info">
+        <p class="list-item"><span class="bold">Comment avez-vous connu l'école :</span> <%= @more_info.know_the_school %></p>
+        <% unless @more_info.reason_why.empty? %>
+          <p><span class="bold">Raison(s) de l'inscription :</span> <%= @more_info.reason_why %></p>
+        <% else %>
+          <p><span class="bold">Raison(s) de l'inscription :</span> <i>non précisé</i></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row sub-actions-delete">
+    <!-- Status button -->
+    <div class="sub-actions flex-center-center">
+
+      <% if @subscription.status == "Etape 0" %>
+        <div class="first-action flex-center-space-around active">
+          <p class="sub_status">0</p>
+          <%= link_to "Accepter le dossier", rendez_vous_path(@subscription) %>
+        </div>
+      <% else %>
+        <div class="first-action texture flex-center-space-around">
+          <p>Accepter le dossier</p>
+        </div>
+      <% end %>
+
+      <% if @subscription.status == "Etape 1" %>
+        <div class="action flex-center-space-around active">
+          <p class="sub_status">1</p>
+          <%= link_to "Valider le rendez-vous", etape_1_to_2_path(@subscription) %>
+        </div>
+      <% else %>
+        <div class="action texture flex-center-space-around">
+          <p>Valider le rendez-vous</p>
+        </div>
+      <% end %>
+
+      <% if @subscription.status == "Etape 2" %>
+        <div class="action flex-center-space-around waiting">
+          <p class="sub_status">2</p>
+          <p>Attente de réponse</p>
+        </div>
+      <% else %>
+        <div class="action texture flex-center-space-around">
+          <p>Attente de réponse</p>
+        </div>
+      <% end %>
+
+      <% if @subscription.status == "Etape 3" %>
+        <div class="last-action flex-center-space-around active">
+          <p class="sub_status">3</p>
+          <%= link_to "Créer les comptes", etape_3_path(@subscription) %>
+        </div>
+      <% else %>
+        <div class="last-action texture flex-center-space-around">
+          <p>Créer les comptes</p>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Button modal delete -->
+    <button type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#deleteModal">Refuser et supprimer</button>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="deleteModalLabel">ATTENTION !</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Vous êtes sur le point de supprimer un dossier d'inscription !</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler et revenir</button>
+            <%= link_to subscription_path(@subscription), method: :delete do %>
+              <button class="btn btn-danger" data-dismiss="modal">Confirmer et supprimer</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Delete Modal -->
+  </div>
+</div>
+

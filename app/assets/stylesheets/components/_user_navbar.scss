@@ -1,19 +1,24 @@
-#admin-nav-container {
+#user-nav-container {
   height: 100%;
+  width: 200px;
   background-color: $light-gray;
   position: fixed;
   top: 0;
   left: 0;
   padding: 0;
+  .admin-link {
+    padding: 20px 0 20px 20px;
+    border-bottom: 1px solid $light-blue;
+    &:hover,
+    &.active {
+      background-color: $blue;
+      color: $light-gray;
+    }
+  }
   h3 {
-    margin-top: 20px;
-    padding-left: 20px;
     font-weight: 600;
   }
-  hr {
-    margin: 20px 0 0 0;
-  }
-  .admin-link {
+  .user-link {
     height: 35px;
     padding-left: 20px;
     border-bottom: 1px solid $light-blue;
@@ -24,5 +29,4 @@
       font-weight: 600;
     }
   }
-
 }

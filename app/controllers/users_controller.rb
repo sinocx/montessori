@@ -2,17 +2,19 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_user_admin
   def index
-
-  end
-  def subscription
-    @subscriptions = Subscription.includes(:child_no_valids, :parent_no_valids, :more_info)
-    @subscription_filtereds = @subscriptions.select do |sub|
-                                sub.more_info.present?
-                              end
   end
 
-  def show_subscription
-    @subscription = Subscription.find(params[:id])
+  def subscriptions_dashboard
+    # @subscriptions = Subscription.all
+    @subscriptions = Subscription.joins(:more_info).where.not(more_infos: { know_the_school: nil }).includes(:child_no_valids, :parent_no_valids)
+  end
+
+  def subscription_show
+    subscription = Subscription.find(params[:id])
+    @more_info = MoreInfo.where("subscription_id = ?", subscription.id)[0]
+    @child_no_valids = ChildNoValid.where("subscription_id = ?", subscription.id).includes(:second_form)
+    @parent_no_valids = ParentNoValid.where("subscription_id = ?", subscription.id)
+    @subscription = subscription
   end
 
 
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
     @subscription.status = 1
     @subscription.save
 
-    redirect_to subscription_admin_path
+    redirect_to subscription_show_path(@subscription)
   end
 
   def etape_1_to_2
@@ -32,7 +34,7 @@ class UsersController < ApplicationController
     end
     @subscription.update(status: 2)
 
-    redirect_to subscription_admin_path
+    redirect_to subscription_show_path(@subscription)
   end
 
   def validate_etape_3
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
     end
     @subscription.destroy
 
-    redirect_to subscription_admin_path
+    redirect_to subscription_show_path(@subscription)
   end
   private
 

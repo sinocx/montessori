@@ -18,9 +18,9 @@ Rails.application.routes.draw do
 
 
   # Admin Route
-  get "/admin", to: "users#index"
-  get "/admin/subscriptions", to: "users#subscription", as: "subscription_admin"
-  get "/admin/subscriptions/:id", to: "users#show_subscription", as: "info_subscription"
+  get "/admin", to: "users#index", as: 'admin'
+  get "/admin/subscriptions_dashboard", to: "users#subscriptions_dashboard", as: "subscriptions_dashboard"
+  get "/admin/subscriptions/:id", to: "users#subscription_show", as: "subscription_show"
   get "/admin/subscriptions/:id/rendez_vous", to: "users#rendez_vous", as: "rendez_vous"
   get "/admin/subscriptions/:id/etape_1_to_2", to: "users#etape_1_to_2", as: "etape_1_to_2"
   get "/admin/subscriptions/:id/etape_2_to_3", to: "users#etape_2_to_3", as: "etape_2_to_3"
