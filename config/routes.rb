@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   post '/subscriptions/:subscription_id/parent_no_valids/next_step', to: "parent_no_valids#next_step", as: "next_step"
   get '/subscriptions/:subscription_id/child_no_valids/:child_no_valid_id/authorisation_de_sortie', to: "doc_to_signs#sortie", as: "doc1"
-  get '/subscriptions/:subscription_id/child_no_valids/:id', to: "child_no_valids#destroy", as: "destroy_child"
+  delete '/subscriptions/:subscription_id/child_no_valids/:id', to: "child_no_valids#destroy", as: "destroy_child"
 
 
   # Admin Route

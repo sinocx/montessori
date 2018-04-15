@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
   end
 
+
   def subscriptions_dashboard
     # @subscriptions = Subscription.all
     @subscriptions = Subscription.joins(:more_info).where.not(more_infos: { know_the_school: nil }).includes(:child_no_valids, :parent_no_valids)
@@ -43,7 +44,6 @@ class UsersController < ApplicationController
     @subscription.parent_no_valids.each do|parent_no_valid|
       SubscriptionMailer.etape_1_2(parent_no_valid, @subscription, @child_no_valids).deliver_now
     end
-    @subscription.destroy
 
     redirect_to subscription_show_path(@subscription)
   end
