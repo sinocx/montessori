@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const buttonB = document.getElementById(buttonB_id);
     const radioA = document.getElementById(radioA_id);
     const radioB = document.getElementById(radioB_id);
+    if (radioA.checked) {
+      buttonA.classList.add('selected');
+    } else if (radioB.checked) {
+      buttonB.classList.add('selected');
+    }
     buttonA.addEventListener('click', function() {
       if (buttonB.classList.contains('selected')) {
         buttonB.classList.remove('selected');
@@ -37,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const radioYes = document.getElementById('child_no_valid_montessori_before_true');
     const radioNo = document.getElementById('child_no_valid_montessori_before_false');
     const montessoriNameInput = document.getElementById('montessori-name');
+    if (radioYes.checked) {
+      yesButton.classList.add('selected');
+    } else if (radioNo.checked) {
+      noButton.classList.add('selected');
+    }
     yesButton.addEventListener('click', function() {
       if (noButton.classList.contains('selected')) {
         noButton.classList.remove('selected');
@@ -67,3 +77,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
   montessoriBefore();
 
 });
+

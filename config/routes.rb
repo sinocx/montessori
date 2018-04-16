@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
 
   # Admin Route
-  get "/admin", to: "users#index", as: 'admin'
+  get "/admin", to: "users#main_dashboard", as: 'main_dashboard'
   get "/admin/subscriptions_dashboard", to: "users#subscriptions_dashboard", as: "subscriptions_dashboard"
   get "/admin/subscriptions/:id", to: "users#subscription_show", as: "subscription_show"
   get "/admin/subscriptions/:id/rendez_vous", to: "users#rendez_vous", as: "rendez_vous"
@@ -31,8 +31,8 @@ Rails.application.routes.draw do
   get "/admin/subscriptions/:id/validate_etape_3", to: "users#validate_etape_3", as: "etape_3_show"
 
   # Visitor Routes
-  root to: 'pages#home'
-  get 'programmes', to: "pages#programmes", as: 'programmes'
+  root to: 'pages#ecole', as: 'ecole'
+  get 'ambiances', to: "pages#ambiances", as: 'ambiances'
   get 'informations', to: "pages#informations", as: 'informations'
   get 'prices', to: "pages#prices", as: 'prices'
   get 'contact', to: "contacts#new", as: 'contact'

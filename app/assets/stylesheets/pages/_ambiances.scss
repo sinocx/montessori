@@ -1,6 +1,6 @@
-#prog-communaute-enfantine,
-#prog-maison-enfants,
-#prog-classe-elementaire {
+#ambiances-communaute-enfantine,
+#ambiances-maison-enfants,
+#ambiances-classe-elementaire {
   h2 {
     margin-bottom: 10px;
   }
@@ -14,26 +14,26 @@
     padding: 5px 0;
   }
 }
-#prog-communaute-enfantine,
-#prog-classe-elementaire {
+#ambiances-communaute-enfantine,
+#ambiances-classe-elementaire {
   .box {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
-#prog-maison-enfants {
+#ambiances-maison-enfants {
   .box {
     background-color: white;
   }
 }
-#prog-classe-elementaire {
+#ambiances-classe-elementaire {
   .opening-date {
     margin-top: 30px;
   }
 }
 @media screen and (max-width: 520px) {
-  #prog-communaute-enfantine,
-  #prog-maison-enfants,
-  #prog-classe-elementaire {
+  #ambiances-communaute-enfantine,
+  #ambiances-maison-enfants,
+  #ambiances-classe-elementaire {
     .daylist-item {
       flex-direction: column;
       justify-content: center;

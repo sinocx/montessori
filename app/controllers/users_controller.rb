@@ -1,12 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_user_admin
-  def index
-  end
-
 
   def subscriptions_dashboard
-    # @subscriptions = Subscription.all
     @subscriptions = Subscription.joins(:more_info).where.not(more_infos: { know_the_school: nil }).includes(:child_no_valids, :parent_no_valids)
   end
 
@@ -76,6 +72,7 @@ class UsersController < ApplicationController
 
     redirect_to subscription_show_path(@subscription)
   end
+
   private
 
   def authorize_user_admin

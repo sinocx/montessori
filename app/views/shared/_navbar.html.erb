@@ -1,6 +1,6 @@
 <nav class="navbar-montessori texture">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-montessori-brand" do %>
+  <%= link_to ecole_path, class: "navbar-montessori-brand" do %>
     <h2>Les petites graines</h2>
   <% end %>
 
@@ -8,9 +8,10 @@
   <div class="navbar-montessori-right">
 
     <div class="navbar-montessori-links">
-      <%= link_to "L'école", root_path, id: 'root', class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}" %>
-      <%= link_to "Pédagogie", pedagogie_path, id: 'pedagogie', class: "navbar-montessori-item navbar-montessori-link #{current_class?(pedagogie_path)}"  %>
-      <%= link_to "Ambiance", programmes_path, id: 'programmes', class: "navbar-montessori-item navbar-montessori-link #{current_class?(programmes_path)}"  %>
+      <%= link_to "L'école", ecole_path, id: 'ecole', class: "navbar-montessori-item navbar-montessori-link #{current_class?(ecole_path)}" %>
+      <% paths_to_check = [pedagogie_path, maria_montessori_path, pedagogie_montessori_path, ambiance_montessori_path, bibliographie_path] %>
+      <%= link_to "Pédagogie", pedagogie_path, id: 'pedagogie', class: "navbar-montessori-item navbar-montessori-link #{is_pedagogie_montessori_secion?(paths_to_check)}"  %>
+      <%= link_to "Ambiances", ambiances_path, id: 'ambiances', class: "navbar-montessori-item navbar-montessori-link #{current_class?(ambiances_path)}"  %>
       <%= link_to "Infos pratiques", informations_path, id: 'informations', class: "navbar-montessori-item navbar-montessori-link #{current_class?(informations_path)}"  %>
       <%= link_to "Tarifs", prices_path, id: 'prices', class: "navbar-montessori-item navbar-montessori-link #{current_class?(prices_path)}" %>
       <%= link_to "Contact", contact_path, id: 'contact', class: "navbar-montessori-item navbar-montessori-link #{current_class?(contact_path)}" %>
@@ -35,13 +36,13 @@
       </div>
       <ul class="dropdown-menu dropdown-menu-right navbar-montessori-dropdown-menu">
         <li>
-          <%= link_to "L'école", root_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(root_path)}" %>
+          <%= link_to "L'école", ecole_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(ecole_path)}" %>
         </li>
         <li>
-          <%= link_to "Pedagogie", pedagogie_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(pedagogie_path)}" %>
+          <%= link_to "Pédagogie", pedagogie_path, class: "navbar-montessori-item navbar-montessori-link #{is_pedagogie_montessori_secion?(paths_to_check)}" %>
         </li>
         <li>
-          <%= link_to "Programmes", programmes_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(programmes_path)}" %>
+          <%= link_to "Ambiances", ambiances_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(ambiances_path)}" %>
         </li>
         <li>
           <%= link_to "Infos pratiques", informations_path, class: "navbar-montessori-item navbar-montessori-link #{current_class?(informations_path)}" %>

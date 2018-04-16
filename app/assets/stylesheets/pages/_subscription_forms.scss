@@ -1,6 +1,7 @@
 #new-child,
 #new-parent,
 #more-info,
+#second-form-step1,
 #second-form {
   h2 {
     margin: 0;
@@ -46,7 +47,12 @@
       background-size: 5px;
       background-position: center;
     }
-    button.selected,
+    button.selected {
+      background-color: $blue;
+      color: $light-gray;
+      border-color: $blue;
+      background-image: none;
+    }
     button:hover {
       background-color: $yellow;
       background-image: none;
@@ -91,6 +97,17 @@
   }
   button {
     margin-top: 50px;
+  }
+}
+#second-form-step1 {
+  min-height: calc(100vh - 140px);
+  .btn-bottom {
+    margin-top: 30px;
+  }
+  #accordion {
+    .card-body {
+      overflow: hidden;
+    }
   }
 }
 #second-form {

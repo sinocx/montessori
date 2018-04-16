@@ -1,4 +1,4 @@
-#home-head {
+#ecole-head {
   width: 100%;
   padding: 150px 0 170px 0;
   .btn-primary {
@@ -11,13 +11,13 @@
     }
   }
 }
-.home-title,
-.home-img,
-.home-text,
-.home-link {
+.ecole-title,
+.ecole-img,
+.ecole-text,
+.ecole-link {
   width: 100%;
 }
-.home-title {
+.ecole-title {
   h1 {
     margin: 0;
   }
@@ -31,21 +31,21 @@
     margin: 10px 0 0 0;
   }
 }
-.home-subtitle {
+.ecole-subtitle {
   margin-top: 10px;
   svg {
     margin: 0 10px;
   }
 }
-.home-img {
+.ecole-img {
   margin-top: 30px;
 }
-.home-text {
+.ecole-text {
   p {
     width: 370px;
   }
 }
-.home-link {
+.ecole-link {
   margin-top: 10px;
   button {
     width: 200px;
@@ -101,14 +101,14 @@
     // text-align: center;
   }
 }
-#home-approche {
+#ecole-approche {
   h3 {
     margin-bottom: 10px;
     font-weight: 600;
   }
 }
 //Section 4
-#home-staff {
+#ecole-staff {
   h2 {
     margin-bottom: 10px;
   }
@@ -127,6 +127,7 @@
   }
   .staf-card {
     width: 140px;
+    height: 241px;
     background-color: $yellow;
     color: $blue;
     border-radius: $r-lg;
@@ -136,17 +137,14 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 10px;
+    text-align: center
   }
   .avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 20px;
-    img {
-      width: 180px;
-      margin-left: -35px;
-    }
+    // margin-bottom: 20px;
   }
   .staf-desc {
 
@@ -154,12 +152,19 @@
   .staf-name {
     text-align: center;
   }
-  .staf-role p {
-    font-size: 15px;
+  .staf-role {
+    h5 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 15px;
+      margin: 0;
+    }
   }
 }
 //Section 5
-#home-relation {
+#ecole-relation {
   .pedagogie-relation-title {
     display: flex;
     align-items: center;
@@ -173,7 +178,7 @@
   }
 }
 //Section 6
-#home-video {
+#ecole-video {
   .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -195,7 +200,7 @@
     border-radius: $r-lg;
   }
 }
-//Home image responsive
+//ecole image responsive
 @media screen and (max-width: 375px) {
   #accueil {
     width: 100%;

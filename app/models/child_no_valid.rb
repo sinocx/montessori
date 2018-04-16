@@ -14,28 +14,22 @@ class ChildNoValid < ApplicationRecord
   validates :montessori_name, presence: true, if: :montessori_before?
   # validates :comment
 
+  NUMBER_OF_DAYS_IN_YEAR = 365.25
+
   def montessori_before?
     montessori_before
   end
 
   def age
-    birth_date = self.birth_date
-    today = Date.today
-    age = ((today - birth_date) / 365.25).to_i
-    age
+    ((Date.today - self.birth_date) / NUMBER_OF_DAYS_IN_YEAR).to_i
   end
 
   def sex
-    if self.gender == "Feminin"
-      "Fille"
-    else
-      "Garçon"
-    end
+    self.gender == "Feminin" ? "Fille" : "Garçon"
   end
 
   def atmosphere
-    n = self.child_atmosphere
-    case n
+    case self.child_atmosphere
     when 0
       child_class = "Communauté Enfantine"
     when 1
@@ -49,11 +43,8 @@ class ChildNoValid < ApplicationRecord
   end
 
   def atmosphere_price
-    if self.child_atmosphere == 0
-      "Un chèque de 800€ pour La Communauté Enfantine"
-    else
-      "Un chèque de 740 € pour La Maison des Enfants"
-    end
+    self.child_atmosphere == 0 ? price = "800€" : price = "740€"
+    "Un chèque de #{price} pour #{self.atmosphere}"
   end
 
 end

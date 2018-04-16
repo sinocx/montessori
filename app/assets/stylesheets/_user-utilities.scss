@@ -87,6 +87,11 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
 }
+.flex-end-start {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
 .flex-start-space-between {
   display: flex;
   align-items: flex-start;

@@ -1,24 +1,24 @@
-<div class="wrapper dots" id="home-head">
+<div class="wrapper dots" id="ecole-head">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
         <div class="text-center">
-          <div class="home-title">
+          <div class="ecole-title">
             <h1 class="text-center">Les petites graines</h1>
             <h3 class="text-center">École Montessori bilingue</h3>
-            <div class="home-subtitle flex-center-center">
+            <div class="ecole-subtitle flex-center-center">
               <%= inline_svg "france.svg", size: '40px', class: 'flag'%>
               <%= inline_svg "england.svg", size: '40px', class: 'flag'%>
             </div>
           </div>
-          <div class="home-img flex-center-center">
+          <div class="ecole-img flex-center-center">
             <%= image_tag "img_accueil.png", id: "accueil" %>
           </div>
-          <div class="home-text flex-center-center">
+          <div class="ecole-text flex-center-center">
             <p>Offrez à votre enfant un environnement adapté qui stimule l’apprentissage et l’autonomie.</p>
           </div>
-          <div class="home-link flex-center-center">
+          <div class="ecole-link flex-center-center">
             <%= link_to new_subscription_path(@subscription) do %>
               <button class="btn btn-primary">Inscription</button>
             <% end %>
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="wrapper background-light-gray texture" id="home-desc">
+<div class="wrapper background-light-gray texture" id="ecole-desc">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<div class="wrapper triangles" id="home-approche">
+<div class="wrapper triangles" id="ecole-approche">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -128,7 +128,7 @@
   </div>
 </div>
 
-<div class="wrapper background-light-gray texture" id="home-objectifs">
+<div class="wrapper background-light-gray texture" id="ecole-objectifs">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -153,7 +153,7 @@
   </div>
 </div>
 
-<div class="wrapper dots" id="home-staff">
+<div class="wrapper dots" id="ecole-staff">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -172,61 +172,65 @@
 
           <div class="staf-card">
             <div class="avatar">
-              <%= image_tag "avatars/jean_dupont.jpg" %>
+              <%= inline_svg "avatars/one.svg", size: '100px'%>
             </div>
-            <div class="staf-name">
+            <!-- <div class="staf-name">
               <h4>Jean Dupont</h4>
-            </div>
+            </div> -->
             <div class="staf-role">
-              <p>Enseignant</p>
+              <h5>Éducatrice Montessori</h5>
+              <p>Communauté Enfantine</p>
             </div>
           </div>
 
           <div class="staf-card">
             <div class="avatar">
-              <%= image_tag "avatars/jean_dupont.jpg" %>
+              <%= inline_svg "avatars/two.svg", size: '100px'%>
             </div>
-            <div class="staf-name">
+            <!-- <div class="staf-name">
               <h4>Jean Dupont</h4>
-            </div>
+            </div> -->
             <div class="staf-role">
-              <p>Enseignant</p>
+              <h5>Éducatrice Montessori</h5>
+              <p>Communauté Enfantine</p>
             </div>
           </div>
 
           <div class="staf-card">
             <div class="avatar">
-              <%= image_tag "avatars/jean_dupont.jpg" %>
+              <%= inline_svg "avatars/three.svg", size: '100px'%>
             </div>
-            <div class="staf-name">
+            <!-- <div class="staf-name">
               <h4>Jean Dupont</h4>
-            </div>
+            </div> -->
             <div class="staf-role">
-              <p>Enseignant</p>
+              <h5>Éducatrice Montessori</h5>
+              <p>Maison des Enfants</p>
             </div>
           </div>
 
           <div class="staf-card">
             <div class="avatar">
-              <%= image_tag "avatars/jean_dupont.jpg" %>
+              <%= inline_svg "avatars/four.svg", size: '100px'%>
             </div>
-            <div class="staf-name">
+            <!-- <div class="staf-name">
               <h4>Jean Dupont</h4>
-            </div>
+            </div> -->
             <div class="staf-role">
-              <p>Enseignant</p>
+              <h5>Éducatrice Montessori</h5>
+              <p>Maison des Enfants</p>
             </div>
           </div>
 
           <div class="staf-card">
             <div class="avatar">
-              <%= image_tag "avatars/jean_dupont.jpg" %>
+              <%= inline_svg "avatars/five.svg", size: '100px'%>
             </div>
-            <div class="staf-name">
+            <!-- <div class="staf-name">
               <h4>Jean Dupont</h4>
-            </div>
+            </div> -->
             <div class="staf-role">
-              <p>Enseignant</p>
+              <h5>Intendance</h5>
             </div>
           </div>
 
@@ -237,7 +241,7 @@
   </div>
 </div>
 
-<div class="wrapper background-light-gray texture" id="home-relation">
+<div class="wrapper background-light-gray texture" id="ecole-relation">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -256,7 +260,7 @@
   </div>
 </div>
 
-<div class="wrapper triangles" id="home-video">
+<div class="wrapper triangles" id="ecole-video">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">

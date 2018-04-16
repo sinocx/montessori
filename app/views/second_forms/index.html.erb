@@ -1,19 +1,24 @@
-<div class="wrapper dots" id="information-services">
+<div class="wrapper dots" id="second-form-step1">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-        <% @parent_no_valids.each do |parent_no_valid| %>
-          <%= render "parent_no_valids/update", parent_no_valid: parent_no_valid, subscription: params[:subscription_id]%>
-        <% end %>
-        <%= render "child_no_valids/update", child_no_valid: @child_no_valid, subscription: params[:subscription_id]%>
-        <div class="text-center">
-          <%= link_to "Etape Suivante", new_subscription_child_no_valid_second_form_path(@subscription, @child_no_valid),class: "btn-success btn-block" %>
+
+        <div class="panel-group" id="accordion">
+          <%= render "child_no_valids/update", child_no_valid: @child_no_valid, subscription: params[:subscription_id]%>
+          <% @parent_no_valids.each do |parent_no_valid| %>
+            <%= render "parent_no_valids/update", parent_no_valid: parent_no_valid, subscription: params[:subscription_id]%>
+          <% end %>
         </div>
+
+        <div class="btn-bottom text-center">
+          <%= link_to "Etape Suivante", new_subscription_child_no_valid_second_form_path(@subscription, @child_no_valid),class: "btn btn-success" %>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
-<%= javascript_pack_tag 'white-tabs' %>
+<%= javascript_pack_tag 'new-child' %>
 <%= javascript_pack_tag 'collapsing-tabs' %>
 

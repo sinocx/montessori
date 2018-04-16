@@ -1,15 +1,10 @@
 class ContactsController < ApplicationController
   skip_before_action :authenticate_user!
+
   def new
     @contact= Contact.new()
     @schools = School.where.not(latitude: nil, longitude: nil)
-
-      @markers = @schools.map do |school|
-        {
-          lat: school.latitude,
-          lng: school.longitude#,
-          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-        }
+    @markers = get_coordonates(@schools)
     end
   end
 
@@ -20,7 +15,6 @@ class ContactsController < ApplicationController
     else
       render :new
     end
-
   end
 
   private
@@ -29,4 +23,11 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:subject, :full_name_parent, :phone, :email, :message)
   end
 
+  def get_coordonates(schools)
+    schools.map do |school|
+      { lat: school.latitude,
+        lng: school.longitude
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+  end
 end

@@ -1,10 +1,12 @@
 class SecondFormsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :action
+
   def index
     @parent_no_valids = ParentNoValid.where(subscription: @subscription)
     @child_no_valid = ChildNoValid.find(params[:child_no_valid_id])
   end
+
   def new
     @second_form = SecondForm.new
   end
@@ -34,4 +36,5 @@ class SecondFormsController < ApplicationController
   def second_form_params
     params.require(:second_form).permit(:canteen, :workshop, :nursery)
   end
+
 end
