@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   get "/admin/subscriptions/:id/etape_1_to_2", to: "users#etape_1_to_2", as: "etape_1_to_2"
   get "/admin/subscriptions/:id/etape_2_to_3", to: "users#etape_2_to_3", as: "etape_2_to_3"
   get "/admin/subscriptions/:id/validate_etape_3", to: "users#validate_etape_3", as: "etape_3"
+    get "/admin/subscriptions/:id/rendez_vous", to: "users#rendez_vous", as: "rendez_vous_show"
+  get "/admin/subscriptions/:id/etape_1_to_2", to: "users#etape_1_to_2", as: "etape_1_to_2_show"
+  get "/admin/subscriptions/:id/etape_2_to_3", to: "users#etape_2_to_3", as: "etape_2_to_3_show"
+  get "/admin/subscriptions/:id/validate_etape_3", to: "users#validate_etape_3", as: "etape_3_show"
 
   # Visitor Routes
   root to: 'pages#home'
