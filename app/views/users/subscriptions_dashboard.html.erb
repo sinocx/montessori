@@ -1,4 +1,4 @@
-<div class="wrapper user-wrapper dots" id="dashboard_admin">
+<div class="user-wrapper dots" id="dashboard_admin">
 
   <div id="dashboard_admin_search" class="flex-center-space-between">
     <input class="search" placeholder="Search" />
@@ -94,7 +94,7 @@
           <% if subscription.status == "Etape 0" %>
             <div class="first-action flex-center-space-around active">
               <p class="sub_status">0</p>
-              <%= link_to "Accepter le dossier", rendez_vous_path(subscription) %>
+              <%= link_to "Accepter le dossier", rendez_vous_show_path(subscription) %>
             </div>
           <% else %>
             <div class="first-action texture flex-center-space-around">
@@ -105,7 +105,7 @@
           <% if subscription.status == "Etape 1" %>
             <div class="action flex-center-space-around active">
               <p class="sub_status">1</p>
-              <%= link_to "Valider le rendez-vous", etape_1_to_2_path(subscription) %>
+              <%= link_to "Valider le rendez-vous", etape_1_to_2_show_path(subscription) %>
             </div>
           <% else %>
             <div class="action texture flex-center-space-around">
@@ -127,7 +127,7 @@
           <% if subscription.status == "Etape 3" %>
             <div class="last-action flex-center-space-around active">
               <p class="sub_status">3</p>
-              <%= link_to "Créer les comptes", etape_3_path(subscription) %>
+              <%= link_to "Créer les comptes", etape_3_show_path(subscription) %>
             </div>
           <% else %>
             <div class="last-action texture flex-center-space-around">
