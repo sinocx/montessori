@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @subscription.status = 1
     @subscription.save
 
-    redirect_to subscription_show_path(@subscription)
+    redirect_to subscriptions_dashboard_path(@subscription)
   end
 
   def etape_1_to_2
@@ -35,10 +35,39 @@ class UsersController < ApplicationController
     end
     @subscription.update(status: 2)
 
-    redirect_to subscription_show_path(@subscription)
+    redirect_to subscriptions_dashboard_path(@subscription)
   end
 
   def validate_etape_3
+    @subscription = Subscription.find(params[:id])
+    @subscription.update(status: 3)
+    @subscription.parent_no_valids.each do|parent_no_valid|
+      SubscriptionMailer.etape_1_2(parent_no_valid, @subscription, @child_no_valids).deliver_now
+    end
+
+    redirect_to subscriptions_dashboard_path(@subscription)
+  end
+
+  def rendez_vous_show
+    @subscription = Subscription.find(params[:id])
+    @subscription.status = 1
+    @subscription.save
+
+    redirect_to subscription_show_path(@subscription)
+  end
+
+  def etape_1_to_2_show
+    @subscription = Subscription.find(params[:id])
+    @child_no_valids = ChildNoValid.where(subscription_id: @subscription)
+    @subscription.parent_no_valids.each do|parent_no_valid|
+      SubscriptionMailer.etape_1_2(parent_no_valid, @subscription, @child_no_valids).deliver_now
+    end
+    @subscription.update(status: 2)
+
+    redirect_to subscription_show_path(@subscription)
+  end
+
+  def validate_etape_3_show
     @subscription = Subscription.find(params[:id])
     @subscription.update(status: 3)
     @subscription.parent_no_valids.each do|parent_no_valid|

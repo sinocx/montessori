@@ -1,6 +1,11 @@
 class SecondForm < ApplicationRecord
   belongs_to :child_no_valid
 
+
+  def price_school
+
+  end
+
   def price_canteen
     if self.canteen == 1
       "100 € / mois"
