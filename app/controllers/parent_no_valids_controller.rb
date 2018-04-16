@@ -1,5 +1,6 @@
 class ParentNoValidsController < ApplicationController
   skip_before_action :authenticate_user!
+
   def new
     @parent = ParentNoValid.new()
     @subscription = params[:subscription_id]
@@ -20,6 +21,7 @@ class ParentNoValidsController < ApplicationController
     @subscription = params[:subscription_id]
     @parent_no_valid = ParentNoValid.find(params[:id])
   end
+
   def update
     @subscription = params[:subscription_id]
     @parent_no_valid = ParentNoValid.find(params[:id])
@@ -40,6 +42,7 @@ class ParentNoValidsController < ApplicationController
   end
 
   private
+
   def parent_no_valids_params
     params.require(:parent_no_valid).permit(:first_name,
                                             :last_name,
@@ -56,4 +59,5 @@ class ParentNoValidsController < ApplicationController
                                             :role)
 
   end
+
 end

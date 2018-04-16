@@ -13,12 +13,5 @@ class PagesController < ApplicationController
                                                   :subscription_success,
                                                   :inscription_success
                                                 ]
-  def home
-  end
-
-  def embed
-  end
-
-  private
 
 end

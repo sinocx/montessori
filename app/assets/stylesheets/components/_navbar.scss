@@ -108,10 +108,9 @@
   color: $red;
   text-decoration: none;
 }
-#root,
 #ecole,
 #pedagogie,
-#programmes,
+#ambiances,
 #informations,
 #prices,
 #contact {
@@ -123,10 +122,9 @@
     box-shadow: none;
   }
 }
-#root.active,
 #ecole.active,
 #pedagogie.active,
-#programmes.active,
+#ambiances.active,
 #informations.active,
 #prices.active,
 #contact.active {
@@ -135,14 +133,14 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-#root.active {
+#ecole.active {
   background-image: url(asset-path("navbar/ecole-circle.svg"));
 }
 #pedagogie.active {
   background-image: url(asset-path("navbar/pedagogie-circle.svg"));
 }
-#programmes.active {
-  background-image: url(asset-path("navbar/programmes-circle.svg"));
+#ambiances.active {
+  background-image: url(asset-path("navbar/ambiances-circle.svg"));
 }
 #informations.active {
   background-image: url(asset-path("navbar/infos-circle.svg"));

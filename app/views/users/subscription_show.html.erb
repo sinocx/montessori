@@ -5,16 +5,43 @@
       <div class="col-xs-12 col-sm-6">
         <div class="card">
 
-          <% if @subscription.child_no_valids.count > 1 %>
-            <div class="delete-child">
-              <%= link_to subscription_child_no_valid_path(@subscription,child), method: :delete do  %>
-                <i class="far fa-trash-alt font-delete"></i>
-              <% end %>
-            </div>
-          <% end %>
 
           <div class="flex-end-space-between list-item-head">
-            <h3><%= child.first_name.capitalize %> <%= child.last_name.capitalize %></h3>
+            <div class="left_part flex-end-start">
+              <h3>
+                <%= child.first_name.capitalize %> <%= child.last_name.capitalize %>
+              </h3>
+
+              <% if @subscription.child_no_valids.count > 1 %>
+                <!-- Button modal delete -->
+                <i type="button" class="far fa-trash-alt font-delete" data-toggle="modal" data-target="#deleteChildModal"></i>
+
+                <!-- Delete Modal -->
+                <div class="modal fade" id="deleteChildModal" tabindex="-1" role="dialog" aria-labelledby="deleteChildModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title" id="deleteChildModalLabel">ATTENTION !</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Vous êtes sur le point de supprimer un enfant du dossier d'inscription !</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler et revenir</button>
+                        <%= link_to subscription_child_no_valid_path(@subscription,child), method: :delete do  %>
+                          <button class="btn btn-danger" data-dismiss="modal">Confirmer et supprimer</button>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Delete Modal -->
+              <% end %>
+
+            </div>
             <p><%= child.sex.capitalize %></p>
           </div>
           <div class="flex-center-space-between list-item">

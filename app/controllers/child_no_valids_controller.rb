@@ -37,7 +37,7 @@ class ChildNoValidsController < ApplicationController
     else
       @child_no_valid = ChildNoValid.find(params[:id])
       @child_no_valid.destroy
-      redirect_to info_subscription_path(@subscription)
+      redirect_to subscription_show_path(@subscription)
     end
   end
 
