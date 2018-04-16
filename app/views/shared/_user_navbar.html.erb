@@ -5,5 +5,7 @@
   <%= link_to subscriptions_dashboard_path, class: "user-link flex-center-start #{current_class?(subscriptions_dashboard_path)}" do %>
     <p>Inscriptions</p>
   <% end %>
-
+  <%= link_to destroy_user_session_path, method: :delete, class: "bottom-link flex-center-start #{current_class?(subscriptions_dashboard_path)}" do %>
+    <button class="btn btn-danger btn-block">Déconnexion</button>
+  <% end %>
 </nav>
