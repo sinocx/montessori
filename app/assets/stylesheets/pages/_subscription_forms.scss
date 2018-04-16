@@ -84,13 +84,11 @@
 #inscription-success {
   min-height: calc(100vh - 140px);
 }
-#subscription-success {
+#subscription-success,
+#inscription-success {
   h1, h3 {
     margin: 0;
     font-weight: normal;
-  }
-  .success-title {
-    margin-top: 25%;
   }
   .success-text {
     margin-top: 30px;
