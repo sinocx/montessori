@@ -14,6 +14,14 @@ class ChildNoValid < ApplicationRecord
   validates :montessori_name, presence: true, if: :montessori_before?
   # validates :comment
 
+   def price_school
+      if self.child_atmosphere == 0
+        "8000 € / ans"
+      else
+        "7400 € / mois"
+      end
+    end
+
   def montessori_before?
     montessori_before
   end

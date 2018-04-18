@@ -8,7 +8,7 @@
 
     <div id="collapse<%= @child_no_valid.id %>" class="panel-collapse collapse">
       <div class="card-body text-center">
-        <div id="<%= @child_no_valid %>">
+        <div id="child-<%= @child_no_valid %>">
          <%= simple_form_for [@child_no_valid], remote: true, url: subscription_child_no_valid_path(@subscription, @child_no_valid), method: :patch do |f| %>
            <h2><%= @child_no_valid.first_name %></h2>
            <hr>
