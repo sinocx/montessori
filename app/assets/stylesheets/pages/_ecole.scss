@@ -1,6 +1,9 @@
 #ecole-head {
   width: 100%;
-  padding: 150px 0 170px 0;
+  padding: 0;
+  #ecole-welcome {
+    height: calc(100vh - 70px);
+  }
   .btn-primary {
     color: $light-gray;
     &:hover,
