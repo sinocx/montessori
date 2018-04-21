@@ -4,6 +4,7 @@ class PagesController < ApplicationController
                                                   :pedagogie,
                                                   :pedagogie_montessori,
                                                   :maria_montessori,
+                                                  :ambiances,
                                                   :ambiance_montessori,
                                                   :bibliographie,
                                                   :informations,
