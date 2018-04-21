@@ -7,6 +7,7 @@ class SecondForm < ApplicationRecord
   end
 
   def price_canteen
+
     if self.canteen == 1
       "100 € / mois"
     elsif self.canteen == 2
