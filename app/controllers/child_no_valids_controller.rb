@@ -12,7 +12,7 @@ class ChildNoValidsController < ApplicationController
     good_params["birth_date"] = defineBirthDate
     @child = ChildNoValid.new(good_params)
     @child.subscription_id =  params[:subscription_id]
-    if @child.save!
+    if @child.save
       next_step
     else
       render :new
