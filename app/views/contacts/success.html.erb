@@ -1,0 +1,35 @@
+<div class="wrapper triangles" id="subscription-success">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="success-title text-center">
+          <h1>Votre demande</h1>
+          <h1>a bien été enregistrée !</h1>
+        </div>
+        <div class="success-text text-center">
+          <h3>Nous reviendrons vers vous le plus rapidement possible !</h3>
+        </div>
+        <div class="flex-center-center">
+          <p id="timer"></p>
+        </div>
+        <script type="text/javascript">
+          let count = 6
+          const redirect = "http://www.ecole-montessori.herokuapp.com"
+          function countDown() {
+            const timer = document.getElementById("timer");
+            if (count > 0){
+              count--;
+              timer.innerHTML = `Vous allez être redirigé dans ${count} seconds.`;
+              setTimeout("countDown()", 1000);
+            } else {
+              window.location.href = redirect
+            }
+          }
+        </script>
+        <span id="timer">
+          <script type="text/javascript"> countDown()</script>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

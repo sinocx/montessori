@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get "/admin/subscriptions/:id/etape_1_to_2", to: "users#etape_1_to_2", as: "etape_1_to_2"
   get "/admin/subscriptions/:id/etape_2_to_3", to: "users#etape_2_to_3", as: "etape_2_to_3"
   get "/admin/subscriptions/:id/validate_etape_3", to: "users#validate_etape_3", as: "etape_3"
-    get "/admin/subscriptions/:id/rendez_vous", to: "users#rendez_vous", as: "rendez_vous_show"
+  get "/admin/subscriptions/:id/rendez_vous", to: "users#rendez_vous", as: "rendez_vous_show"
   get "/admin/subscriptions/:id/etape_1_to_2", to: "users#etape_1_to_2", as: "etape_1_to_2_show"
   get "/admin/subscriptions/:id/etape_2_to_3", to: "users#etape_2_to_3", as: "etape_2_to_3_show"
   get "/admin/subscriptions/:id/validate_etape_3", to: "users#validate_etape_3", as: "etape_3_show"
@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'prices', to: "pages#prices", as: 'prices'
   get 'contact', to: "contacts#new", as: 'contact'
   post 'contact', to: "contacts#create", as: 'contact_new'
+  get 'contact/success',to: "contacts#success", as: 'contact_success'
   get 'inscription', to: "pages#inscription", as: 'inscription'
   get 'pedagogie_montessori', to: "pages#pedagogie_montessori", as: 'pedagogie_montessori'
   get 'maria_montessori', to: "pages#maria_montessori", as: 'maria_montessori'
