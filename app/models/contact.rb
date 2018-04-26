@@ -15,8 +15,4 @@ class Contact < ApplicationRecord
                         message: "%{value} n'est pas un objet valide"
                       }
   validates :message, presence: true, length: {minimum: 15}
-
-  def contact_mailer
-    ContactMailer.send_contact(self).deliver_now
-  end
 end
