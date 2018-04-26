@@ -11,7 +11,7 @@ class ParentNoValid < ApplicationRecord
   validates :address, presence: true
   validates :zip_code, presence: true, format: { with: /\A\d{5}\z/ }
   validates :city, presence: true
-  validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }, presence: true, uniqueness: true
+  validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }, presence: true
   # validates :phone, presence: true
   validates :phone,
             presence: true,
