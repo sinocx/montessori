@@ -42,6 +42,11 @@ class ChildNoValid < ApplicationRecord
     child_class
   end
 
+  def ambiance_price
+    self.child_atmosphere == 0 ? price = "8000 €" : price = "7400 €"
+    price
+  end
+
   def atmosphere_price
     self.child_atmosphere == 0 ? price = "800€" : price = "740€"
     "Un chèque de #{price} pour #{self.atmosphere}"

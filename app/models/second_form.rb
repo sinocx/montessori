@@ -1,6 +1,8 @@
 class SecondForm < ApplicationRecord
   belongs_to :child_no_valid
-
+  validates :canteen , presence: true
+  validates :workshop, presence: true
+  validates :nursery, presence: true
 
   def price_school
 
