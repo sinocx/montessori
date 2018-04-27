@@ -9,6 +9,6 @@ class ContactMailer < ApplicationMailer
     @contact = contact
     @greeting = "Hi"
 
-    mail to: "contact@lespetitesgraines-montessori.fr", subject: "#{@contact.subject}", from: "contact@lespetitesgraines-montessori.fr"
+    mail to: "pauline.lemonnier@hotmail.fr", subject: "#{@contact.subject}", from: "contact@lespetitesgraines-montessori.fr"
   end
 end

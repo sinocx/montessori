@@ -13,7 +13,7 @@ class SecondForm < ApplicationRecord
     if self.canteen == 1
       "100 € / mois"
     elsif self.canteen == 2
-      "100 € / ans"
+      "1000 € / an"
     elsif self.canteen == 3
       "7€ / jour"
     else
