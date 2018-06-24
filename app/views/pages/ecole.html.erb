@@ -3,9 +3,11 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-        <div id="ecole-welcome" class="flex-center-space-around">
-          <div class="text-center" style="width: 100%;">
-            <div class="ecole-title">
+        <div id="ecole-welcome" class="flex-center-space-around-column">
+          <!-- <div class="text-center" style="width: 100%;"> -->
+            <!-- <div class="ecole-img flex-center-center"> -->
+            <div class="ecole-title flex-center-center-column">
+              <%= inline_svg "Les_enfants_Les_Petites_Graines.svg", size: "90%*70%", class:'img_acceuil'%>
               <h1 class="text-center">Les petites graines</h1>
               <h3 class="text-center">École Montessori bilingue</h3>
               <div class="ecole-subtitle flex-center-center">
@@ -13,18 +15,17 @@
                 <%= inline_svg "england.svg", size: '40px', class: 'flag'%>
               </div>
             </div>
-            <div class="ecole-img flex-center-center">
-              <%= inline_svg "Les_enfants_Les_Petites_Graines.svg", size: '90%*70%', class:'img_acceuil'%>
-            </div>
-            <div class="ecole-text flex-center-center">
+
+            <!-- <div class="ecole-text flex-center-center">
               <p>Offrez à votre enfant un environnement adapté qui stimule l’apprentissage et l’autonomie.</p>
-            </div>
-            <div class="ecole-link flex-center-center">
-              <%= link_to new_subscription_path(@subscription) do %>
-                <button class="btn btn-primary">Inscription</button>
-              <% end %>
-            </div>
+            </div> -->
+
+          <div class="ecole-link flex-center-center">
+            <%= link_to new_subscription_path(@subscription) do %>
+              <button class="btn btn-primary">Inscription</button>
+            <% end %>
           </div>
+          <!-- </div> -->
         </div>
         <%#= link_to "dashboard",dashboard_path %>
 

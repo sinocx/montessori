@@ -20,16 +20,31 @@
 .ecole-link {
   width: 100%;
 }
+@media (max-width: 369.98px) {
+  .ecole-title {
+    h1 { font-size: 28px; }
+    h3 { font-size: 17px; }
+  }
+}
+@media (min-width: 370px) and (max-width: 424.98px) {
+  .ecole-title {
+    h1 { font-size: 34px; }
+    h3 { font-size: 20px; }
+  }
+}
+@media (min-width: 425px) {
+  .ecole-title {
+    h1 { font-size: 45px; }
+    h3 { font-size: 24px; }
+  }
+}
 .ecole-title {
+  padding-top: 10%;
   h1 {
     margin: 0;
-  }
-  h1 {
-    font-size: 45px;
     font-weight: 600;
   }
   h3 {
-    font-size: 20px;
     font-weight: 600;
     margin: 10px 0 0 0;
   }
@@ -207,6 +222,9 @@
   }
   iframe {
     border-radius: $r-lg;
+  }
+  p {
+    font-size: 15px;
   }
 }
 //ecole image responsive
